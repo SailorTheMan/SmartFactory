@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "data.sql" //Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;
+  }
+}
