@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartFactory.Pages;
 
 namespace SmartFactory
 {
@@ -17,9 +18,17 @@ namespace SmartFactory
             InitializeComponent();
         }
 
+        LoginPage loginPage;
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            loginPage = new LoginPage();
+            loginPage.Show();
         }
     }
 }
