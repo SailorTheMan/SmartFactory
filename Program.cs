@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using User; // TODO: Импортировать файл Scripts\User.cs
 
 namespace SmartFactory
 {
@@ -18,5 +19,7 @@ namespace SmartFactory
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+        private User user; // TODO: ХЗ
     }
 }

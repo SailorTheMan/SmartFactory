@@ -16,5 +16,13 @@ namespace SmartFactory.Pages
         {
             InitializeComponent();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            String login = loginInput.Text;
+            String password = passwordInput.Text;
+
+            // TODO: Подтянуть пароль по логину из дб, сравнить, если все ок, подгрузить остальные поля из дб в глобальную переменную User в program.cs
+        }
     }
 }

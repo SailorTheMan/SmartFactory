@@ -44,6 +44,7 @@
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Войти";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // Login
             // 
@@ -89,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 346);
+            this.ClientSize = new System.Drawing.Size(382, 353);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.loginInput);
             this.Controls.Add(this.Warning);
