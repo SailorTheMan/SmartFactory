@@ -30,5 +30,10 @@ namespace SmartFactory
             loginPage = new LoginPage();
             loginPage.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
