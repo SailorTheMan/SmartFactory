@@ -15,11 +15,11 @@ namespace SmartFactory.Models
         private bool DangerousStatus = false;
         private bool CriticalStatus = false;
 
-        private List<string> TempLog;
-        private List<string> VibrLog;
-        private List<string> PowerLog;
-        private List<string> LoadLog;
-        private List<string> WorkTimeLog;
+        private List<string> TempLog = new List<string>();
+        private List<string> VibrLog = new List<string>();
+        private List<string> PowerLog = new List<string>();
+        private List<string> LoadLog = new List<string>();
+        private List<string> WorkTimeLog = new List<string>();
 
         public Machine(int id)
         {

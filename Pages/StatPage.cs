@@ -29,7 +29,7 @@ namespace SmartFactory.Pages
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (new DatToDB().Convert(openFileDialog1.FileName))
+                if (new DatToDB().Converter(openFileDialog1.FileName))
                 {
                     MessageBox.Show("Всё ок");
                 }
@@ -40,6 +40,11 @@ namespace SmartFactory.Pages
 
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new OverallStats().Show();
         }
     }
 }

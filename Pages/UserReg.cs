@@ -32,8 +32,7 @@ namespace SmartFactory.Pages
             uc.Register(emailInput.Text, passwordInput.Text, nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text), 
                 Int32.Parse(expInput.Text), sexInput.Text);
 
-           ///ТОДО:
-           ///Запустить функцию Register из контроллера, скормив ей значения полей
+           
         }
     }
 }
