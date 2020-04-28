@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartFactory.Models;
 using SmartFactory.Pages;
 
 namespace SmartFactory
@@ -19,6 +20,7 @@ namespace SmartFactory
         }
 
         LoginPage loginPage;
+        User user;
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -29,6 +31,8 @@ namespace SmartFactory
         {
             loginPage = new LoginPage();
             loginPage.Show();
+
+            button3.Text = "Личный кабинет";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

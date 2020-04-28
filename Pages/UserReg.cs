@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using SmartFactory.Controllers;
+
 namespace SmartFactory.Pages
 {
     public partial class UserReg : Form
@@ -24,6 +26,12 @@ namespace SmartFactory.Pages
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            UserController uc = new UserController();
+
+            uc.Register(emailInput.Text, passwordInput.Text, nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text), 
+                Int32.Parse(expInput.Text), sexInput.Text);
+
            ///ТОДО:
            ///Запустить функцию Register из контроллера, скормив ей значения полей
         }

@@ -11,11 +11,15 @@ using System.Collections.Specialized;
 using System.Text.RegularExpressions;
 
 using MySql.Data.MySqlClient;
+using SmartFactory.Models;
 
 namespace SmartFactory.Controllers
 {
     public class UserController //: Controller
     {
+        private User user;
+
+
         private static Repository repository = new Repository();
         private IEnumerable<User> users = repository.Users;
 
@@ -43,25 +47,51 @@ namespace SmartFactory.Controllers
 
             conn.Open();
 
-            string sql = "SELECT password FROM users WHERE name = " + "'" + login + "'";
+            string sql = "SELECT password FROM users WHERE email = '" + login + "'";
 
             MySqlCommand command = new MySqlCommand(sql, conn);
-
-            string pwd = command.ExecuteScalar().ToString();
-
-            conn.Close();
-
-            if (pwd == password)
+            try
             {
-                return true;
+                string pwd = command.ExecuteScalar().ToString();
+                conn.Close();
+                if (pwd == password)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (NullReferenceException e)
             {
                 return false;
             }
             
+            
         }
 
+        public bool Register(string email, string password, string name, string position, int age,
+                int exp, string sex)
+        {
+            string connStr = "server=localhost;user=root;database=smartfactory;password=ыфшдщк;";
+
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string query = "INSERT INTO users (name, age, sex, position, email, exp, password) VALUES('" + name + "', '" +
+                age.ToString() + "', '" + sex + "', '" + position + "', '" + email + "', '" + exp.ToString() 
+                + "', '" + password + "');"; 
+
+            MySqlCommand command = new MySqlCommand(query, conn);
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+
+            return true;
+        }
 
         /*
         public bool Register()
