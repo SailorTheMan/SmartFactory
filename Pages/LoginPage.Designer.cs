@@ -133,6 +133,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginPage";
             this.Text = "Вход";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

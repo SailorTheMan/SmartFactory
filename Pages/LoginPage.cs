@@ -50,5 +50,10 @@ namespace SmartFactory.Pages
             UserRegPage = new UserReg();
             UserRegPage.Show();
         }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

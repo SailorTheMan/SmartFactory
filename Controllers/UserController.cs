@@ -15,6 +15,8 @@ using SmartFactory.Models;
 
 namespace SmartFactory.Controllers
 {
+
+    //dfcdsf
     public class UserController //: Controller
     {
         /*
