@@ -41,7 +41,7 @@ namespace SmartFactory.Controllers
         public bool Login(string login, string password)
         {
 
-            string connStr = "server=localhost;user=root;database=smartfactory;password=ыфшдщк;";
+            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;";
 
             MySqlConnection conn = new MySqlConnection(connStr);
 
@@ -91,7 +91,7 @@ namespace SmartFactory.Controllers
         public bool Register(string email, string password, string name, string position, int age,
                 int exp, string sex)
         {
-            string connStr = "server=localhost;user=root;database=smartfactory;password=ыфшдщк;";
+            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;";
 
             MySqlConnection conn = new MySqlConnection(connStr);
 
