@@ -8,6 +8,7 @@ namespace SmartFactory.Models.Repository
 {
     public class Repository
     {
+        /*
         private DBlayer context = new DBlayer();
 
         public IEnumerable<User> Users
@@ -37,5 +38,6 @@ namespace SmartFactory.Models.Repository
                 context.Users.Remove(user);
             context.SaveChanges();
         }
+        */
     }
 }

@@ -209,6 +209,12 @@
     <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Repository\DBlayer.cs" />
+    <Compile Include="Pages\AccountPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AccountPage.Designer.cs">
+      <DependentUpon>AccountPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pages\AccountPage.resx">
+      <DependentUpon>AccountPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>

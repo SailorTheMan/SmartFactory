@@ -29,9 +29,12 @@ namespace SmartFactory.Pages
 
             UserController uc = new UserController();
 
+            AccountPage f1 = new AccountPage();
+
             if (uc.Login(login, password))
             {
                 MessageBox.Show("Выполнен вход.");
+
                 this.Close();
             }
             else

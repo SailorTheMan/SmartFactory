@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 using SmartFactory.Models;
+using SmartFactory.Pages;
 
 namespace SmartFactory
 {

@@ -17,12 +17,10 @@ namespace SmartFactory.Controllers
 {
     public class UserController //: Controller
     {
-        private User user;
-
-
+        /*
         private static Repository repository = new Repository();
         private IEnumerable<User> users = repository.Users;
-
+        
 
         public string Encrypt(string p)
         {
@@ -33,7 +31,7 @@ namespace SmartFactory.Controllers
             string finaliized = Convert.ToBase64String(tmpHash);
             return finaliized;
         }
-
+        */
         ///TODO: Превратить Viewbag в пуши (уведомления окошками). 
         ///Придумать как обойти request (или просто переписать всю функцию нормально без хттп-хлама)
 
@@ -53,9 +51,26 @@ namespace SmartFactory.Controllers
             try
             {
                 string pwd = command.ExecuteScalar().ToString();
-                conn.Close();
                 if (pwd == password)
                 {
+                    string query = "SELECT * FROM users WHERE email = '" + login + "'";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader[0].ToString());
+                        User.ID = int.Parse(reader[0].ToString());
+                        User.Name = reader[1].ToString();
+                        User.Age = int.Parse(reader[2].ToString());
+                        User.Sex = reader[3].ToString();
+                        User.Position = reader[4].ToString();
+                        User.Email = reader[5].ToString();
+                        User.Experience = reader[6].ToString();
+                    }
+
                     return true;
                 }
                 else

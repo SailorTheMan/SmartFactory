@@ -10,7 +10,7 @@ namespace SmartFactory.Models.Repository
 {
     public class DBlayer : DbContext
     {
-        public DbSet<User> Users { get; set; }
+     //   public DbSet<User> Users { get; set; }
 
     }
 }

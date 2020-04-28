@@ -20,7 +20,6 @@ namespace SmartFactory
         }
 
         LoginPage loginPage;
-        User user;
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -29,10 +28,22 @@ namespace SmartFactory
 
         private void button3_Click(object sender, EventArgs e)
         {
-            loginPage = new LoginPage();
-            loginPage.Show();
+            Console.WriteLine(User.ID);
+            if (User.ID == -1)
+            {
+                new LoginPage().ShowDialog();
+                if (User.ID != -1)
+                {
+                    button3.Text = "Личный кабинет";
+                }
+            }
 
-            button3.Text = "Личный кабинет";
+            else
+            {
+                new AccountPage().ShowDialog();
+            }
+
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

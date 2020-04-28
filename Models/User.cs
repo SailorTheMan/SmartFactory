@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace SmartFactory.Models
 {
-    public class User
+    public static class User
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string Position { get; set; }
-        public string Experience { get; set; }
-        public string Email { get; set; }
-        public string Sex { get; set; }
+        public static int ID { get; set; } = -1;
+        public static string Name { get; set; }
+        public static string Password { get; set; }
+        public static string Position { get; set; }
+        public static string Experience { get; set; }
+        public static string Email { get; set; }
+        public static int Age { get; set; }
+        public static string Sex { get; set; }
     }
 }
