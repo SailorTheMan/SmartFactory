@@ -10,6 +10,8 @@ using SmartFactory.Models;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
 
+using MySql.Data.MySqlClient;
+
 namespace SmartFactory.Controllers
 {
     public class UserController //: Controller
@@ -30,6 +32,36 @@ namespace SmartFactory.Controllers
 
         ///TODO: Превратить Viewbag в пуши (уведомления окошками). 
         ///Придумать как обойти request (или просто переписать всю функцию нормально без хттп-хлама)
+
+
+        public bool Login(string login, string password)
+        {
+
+            string connStr = "server=localhost;user=root;database=smartfactory;password=ыфшдщк;";
+
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string sql = "SELECT password FROM users WHERE name = " + "'" + login + "'";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+
+            string pwd = command.ExecuteScalar().ToString();
+
+            conn.Close();
+
+            if (pwd == password)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
 
         /*
         public bool Register()

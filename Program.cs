@@ -5,7 +5,8 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
-//using User; // TODO: Импортировать файл Scripts\User.cs
+
+using SmartFactory.Models;
 
 namespace SmartFactory
 {
@@ -20,7 +21,8 @@ namespace SmartFactory
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
+            
+            /* не нужно
             ///TODO
             ///Проверить, работает ли вообще
             ///Для этого нужно засунуть путь до бд в JSON и реализовать хоть какое-то взаимодействие в контроллерах
@@ -33,9 +35,8 @@ namespace SmartFactory
             builder.AddJsonFile("appsetting.json");   // создаем конфигурацию
             var config = builder.Build();  // получаем строку подключения
             string connectionString = config.GetConnectionString("DefaultConnection");
-
+            */
         }
 
-      //  private User user; // TODO: ХЗ
     }
 }

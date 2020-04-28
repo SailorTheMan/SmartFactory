@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using SmartFactory.Controllers;
+using SmartFactory.Models;
+
 namespace SmartFactory.Pages
 {
     public partial class LoginPage : Form
@@ -24,7 +27,19 @@ namespace SmartFactory.Pages
             String login = loginInput.Text;
             String password = passwordInput.Text;
 
-            // TODO: Подтянуть пароль по логину из дб, сравнить, если все ок, подгрузить остальные поля из дб в глобальную переменную User в program.cs
+            UserController uc = new UserController();
+
+            if (uc.Login(login, password))
+            {
+                MessageBox.Show("Выполнен вход.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте правильность ввода логина/пароля");
+            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
