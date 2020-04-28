@@ -50,5 +50,10 @@ namespace SmartFactory
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new StatPage().Show();
+        }
     }
 }
