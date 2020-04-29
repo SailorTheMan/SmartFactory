@@ -13,6 +13,9 @@ namespace SmartFactory
 {
     static class Program
     {
+
+        public static Machine[] machineList = new Machine[20];
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -22,7 +25,7 @@ namespace SmartFactory
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            
+
             /* не нужно
             ///TODO
             ///Проверить, работает ли вообще

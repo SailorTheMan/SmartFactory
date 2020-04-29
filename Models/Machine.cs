@@ -47,10 +47,31 @@ namespace SmartFactory.Models
             WorkTimeLog.Add(str);
         }
 
+        public List<string> getTempLog()
+        {
+            return TempLog;
+        }
+        public List<string> getVibrLog()
+        {
+            return VibrLog;
+        }
+        public List<string> getPowerLog()
+        {
+            return PowerLog;
+        }
+        public List<string> getLoadLog()
+        {
+            return LoadLog;
+        }
+        public List<string> getWorkTimeLog()
+        {
+            return WorkTimeLog;
+        }
 
         public bool isDangerous() { return DangerousStatus; }
         public bool isCritical() { return CriticalStatus; }
 
+       
 
         public float getTempByDate(string date)
         {

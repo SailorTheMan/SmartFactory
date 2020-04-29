@@ -76,6 +76,12 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
+    <Reference Include="MediaFoundation">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -162,6 +168,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RadControlSpy">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\RadControlSpy.dll</HintPath>
+    </Reference>
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
@@ -226,6 +235,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -241,13 +251,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Common.Trial.2020.1.218\lib\net40\Telerik.WinControls.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.ChartView, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.ChartView.Trial.2020.1.218\lib\net40\Telerik.WinControls.ChartView.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.ChartView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.GridView.Trial.2020.1.218\lib\net40\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.PdfViewer.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.PivotGrid, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.PivotGrid.dll</HintPath>
@@ -258,125 +271,170 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.RadDiagram, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.RadDiagram.Trial.2020.1.218\lib\net40\Telerik.WinControls.RadDiagram.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.RadDiagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.RadDock.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.RadMap, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.RadMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.WinControls.RadSpreadsheet, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.RadSpreadsheet.Trial.2020.1.218\lib\net40\Telerik.WinControls.RadSpreadsheet.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.RadSpreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadWebCam">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.RadWebCam.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.SpellChecker">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.SyntaxEditor">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.SyntaxEditor.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Aqua.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Breeze.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Crystal, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Crystal.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Crystal.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.CrystalDark, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.CrystalDark.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.CrystalDark.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Desert, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Desert.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Desert.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Fluent, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Fluent.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Fluent.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.FluentDark, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.FluentDark.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.FluentDark.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Material, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Material.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Material.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.MaterialBlueGrey, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.MaterialBlueGrey.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.MaterialBlueGrey.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.MaterialPink, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.MaterialPink.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.MaterialPink.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.MaterialTeal.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.MaterialTeal.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Windows7.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Themes.Trial.2020.1.218\lib\net40\Telerik.WinControls.Themes.Windows8.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.Themes.Windows8.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Common.Trial.2020.1.218\lib\net40\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI.Design, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Common.Trial.2020.1.218\lib\net40\Telerik.WinControls.UI.Design.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.UI.Design.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Core, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\Telerik.Windows.Documents.Core.Trial.2020.1.212\lib\net40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Fixed, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\Telerik.Windows.Documents.Fixed.Trial.2020.1.212\lib\net40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\Telerik.Windows.Documents.Spreadsheet.Trial.2020.1.212\lib\net40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Trial.2020.1.212\lib\net40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.Trial.2020.1.212\lib\net40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.MediaFoundation">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.MediaFoundation.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Zip, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\Telerik.Windows.Zip.Trial.2020.1.212\lib\net40\Telerik.Windows.Zip.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
     <Reference Include="TelerikCommon, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.Common.Trial.2020.1.218\lib\net40\TelerikCommon.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\TelerikCommon.dll</HintPath>
     </Reference>
     <Reference Include="TelerikData, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.GridView.Trial.2020.1.218\lib\net40\TelerikData.dll</HintPath>
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikExport">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\TelerikExport.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikProviderForGoogleAnalytics">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\TelerikProviderForGoogleAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="ThemeViewer">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\ThemeViewer.exe</HintPath>
     </Reference>
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.20\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\VisualStyleBuilder.exe</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder.Design">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\VisualStyleBuilder.Design.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -394,6 +452,12 @@
     </Compile>
     <Compile Include="Pages\AccountPage.Designer.cs">
       <DependentUpon>AccountPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DangerousPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\DangerousPage.Designer.cs">
+      <DependentUpon>DangerousPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\OverallStats.cs">
       <SubType>Form</SubType>
@@ -434,9 +498,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\StatUpdater.cs" />
     <Compile Include="Scripts\DatToDB.cs" />
     <EmbeddedResource Include="Pages\AccountPage.resx">
       <DependentUpon>AccountPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\DangerousPage.resx">
+      <DependentUpon>DangerousPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\OverallStats.resx">
       <DependentUpon>OverallStats.cs</DependentUpon>

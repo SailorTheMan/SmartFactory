@@ -56,5 +56,10 @@ namespace SmartFactory.Pages
         {
             MessageBox.Show("Всё ок");
         }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

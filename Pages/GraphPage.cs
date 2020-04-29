@@ -34,5 +34,10 @@ namespace SmartFactory.Pages
                 MessageBox.Show(s + '\t' + d);
             }
         }
+
+        private void radChartView1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

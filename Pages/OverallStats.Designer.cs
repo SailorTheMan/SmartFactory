@@ -121,13 +121,14 @@
             this.radButton1.TabIndex = 10;
             this.radButton1.Text = "Перестроить таблицу";
             this.radButton1.ThemeName = "VisualStudio2012Dark";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(196, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.Size = new System.Drawing.Size(69, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "Время до";
             // 
@@ -135,7 +136,7 @@
             // 
             this.radDateTimePicker2.Location = new System.Drawing.Point(199, 96);
             this.radDateTimePicker2.Name = "radDateTimePicker2";
-            this.radDateTimePicker2.Size = new System.Drawing.Size(164, 24);
+            this.radDateTimePicker2.Size = new System.Drawing.Size(164, 25);
             this.radDateTimePicker2.TabIndex = 8;
             this.radDateTimePicker2.TabStop = false;
             this.radDateTimePicker2.Text = "28 апреля 2020 г.";
@@ -147,7 +148,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(196, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.Size = new System.Drawing.Size(0, 19);
             this.label6.TabIndex = 7;
             // 
             // label4
@@ -155,7 +156,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(196, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(67, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Время от";
             // 
@@ -163,7 +164,7 @@
             // 
             this.radDateTimePicker1.Location = new System.Drawing.Point(199, 48);
             this.radDateTimePicker1.Name = "radDateTimePicker1";
-            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 24);
+            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 25);
             this.radDateTimePicker1.TabIndex = 5;
             this.radDateTimePicker1.TabStop = false;
             this.radDateTimePicker1.Text = "28 апреля 2020 г.";
@@ -175,7 +176,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(196, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 19);
             this.label3.TabIndex = 4;
             // 
             // label2
@@ -183,7 +184,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(18, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.Size = new System.Drawing.Size(123, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Выбор параметра";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -202,7 +203,7 @@
             this.radDropDownList2.Items.Add(radListDataItem5);
             this.radDropDownList2.Location = new System.Drawing.Point(17, 96);
             this.radDropDownList2.Name = "radDropDownList2";
-            this.radDropDownList2.Size = new System.Drawing.Size(125, 24);
+            this.radDropDownList2.Size = new System.Drawing.Size(125, 28);
             this.radDropDownList2.TabIndex = 2;
             this.radDropDownList2.ThemeName = "VisualStudio2012Dark";
             // 
@@ -211,7 +212,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(109, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Выбор машины";
             // 
@@ -230,7 +231,7 @@
             this.radDropDownList1.Items.Add(radListDataItem10);
             this.radDropDownList1.Location = new System.Drawing.Point(17, 50);
             this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(125, 24);
+            this.radDropDownList1.Size = new System.Drawing.Size(125, 28);
             this.radDropDownList1.TabIndex = 0;
             this.radDropDownList1.ThemeName = "VisualStudio2012Dark";
             this.radDropDownList1.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.radDropDownList1_SelectedIndexChanged);
@@ -242,7 +243,7 @@
             // 
             // OverallStats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 536);
             this.Controls.Add(this.groupBox1);
