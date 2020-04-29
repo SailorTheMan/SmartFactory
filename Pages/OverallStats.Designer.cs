@@ -172,6 +172,7 @@
             this.radDateTimePicker1.Text = "28 апреля 2020 г.";
             this.radDateTimePicker1.ThemeName = "VisualStudio2012Dark";
             this.radDateTimePicker1.Value = new System.DateTime(2020, 4, 28, 23, 11, 11, 795);
+            this.radDateTimePicker1.ValueChanged += new System.EventHandler(this.radDateTimePicker1_ValueChanged);
             // 
             // label3
             // 

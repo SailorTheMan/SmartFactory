@@ -42,10 +42,16 @@ namespace SmartFactory.Pages
 
         private void radButton2_Click(object sender, EventArgs e)
         {
+            /*
             GraphPage gp = new GraphPage();
             gp.Owner = this;
             gp.ShowDialog();
             //new GraphPage().Show();
+            */
+
+            GraphPage2 gp = new GraphPage2();
+            gp.Owner = this;
+            gp.ShowDialog();
         }
 
         private void radDropDownList1_SelectedValueChanged(object sender, EventArgs e)
@@ -61,6 +67,11 @@ namespace SmartFactory.Pages
         private void radButton1_Click(object sender, EventArgs e)
         {
             //radGridView1
+        }
+
+        private void radDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
