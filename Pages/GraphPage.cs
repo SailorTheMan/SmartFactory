@@ -15,7 +15,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace SmartFactory.Pages
 {
     public partial class GraphPage : Telerik.WinControls.UI.RadForm
-    {
+    { 
         public GraphPage()
         {
             InitializeComponent();
@@ -135,6 +135,11 @@ namespace SmartFactory.Pages
             //chart1.ChartAreas[0].AxisX.IntervalOffset = Auto;
             chart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             chart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
+
+        }
+
+        private void GraphPage_Load(object sender, EventArgs e)
+        {
 
         }
     }
