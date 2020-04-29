@@ -5,47 +5,24 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls.UI;
-using Telerik.Charting;
-using Telerik.Windows.Controls.Diagrams;
-using Telerik.Charting.Styles;
-using SmartFactory.Models;
-using System.Windows.Forms.DataVisualization.Charting;
+using Telerik.WinControls;
 
+using SmartFactory.Models;
+using ZedGraph;
 
 
 namespace SmartFactory.Pages
 {
-    public partial class GraphPage : Telerik.WinControls.UI.RadForm
-    { 
-        public GraphPage()
+    public partial class GraphPage2 : Telerik.WinControls.UI.RadForm
+    {
+        public GraphPage2()
         {
             InitializeComponent();
-            //Данные можно в графики подгружать из подключенной через его же интерфейс ДБ
         }
 
-        private void GraphPage_Shown(object sender, EventArgs e)
+        private void GraphPage2_Load(object sender, EventArgs e)
         {
-            OverallStats main = this.Owner as OverallStats;         //Шняга для передачи данных между формами. Но нужно соответсвующуе элементы пабликами делать
-            if (main != null)
-            {
-                string s = main.radDropDownList1.SelectedItem.Text;
-                string d = main.radDropDownList2.SelectedItem.Text;
-                
-            }
-            
-        }
-
-        private void radChartView1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GraphPage_Load(object sender, EventArgs e)
-        {
-
             fillChart();
-
         }
 
         private void fillChart()
@@ -55,14 +32,11 @@ namespace SmartFactory.Pages
             //chart1.Series["Series1"].LegendText = "График XY";
 
             OverallStats main = this.Owner as OverallStats;         //Шняга для передачи данных между формами. Но нужно соответсвующуе элементы пабликами делать
-            
+
             int machid = main.radDropDownList1.SelectedItem.Index;
             int measure = main.radDropDownList2.SelectedItem.Index;
             Machine dummy = Program.machineList[machid];
             List<string> DataToDraw = new List<string>();
-
-            var s = new Series();
-            s.ChartType = SeriesChartType.Line;
 
             switch (measure)
             {
@@ -84,8 +58,16 @@ namespace SmartFactory.Pages
 
             }
 
-            DateTime minDate = main.radDateTimePicker1.Value;
-            DateTime maxDate = main.radDateTimePicker2.Value; 
+            GraphPane pane = zedGraphControl1.GraphPane;
+
+            pane.CurveList.Clear();
+
+            //DateTime minDate = main.radDateTimePicker1.Value;
+            //DateTime maxDate = main.radDateTimePicker2.Value;
+            PointPairList list = new PointPairList();
+
+            //double[] xvalues = new double[DataToDraw.Count];
+            //double[] yvalues = new double[DataToDraw.Count];
 
             for (int i = 0; i < DataToDraw.Count; i++)
             {
@@ -94,16 +76,31 @@ namespace SmartFactory.Pages
                 string[] parsedD = parsedDT[0].Split('.');
                 string[] parsedT = parsedDT[1].Split(':');
 
-               
-
-                DateTime dt = new DateTime(Convert.ToInt32(parsedD[2]), Convert.ToInt32(parsedD[1]), Convert.ToInt32(parsedD[0]),
+                XDate dt = new XDate(Convert.ToInt32(parsedD[2]), Convert.ToInt32(parsedD[1]), Convert.ToInt32(parsedD[0]),
                     Convert.ToInt32(parsedT[0]), Convert.ToInt32(parsedT[1]), Convert.ToInt32(parsedT[2]));
+
+                list.Add(dt, float.Parse(couple[1]));
+
                 /*
                 if (i == 0) minDate = dt;
                 if (i == DataToDraw.Count - 1) maxDate = dt;
                 */
-                s.Points.AddXY(dt, float.Parse(couple[1]));
+
+                //s.Points.AddXY(dt, float.Parse(couple[1]));
             }
+
+            LineItem myCurve = pane.AddCurve("Кек", list, Color.Blue, SymbolType.None);
+
+            pane.XAxis.Type = AxisType.Date;
+            pane.XAxis.Scale.Format = "dd.MM.yyyy HH:mm:ss";
+
+            pane.XAxis.Scale.Min = main.radDateTimePicker1.Value.ToOADate();
+            pane.XAxis.Scale.Max = main.radDateTimePicker2.Value.ToOADate();
+
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+
+            /*
             chart1.Series.Clear();
             chart1.Series.Add(s);
 
@@ -114,9 +111,8 @@ namespace SmartFactory.Pages
             //chart1.ChartAreas[0].AxisX.IntervalOffset = Auto;
             chart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             chart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
+            */
 
         }
-
-        
     }
 }

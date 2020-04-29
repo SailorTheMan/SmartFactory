@@ -31,6 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -371,6 +372,9 @@
     <Reference Include="Telerik.WinControls.UI, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Windows.Documents.Core, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <HintPath>lib\RCWF\2020.1.218.40.Trial\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
@@ -408,10 +412,25 @@
       <HintPath>lib\RCWF\2020.1.218.40.Trial\TelerikExport.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="TelerikProviderForGoogleAnalytics">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\TelerikProviderForGoogleAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="ThemeViewer">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\ThemeViewer.exe</HintPath>
+    </Reference>
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.20\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
+    <Reference Include="VisualStyleBuilder">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\VisualStyleBuilder.exe</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder.Design">
+      <HintPath>lib\RCWF\2020.1.218.40.Trial\VisualStyleBuilder.Design.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.20\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
@@ -445,6 +464,12 @@
     </Compile>
     <Compile Include="Pages\GraphPage.Designer.cs">
       <DependentUpon>GraphPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GraphPage2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\GraphPage2.Designer.cs">
+      <DependentUpon>GraphPage2.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\StatPage.cs">
       <SubType>Form</SubType>
@@ -487,6 +512,9 @@
     <EmbeddedResource Include="Pages\GraphPage.resx">
       <DependentUpon>GraphPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\GraphPage2.resx">
+      <DependentUpon>GraphPage2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\StatPage.resx">
       <DependentUpon>StatPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -508,6 +536,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
     <None Include="appsetting.json">
@@ -545,6 +574,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License-LGPL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

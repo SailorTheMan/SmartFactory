@@ -34,17 +34,23 @@ namespace SmartFactory.Pages
             radDateTimePicker2.Value = DateTime.Today;
 
             radDateTimePicker1.Format = DateTimePickerFormat.Custom;
-            radDateTimePicker1.CustomFormat = "dd/mm/yyyy HH:mm";
+            radDateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm";
             radDateTimePicker2.Format = DateTimePickerFormat.Custom;
-            radDateTimePicker2.CustomFormat = "dd/mm/yyyy HH:mm";
+            radDateTimePicker2.CustomFormat = "dd/MM/yyyy HH:mm";
         }
 
         private void radButton2_Click(object sender, EventArgs e)
         {
+            /*
             GraphPage gp = new GraphPage();
             gp.Owner = this;
             gp.ShowDialog();
             //new GraphPage().Show();
+            */
+
+            GraphPage2 gp = new GraphPage2();
+            gp.Owner = this;
+            gp.ShowDialog();
         }
 
         private void radDropDownList1_SelectedValueChanged(object sender, EventArgs e)
@@ -58,6 +64,11 @@ namespace SmartFactory.Pages
         }
 
         private void radButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radDateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
