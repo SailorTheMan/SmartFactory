@@ -24,7 +24,7 @@ namespace SmartFactory.Pages
             {
                 string s = main.radDropDownList1.SelectedItem.Text;
                 string d = main.radDropDownList2.SelectedItem.Text;
-                MessageBox.Show(s+'\t'+d);
+                
             }
             //Данные можно в графики подгружать из подключенной через его же интерфейс ДБ
         }
@@ -36,7 +36,7 @@ namespace SmartFactory.Pages
             {
                 string s = main.radDropDownList1.SelectedItem.Text;
                 string d = main.radDropDownList2.SelectedItem.Text;
-                MessageBox.Show(s + '\t' + d);
+                
 
             }
             
@@ -49,20 +49,7 @@ namespace SmartFactory.Pages
 
         private void GraphPage_Load(object sender, EventArgs e)
         {
-            /*RadCartesianChart chart = new RadCartesianChart();     
-            CategoricalAxis catAxis = new CategoricalAxis();
-            LinearAxis lineAxis = new LinearAxis();
-            chart.HorizontalAxis = catAxis;
-            chart.VerticalAxis = lineAxis;
-
-            BarSeries barSeries = new BarSeries();
-            barSeries.DataPoints.Add(new CategoricalDataPoint() { Category = "Apples", Value = 20 });
-            barSeries.DataPoints.Add(new CategoricalDataPoint() { Category = "Bananas", Value = 28 });
-            barSeries.DataPoints.Add(new CategoricalDataPoint() { Category = "Oranges", Value = 17 });
-            barSeries.DataPoints.Add(new CategoricalDataPoint() { Category = "Strawberries", Value = 30 });
-            chart.Series.Add(barSeries);
-
-            this.LayoutRoot.Children.Add(chart);*/
+            
 
             fillChart();
 
@@ -106,8 +93,8 @@ namespace SmartFactory.Pages
 
             }
 
-            DateTime minDate = new DateTime(2013, 01, 01).AddSeconds(-1);
-            DateTime maxDate = DateTime.Now; // or DateTime.Now;
+            DateTime minDate = new DateTime();
+            DateTime maxDate = DateTime.Now; 
 
 
             for (int i = 0; i < DataToDraw.Count; i++)
@@ -138,9 +125,6 @@ namespace SmartFactory.Pages
 
         }
 
-        private void GraphPage_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
