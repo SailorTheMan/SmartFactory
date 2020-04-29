@@ -5,7 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
+//using Telerik.WinControls.GridView;
+//using Telerik.WinControls.GridView;
 
 namespace SmartFactory.Pages
 {
@@ -34,9 +35,9 @@ namespace SmartFactory.Pages
             radDateTimePicker2.Value = DateTime.Today;
 
             radDateTimePicker1.Format = DateTimePickerFormat.Custom;
-            radDateTimePicker1.CustomFormat = "dd/mm/yyyy HH:mm";
+            radDateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm";
             radDateTimePicker2.Format = DateTimePickerFormat.Custom;
-            radDateTimePicker2.CustomFormat = "dd/mm/yyyy HH:mm";
+            radDateTimePicker2.CustomFormat = "dd/MM/yyyy HH:mm";
         }
 
         private void radButton2_Click(object sender, EventArgs e)
@@ -54,12 +55,12 @@ namespace SmartFactory.Pages
 
         private void radDropDownList1_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-            MessageBox.Show("Всё ок");
+            //MessageBox.Show("Всё ок");
         }
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-
+            //radGridView1
         }
     }
 }

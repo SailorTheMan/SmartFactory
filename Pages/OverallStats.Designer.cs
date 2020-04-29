@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //Телерик блет
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
@@ -76,8 +75,10 @@
             // 
             // 
             // 
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.radGridView1.Name = "radGridView1";
+            this.radGridView1.ReadOnly = true;
             this.radGridView1.Size = new System.Drawing.Size(959, 345);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.ThemeName = "VisualStudio2012Dark";
@@ -129,7 +130,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(196, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 19);
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Время до";
             // 
@@ -137,7 +138,7 @@
             // 
             this.radDateTimePicker2.Location = new System.Drawing.Point(199, 96);
             this.radDateTimePicker2.Name = "radDateTimePicker2";
-            this.radDateTimePicker2.Size = new System.Drawing.Size(164, 25);
+            this.radDateTimePicker2.Size = new System.Drawing.Size(164, 24);
             this.radDateTimePicker2.TabIndex = 8;
             this.radDateTimePicker2.TabStop = false;
             this.radDateTimePicker2.Text = "28 апреля 2020 г.";
@@ -149,7 +150,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(196, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 19);
+            this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 7;
             // 
             // label4
@@ -157,7 +158,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(196, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 19);
+            this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Время от";
             // 
@@ -165,7 +166,7 @@
             // 
             this.radDateTimePicker1.Location = new System.Drawing.Point(199, 48);
             this.radDateTimePicker1.Name = "radDateTimePicker1";
-            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 25);
+            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 24);
             this.radDateTimePicker1.TabIndex = 5;
             this.radDateTimePicker1.TabStop = false;
             this.radDateTimePicker1.Text = "28 апреля 2020 г.";
@@ -177,7 +178,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(196, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 19);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 4;
             // 
             // label2
@@ -185,26 +186,26 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(18, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 19);
+            this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Выбор параметра";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // radDropDownList2
             // 
-            radListDataItem1.Text = "Температура";
-            radListDataItem2.Text = "Вибрация";
-            radListDataItem3.Text = "Мощность";
-            radListDataItem4.Text = "Загрузка";
-            radListDataItem5.Text = "Время работы";
-            this.radDropDownList2.Items.Add(radListDataItem1);
-            this.radDropDownList2.Items.Add(radListDataItem2);
-            this.radDropDownList2.Items.Add(radListDataItem3);
-            this.radDropDownList2.Items.Add(radListDataItem4);
-            this.radDropDownList2.Items.Add(radListDataItem5);
+            radListDataItem11.Text = "Температура";
+            radListDataItem12.Text = "Вибрация";
+            radListDataItem13.Text = "Мощность";
+            radListDataItem14.Text = "Загрузка";
+            radListDataItem15.Text = "Время работы";
+            this.radDropDownList2.Items.Add(radListDataItem11);
+            this.radDropDownList2.Items.Add(radListDataItem12);
+            this.radDropDownList2.Items.Add(radListDataItem13);
+            this.radDropDownList2.Items.Add(radListDataItem14);
+            this.radDropDownList2.Items.Add(radListDataItem15);
             this.radDropDownList2.Location = new System.Drawing.Point(17, 96);
             this.radDropDownList2.Name = "radDropDownList2";
-            this.radDropDownList2.Size = new System.Drawing.Size(125, 28);
+            this.radDropDownList2.Size = new System.Drawing.Size(125, 24);
             this.radDropDownList2.TabIndex = 2;
             this.radDropDownList2.ThemeName = "VisualStudio2012Dark";
             // 
@@ -213,38 +214,34 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 19);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Выбор машины";
             // 
             // radDropDownList1
             // 
             this.radDropDownList1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            radListDataItem6.Text = "1";
-            radListDataItem7.Text = "2";
-            radListDataItem8.Text = "3";
-            radListDataItem9.Text = "4";
-            radListDataItem10.Text = "итд";
-            this.radDropDownList1.Items.Add(radListDataItem6);
-            this.radDropDownList1.Items.Add(radListDataItem7);
-            this.radDropDownList1.Items.Add(radListDataItem8);
-            this.radDropDownList1.Items.Add(radListDataItem9);
-            this.radDropDownList1.Items.Add(radListDataItem10);
+            radListDataItem1.Text = "1";
+            radListDataItem2.Text = "2";
+            radListDataItem3.Text = "3";
+            radListDataItem4.Text = "4";
+            radListDataItem5.Text = "итд";
+            this.radDropDownList1.Items.Add(radListDataItem1);
+            this.radDropDownList1.Items.Add(radListDataItem2);
+            this.radDropDownList1.Items.Add(radListDataItem3);
+            this.radDropDownList1.Items.Add(radListDataItem4);
+            this.radDropDownList1.Items.Add(radListDataItem5);
             this.radDropDownList1.Location = new System.Drawing.Point(17, 50);
             this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(125, 28);
+            this.radDropDownList1.Size = new System.Drawing.Size(125, 24);
             this.radDropDownList1.TabIndex = 0;
             this.radDropDownList1.ThemeName = "VisualStudio2012Dark";
             this.radDropDownList1.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.radDropDownList1_SelectedIndexChanged);
             this.radDropDownList1.SelectedValueChanged += new System.EventHandler(this.radDropDownList1_SelectedValueChanged);
             // 
-            // machineBindingSource
-            // 
-            //this.machineBindingSource.DataSource = typeof(SmartFactory.Models.Machine);
-            // 
             // OverallStats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 536);
             this.Controls.Add(this.groupBox1);

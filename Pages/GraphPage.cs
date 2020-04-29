@@ -31,14 +31,7 @@ namespace SmartFactory.Pages
 
         private void GraphPage_Shown(object sender, EventArgs e)
         {
-            OverallStats main = this.Owner as OverallStats;         //Шняга для передачи данных между формами. Но нужно соответсвующуе элементы пабликами делать
-            if (main != null)
-            {
-                string s = main.radDropDownList1.SelectedItem.Text;
-                string d = main.radDropDownList2.SelectedItem.Text;
-                
-
-            }
+          
             
         }
 
@@ -108,7 +101,9 @@ namespace SmartFactory.Pages
 
                 DateTime dt = new DateTime(Convert.ToInt32(parsedD[2]), Convert.ToInt32(parsedD[1]), Convert.ToInt32(parsedD[0]),
                     Convert.ToInt32(parsedT[0]), Convert.ToInt32(parsedT[1]), Convert.ToInt32(parsedT[2]));
+
                 if (i == 0) minDate = dt;
+                if(i == DataToDraw.Count - 1) maxDate = dt;
 
                 s.Points.AddXY(dt, couple[1]);
             }
@@ -122,6 +117,8 @@ namespace SmartFactory.Pages
             //chart1.ChartAreas[0].AxisX.IntervalOffset = Auto;
             chart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             chart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
+
+            
 
         }
 
