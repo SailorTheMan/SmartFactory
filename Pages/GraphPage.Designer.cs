@@ -139,6 +139,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "radDiagramRibbonBar1";
             this.ThemeName = "VisualStudio2012Dark";
+            this.Load += new System.EventHandler(this.GraphPage_Load);
             this.Shown += new System.EventHandler(this.GraphPage_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

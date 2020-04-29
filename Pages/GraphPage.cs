@@ -5,12 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using SmartFactory.Models;
 using Telerik.WinControls;
 
 namespace SmartFactory.Pages
 {
     public partial class GraphPage : Telerik.WinControls.UI.RadForm
-    {
+    { 
         public GraphPage()
         {
             InitializeComponent();
@@ -36,6 +37,11 @@ namespace SmartFactory.Pages
         }
 
         private void radChartView1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GraphPage_Load(object sender, EventArgs e)
         {
 
         }
