@@ -11,6 +11,7 @@ using SmartFactory;
 using Telerik.Windows.Documents.Spreadsheet.Formatting.FormatStrings.Infos;
 using Telerik.WinControls.UI;
 
+
 namespace SmartFactory.Scripts
 {
     class DatToDB
@@ -31,6 +32,8 @@ namespace SmartFactory.Scripts
                 string query = "INSERT INTO `machine_stats` (`Machine ID`, `DateTime`, `Temp`, `Vibr`, `Power`, `Load`, `Wtime`) VALUES";
                 int id = 0;
 
+                
+
                 sr.ReadLine();
                 sr.ReadLine();
 
@@ -45,13 +48,6 @@ namespace SmartFactory.Scripts
                     int intID = Convert.ToInt32(stringArray[0])-1;
 
                     string dateStr = reverseDate(stringArray[1]);
-
-                    Program.machineList[intID] = new Machine(intID);
-                    Program.machineList[intID].addTempLog(dateStr + '	' + stringArray[2]);
-                    Program.machineList[intID].addVibrLog(dateStr + '	' + stringArray[3]);
-                    Program.machineList[intID].addPowerLog(dateStr + '	' + stringArray[4]);
-                    Program.machineList[intID].addLoadLog(dateStr + '	' + stringArray[5]);
-                    Program.machineList[intID].addWorkTimeLog(dateStr + '	' + stringArray[6]);
 
                     query += String.Format("('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}'),", 
                         stringArray[0], dateStr, stringArray[2], stringArray[3], stringArray[4], stringArray[5], stringArray[6]);

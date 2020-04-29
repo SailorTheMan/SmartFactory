@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using SmartFactory.Models;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
+using System.Data;
 
 using MySql.Data.MySqlClient;
 using SmartFactory.Models;
@@ -57,6 +58,8 @@ namespace SmartFactory.Controllers
                     string query = "SELECT * FROM users WHERE email = '" + login + "'";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 
