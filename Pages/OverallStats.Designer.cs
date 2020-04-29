@@ -239,7 +239,7 @@
             // 
             // machineBindingSource
             // 
-            this.machineBindingSource.DataSource = typeof(SmartFactory.Models.Machine);
+            //this.machineBindingSource.DataSource = typeof(SmartFactory.Models.Machine);
             // 
             // OverallStats
             // 
