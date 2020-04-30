@@ -39,7 +39,7 @@ namespace SmartFactory
                     button3.Text = "Личный кабинет";
                 }
             }
-
+//
             else
             {
                 new AccountPage().ShowDialog();
