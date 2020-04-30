@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
@@ -182,16 +182,16 @@
             // 
             // radDropDownList2
             // 
-            radListDataItem1.Text = "Температура";
-            radListDataItem2.Text = "Вибрация";
-            radListDataItem3.Text = "Мощность";
-            radListDataItem4.Text = "Загрузка";
-            radListDataItem5.Text = "Время работы";
-            this.radDropDownList2.Items.Add(radListDataItem1);
-            this.radDropDownList2.Items.Add(radListDataItem2);
-            this.radDropDownList2.Items.Add(radListDataItem3);
-            this.radDropDownList2.Items.Add(radListDataItem4);
-            this.radDropDownList2.Items.Add(radListDataItem5);
+            radListDataItem11.Text = "Температура";
+            radListDataItem12.Text = "Вибрация";
+            radListDataItem13.Text = "Мощность";
+            radListDataItem14.Text = "Загрузка";
+            radListDataItem15.Text = "Время работы";
+            this.radDropDownList2.Items.Add(radListDataItem11);
+            this.radDropDownList2.Items.Add(radListDataItem12);
+            this.radDropDownList2.Items.Add(radListDataItem13);
+            this.radDropDownList2.Items.Add(radListDataItem14);
+            this.radDropDownList2.Items.Add(radListDataItem15);
             this.radDropDownList2.Location = new System.Drawing.Point(17, 96);
             this.radDropDownList2.Name = "radDropDownList2";
             this.radDropDownList2.Size = new System.Drawing.Size(125, 24);
@@ -210,16 +210,16 @@
             // radDropDownList1
             // 
             this.radDropDownList1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            radListDataItem6.Text = "1";
-            radListDataItem7.Text = "2";
-            radListDataItem8.Text = "3";
-            radListDataItem9.Text = "4";
-            radListDataItem10.Text = "итд";
-            this.radDropDownList1.Items.Add(radListDataItem6);
-            this.radDropDownList1.Items.Add(radListDataItem7);
-            this.radDropDownList1.Items.Add(radListDataItem8);
-            this.radDropDownList1.Items.Add(radListDataItem9);
-            this.radDropDownList1.Items.Add(radListDataItem10);
+            radListDataItem1.Text = "1";
+            radListDataItem2.Text = "2";
+            radListDataItem3.Text = "3";
+            radListDataItem4.Text = "4";
+            radListDataItem5.Text = "итд";
+            this.radDropDownList1.Items.Add(radListDataItem1);
+            this.radDropDownList1.Items.Add(radListDataItem2);
+            this.radDropDownList1.Items.Add(radListDataItem3);
+            this.radDropDownList1.Items.Add(radListDataItem4);
+            this.radDropDownList1.Items.Add(radListDataItem5);
             this.radDropDownList1.Location = new System.Drawing.Point(17, 49);
             this.radDropDownList1.Name = "radDropDownList1";
             this.radDropDownList1.Size = new System.Drawing.Size(125, 24);
@@ -237,10 +237,10 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 216);
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 216);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(959, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(990, 280);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
@@ -271,7 +271,7 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox2.Location = new System.Drawing.Point(-4, 502);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(989, 38);
+            this.pictureBox2.Size = new System.Drawing.Size(990, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;

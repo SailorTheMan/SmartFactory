@@ -89,10 +89,14 @@ namespace SmartFactory.Pages
                 //s.Points.AddXY(dt, float.Parse(couple[1]));
             }
 
+            
+
             LineItem myCurve = pane.AddCurve(main.radDropDownList2.SelectedItem.Text + " машины " + (machid+1).ToString(), list, Color.Blue, SymbolType.None);
 
+            pane.Title.IsVisible = false;
+
             pane.XAxis.Type = AxisType.Date;
-            pane.XAxis.Scale.Format = "dd.MM.yyyy HH:mm:ss";
+            pane.XAxis.Scale.Format = "dd.MM.yyyy HH:mm";
 
             pane.XAxis.Scale.Min = main.radDateTimePicker1.Value.ToOADate();
             pane.XAxis.Scale.Max = main.radDateTimePicker2.Value.ToOADate();
