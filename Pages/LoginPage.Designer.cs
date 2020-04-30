@@ -120,7 +120,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 230);
+            this.label1.Location = new System.Drawing.Point(30, 230);
             this.label1.MinimumSize = new System.Drawing.Size(300, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(300, 17);
@@ -143,7 +143,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(399, 400);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(399, 400);
             this.Name = "LoginPage";
             this.Text = "Вход";
             this.Load += new System.EventHandler(this.LoginPage_Load);

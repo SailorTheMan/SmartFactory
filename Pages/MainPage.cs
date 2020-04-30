@@ -33,7 +33,8 @@ namespace SmartFactory
         {
             if (User.ID == -1)//
             {
-                new LoginPage().ShowDialog();
+                MainPush.Text = "Открытие входа в личный кабинет";
+                new LoginPage().Show();
                 if (User.ID != -1)
                 {
                     button3.Text = "Личный кабинет";
@@ -42,9 +43,9 @@ namespace SmartFactory
 //
             else
             {
-                new AccountPage().ShowDialog();
+                new AccountPage().Show();
             }
-            MainPush.Text = "Аутинфикация";
+            MainPush.Text = "";
             
         }
 
@@ -57,7 +58,7 @@ namespace SmartFactory
         {
             MainPush.Text = "Открытие телеметрии";
             new StatPage().Show();
-            
+            MainPush.Text = "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -120,13 +121,16 @@ namespace SmartFactory
         private void mapButton_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Загрузка системы картографии";
-            new MapPage().ShowDialog();
+            new MapPage().Show();
+            MainPush.Text = "";
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+            MainPush.Text = "Загрузка автоматизации склада";
             StorePage sp = new StorePage();
             sp.Show();
+            MainPush.Text = "";
         }
     }
 }

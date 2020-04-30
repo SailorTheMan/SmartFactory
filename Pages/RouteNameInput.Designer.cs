@@ -67,6 +67,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(510, 179);
+            this.MinimumSize = new System.Drawing.Size(510, 179);
             this.Name = "RouteNameInput";
             this.Text = "Form1";
             this.ResumeLayout(false);
