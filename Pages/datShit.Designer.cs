@@ -48,6 +48,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "datShit";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.datShit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
