@@ -63,6 +63,7 @@ namespace SmartFactory
         private void Form1_Load(object sender, EventArgs e)
         {
             InitMachineList();
+            new datShit().ShowDialog();
         }
 
         private void InitMachineList()
