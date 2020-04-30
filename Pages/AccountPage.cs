@@ -86,6 +86,27 @@ namespace SmartFactory.Pages
             posLbl.Text = User.Position;
             emailLbl.Text = User.Email;
             expLbl.Text = User.Experience.ToString();
+
+            if (User.Level == 0)
+            {
+                levelLbl.Text = "админ";
+            }
+
+            if (User.Level == 1)
+            {
+                levelLbl.Text = "руководитель предприятия";
+            }
+
+            if (User.Level == 2)
+            {
+                levelLbl.Text = "руководитель отдела";
+            }
+
+            if (User.Level == 3)
+            {
+                levelLbl.Text = "сотрудник";
+            }
+
         }
     }
 }

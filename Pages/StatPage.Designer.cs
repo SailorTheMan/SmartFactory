@@ -110,8 +110,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(267, 64);
             this.button3.TabIndex = 1;
-            this.button3.Text = "Личный кабинет";
+            this.button3.Text = "Вход";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -209,6 +210,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StatPage";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.StatPage_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

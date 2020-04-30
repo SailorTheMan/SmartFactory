@@ -9,6 +9,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using SmartFactory.Models;
+
 using SmartFactory.Scripts;
 
 namespace SmartFactory.Pages
@@ -58,6 +60,31 @@ namespace SmartFactory.Pages
         private void timer1_Tick(object sender, EventArgs e)
         {
             new StatUpdater().UpdateStat();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (User.ID == -1)
+            {
+                new LoginPage().ShowDialog();
+                if (User.ID != -1)
+                {
+                    button3.Text = "Личный кабинет";
+                }
+            }
+
+            else
+            {
+                new AccountPage().ShowDialog();
+            }
+        }
+
+        private void StatPage_Load(object sender, EventArgs e)
+        {
+            if (User.ID != -1)
+            {
+                button3.Text = "Личный кабинет";
+            }
         }
     }
 }

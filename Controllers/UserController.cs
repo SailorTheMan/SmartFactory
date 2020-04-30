@@ -19,21 +19,6 @@ namespace SmartFactory.Controllers
 
     public class UserController //: Controller
     {
-        /*
-        private static Repository repository = new Repository();
-        private IEnumerable<User> users = repository.Users;
-        
-
-        public string Encrypt(string p)
-        {
-            byte[] tmpSource;
-            byte[] tmpHash;
-            tmpSource = ASCIIEncoding.ASCII.GetBytes(p);
-            tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            string finaliized = Convert.ToBase64String(tmpHash);
-            return finaliized;
-        }
-        */
         ///TODO: Превратить Viewbag в пуши (уведомления окошками). 
         ///Придумать как обойти request (или просто переписать всю функцию нормально без хттп-хлама)
 
@@ -63,7 +48,6 @@ namespace SmartFactory.Controllers
 
                     while (reader.Read())
                     {
-                        Console.WriteLine(reader[0].ToString());
                         User.ID = int.Parse(reader[0].ToString());
                         User.Name = reader[1].ToString();
                         User.Age = int.Parse(reader[2].ToString());
@@ -71,6 +55,7 @@ namespace SmartFactory.Controllers
                         User.Position = reader[4].ToString();
                         User.Email = reader[5].ToString();
                         User.Experience = reader[6].ToString();
+                        User.Level = int.Parse(reader[8].ToString());
                     }
 
                     return true;
@@ -89,17 +74,35 @@ namespace SmartFactory.Controllers
         }
 
         public bool Register(string email, string password, string name, string position, int age,
-                int exp, string sex)
+                int exp, string sex, string level)
         {
             string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
 
             MySqlConnection conn = new MySqlConnection(connStr);
 
             conn.Open();
+            int numLevel = 0;
+            switch (level)
+            {
+                case "сотрудник":
+                    numLevel = 3;
+                    break;
 
-            string query = "INSERT INTO users (name, age, sex, position, email, exp, password) VALUES('" + name + "', '" +
-                age.ToString() + "', '" + sex + "', '" + position + "', '" + email + "', '" + exp.ToString() 
-                + "', '" + password + "');"; 
+                case "руководитель отдела":
+                    numLevel = 2;
+                    break;
+
+                case "руководитель предприятия":
+                    numLevel = 1;
+                    break;
+                case "админ":
+                    numLevel = 0;
+                    break;
+            }
+
+            string query = String.Format("INSERT INTO users (name, age, sex, position, email, exp, password, level) " +
+                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}');", name, age.ToString(), sex, position, email, exp.ToString(),
+                password, numLevel);
 
             MySqlCommand command = new MySqlCommand(query, conn);
 
@@ -109,74 +112,5 @@ namespace SmartFactory.Controllers
 
             return true;
         }
-
-        /*
-        public bool Register()
-        {
-            User guest = new User();
-            NameValueCollection coll;
-            coll = Request.Form;
-            string pwd = Encrypt(coll["Password"]);
-            bool fuckup = false;
-            //ViewBag.Message = "Registration failed. Problems occured:";
-            bool ifmaker = false;
-            bool ifcustomer = false;
-            if (coll["IfMaker"] == "on")
-                ifmaker = true;
-            if (coll["IfCustomer"] == "on")
-                ifcustomer = true;
-            if (!Regex.IsMatch(coll["Email"],
-              @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-              @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
-              RegexOptions.IgnoreCase))
-            {
-                ViewBag.Message += "\nEmail is not valid";
-                fuckup = true;
-            }
-            if (coll["Name"].Length < 3 || coll["Name"].Length > 25)
-            {
-                ViewBag.Message += "\nUsername must be between 3 and 25 units long";
-                fuckup = true;
-            }
-            if (coll["Password"].Length < 6)
-            {
-                ViewBag.Message += "\nPassword must contain 6 or more units";
-                fuckup = true;
-            }
-            if (repository.IsUserExist(coll["Email"]))
-            {
-                ViewBag.Message += "\nUser with such email aready exists";
-                fuckup = true;
-            }
-            if (repository.IsUserExist(coll["Name"]))
-            {
-                ViewBag.Message += "\nUser with such username aready exists";
-                fuckup = true;
-            }
-            if (!ifmaker && !ifcustomer)
-            {
-                ViewBag.Message += "\nYour role is not selected. At least one role needs to be applied";
-                fuckup = true;
-            }
-            if (!fuckup)
-            {
-                guest.Email = coll["Email"];
-                guest.Password = pwd;
-                guest.Name = coll["Name"];
-                guest.IfMaker = ifmaker;
-                guest.IfCustomer = ifcustomer;
-                repository.CreateUser(guest);
-                User dummy = new User();
-                dummy.Name = guest.Name;
-                Session["UserId"] = guest.ID;
-                return RedirectToAction("RegComplete", dummy);
-            }
-            else
-            {
-                ViewBag.Message += "\nPlease, try again";
-                return View();
-            }
-            
-        }*/
     }
 }

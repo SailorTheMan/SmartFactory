@@ -43,12 +43,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.passwodLbl = new System.Windows.Forms.Label();
             this.passwordInput = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.levelInput = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
             // 
             // nameInput
             // 
             this.nameInput.Location = new System.Drawing.Point(16, 34);
-            this.nameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameInput.Margin = new System.Windows.Forms.Padding(4);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(215, 22);
             this.nameInput.TabIndex = 0;
@@ -77,7 +79,7 @@
             // ageInput
             // 
             this.ageInput.Location = new System.Drawing.Point(272, 34);
-            this.ageInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ageInput.Margin = new System.Windows.Forms.Padding(4);
             this.ageInput.Name = "ageInput";
             this.ageInput.Size = new System.Drawing.Size(53, 22);
             this.ageInput.TabIndex = 2;
@@ -87,7 +89,7 @@
             this.sexInput.Items.Add("М");
             this.sexInput.Items.Add("Ж");
             this.sexInput.Location = new System.Drawing.Point(371, 34);
-            this.sexInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sexInput.Margin = new System.Windows.Forms.Padding(4);
             this.sexInput.Name = "sexInput";
             this.sexInput.Size = new System.Drawing.Size(169, 22);
             this.sexInput.TabIndex = 5;
@@ -116,7 +118,7 @@
             // positionInput
             // 
             this.positionInput.Location = new System.Drawing.Point(16, 94);
-            this.positionInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.positionInput.Margin = new System.Windows.Forms.Padding(4);
             this.positionInput.Name = "positionInput";
             this.positionInput.Size = new System.Drawing.Size(309, 22);
             this.positionInput.TabIndex = 7;
@@ -134,7 +136,7 @@
             // emailInput
             // 
             this.emailInput.Location = new System.Drawing.Point(16, 154);
-            this.emailInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailInput.Margin = new System.Windows.Forms.Padding(4);
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(215, 22);
             this.emailInput.TabIndex = 9;
@@ -152,15 +154,15 @@
             // expInput
             // 
             this.expInput.Location = new System.Drawing.Point(272, 154);
-            this.expInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.expInput.Margin = new System.Windows.Forms.Padding(4);
             this.expInput.Name = "expInput";
             this.expInput.Size = new System.Drawing.Size(53, 22);
             this.expInput.TabIndex = 11;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 78);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(371, 138);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 100);
             this.button1.TabIndex = 13;
@@ -186,11 +188,36 @@
             this.passwordInput.Size = new System.Drawing.Size(215, 22);
             this.passwordInput.TabIndex = 14;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(368, 78);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Уровень доступа";
+            // 
+            // levelInput
+            // 
+            this.levelInput.Items.Add("сотрудник");
+            this.levelInput.Items.Add("руководитель отдела");
+            this.levelInput.Items.Add("руководитель предприятия");
+            this.levelInput.Items.Add("админ");
+            this.levelInput.Location = new System.Drawing.Point(370, 99);
+            this.levelInput.Margin = new System.Windows.Forms.Padding(4);
+            this.levelInput.Name = "levelInput";
+            this.levelInput.Size = new System.Drawing.Size(169, 22);
+            this.levelInput.TabIndex = 18;
+            this.levelInput.Text = "Уровень доступа";
+            // 
             // UserReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 251);
+            this.Controls.Add(this.levelInput);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.passwodLbl);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.button1);
@@ -206,7 +233,7 @@
             this.Controls.Add(this.ageInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nameInput);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserReg";
             this.Text = "Регистрация нового пльзователя";
             this.ResumeLayout(false);
@@ -231,5 +258,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label passwodLbl;
         private System.Windows.Forms.TextBox passwordInput;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DomainUpDown levelInput;
     }
 }
