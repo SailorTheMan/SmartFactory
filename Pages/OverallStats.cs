@@ -48,6 +48,8 @@ namespace SmartFactory.Pages
 
         private void radButton2_Click(object sender, EventArgs e)
         {
+            OverallPush.Text = "Отрисовка графика";
+
             /*
             GraphPage gp = new GraphPage();
             gp.Owner = this;
@@ -72,7 +74,9 @@ namespace SmartFactory.Pages
 
         private void radButton1_Click(object sender, EventArgs e)
         {
+            OverallPush.Text = "Заполнение таблицы";
             fillTable();
+            OverallPush.Text = "Таблица заполнена";
         }
 
         private void radDateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -181,7 +185,7 @@ namespace SmartFactory.Pages
         }
 
         /// <summary>
-        /// ТУТ БЫЛИ ПОПЫТКИ ПОМЕНЯТЬ СТАТУСЫ. НУЖНО ПОДУМ0ТЬ
+        /// Возвращает элемент класса Machine с обновлённым статусом
         /// </summary>
         
 

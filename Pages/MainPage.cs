@@ -7,11 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using SmartFactory.Models;
 using SmartFactory.Pages;
 using SmartFactory;
-
 using MySql.Data.MySqlClient;
 using Google.Protobuf.Collections;
 
@@ -47,7 +45,7 @@ namespace SmartFactory
             {
                 new AccountPage().ShowDialog();
             }
-
+            MainPush.Text = "Аутинфикация";
             
         }
 
@@ -58,7 +56,9 @@ namespace SmartFactory
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MainPush.Text = "Открытие телеметрии";
             new StatPage().Show();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -105,8 +105,8 @@ namespace SmartFactory
                 
                 isFirst = false;
             }
+            MainPush.Text = "Последние данные загружены";
 
-            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -120,6 +120,7 @@ namespace SmartFactory
 
         private void mapButton_Click(object sender, EventArgs e)
         {
+            MainPush.Text = "Загрузка системы картографии";
             new MapPage().ShowDialog();
         }
     }
