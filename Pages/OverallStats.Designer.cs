@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
@@ -40,7 +39,6 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
@@ -56,8 +54,8 @@
             this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.machineBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
@@ -66,22 +64,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
-            // 
-            // radGridView1
-            // 
-            this.radGridView1.Location = new System.Drawing.Point(12, 179);
-            // 
-            // 
-            // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.Size = new System.Drawing.Size(959, 345);
-            this.radGridView1.TabIndex = 0;
-            this.radGridView1.ThemeName = "VisualStudio2012Dark";
             // 
             // groupBox1
             // 
@@ -117,7 +102,7 @@
             // 
             // radButton1
             // 
-            this.radButton1.Location = new System.Drawing.Point(413, 50);
+            this.radButton1.Location = new System.Drawing.Point(413, 46);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(135, 24);
             this.radButton1.TabIndex = 10;
@@ -136,7 +121,7 @@
             // 
             // radDateTimePicker2
             // 
-            this.radDateTimePicker2.Location = new System.Drawing.Point(199, 96);
+            this.radDateTimePicker2.Location = new System.Drawing.Point(199, 95);
             this.radDateTimePicker2.Name = "radDateTimePicker2";
             this.radDateTimePicker2.Size = new System.Drawing.Size(164, 24);
             this.radDateTimePicker2.TabIndex = 8;
@@ -232,7 +217,7 @@
             this.radDropDownList1.Items.Add(radListDataItem3);
             this.radDropDownList1.Items.Add(radListDataItem4);
             this.radDropDownList1.Items.Add(radListDataItem5);
-            this.radDropDownList1.Location = new System.Drawing.Point(17, 50);
+            this.radDropDownList1.Location = new System.Drawing.Point(17, 49);
             this.radDropDownList1.Name = "radDropDownList1";
             this.radDropDownList1.Size = new System.Drawing.Size(125, 24);
             this.radDropDownList1.TabIndex = 0;
@@ -240,13 +225,40 @@
             this.radDropDownList1.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.radDropDownList1_SelectedIndexChanged);
             this.radDropDownList1.SelectedValueChanged += new System.EventHandler(this.radDropDownList1_SelectedValueChanged);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.RosyBrown;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 216);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(959, 308);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(12, 190);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Последние данные";
+            // 
             // OverallStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 536);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.radGridView1);
             this.Name = "OverallStats";
             // 
             // 
@@ -255,8 +267,6 @@
             this.Text = "Телеметрия";
             this.ThemeName = "VisualStudio2012Dark";
             this.Load += new System.EventHandler(this.RadForm1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
@@ -266,14 +276,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Telerik.WinControls.UI.RadGridView radGridView1;
         private System.Windows.Forms.BindingSource machineBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
@@ -289,5 +299,7 @@
         private System.Windows.Forms.Label label3;
         private Telerik.WinControls.UI.RadButton radButton2;
         private Telerik.WinControls.UI.RadButton radButton1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label7;
     }
 }

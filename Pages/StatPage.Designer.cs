@@ -143,7 +143,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(465, 172);
             this.button2.TabIndex = 0;
-            this.button2.Text = "Онлайн данные со всех устройств";
+            this.button2.Text = "Данные со всех устройств";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

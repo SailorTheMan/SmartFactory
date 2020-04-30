@@ -35,9 +35,8 @@
             // 
             // zedGraphControl1
             // 
-            this.zedGraphControl1.BackColor = System.Drawing.Color.White;
-            this.zedGraphControl1.Location = new System.Drawing.Point(40, 13);
-            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.zedGraphControl1.Location = new System.Drawing.Point(13, 13);
+            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.ScrollGrace = 0D;
             this.zedGraphControl1.ScrollMaxX = 0D;
@@ -52,10 +51,9 @@
             // 
             // GraphPage2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(811, 528);
+            this.ClientSize = new System.Drawing.Size(751, 495);
             this.Controls.Add(this.zedGraphControl1);
             this.Name = "GraphPage2";
             // 
@@ -63,6 +61,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "RadForm1";
+            this.ThemeName = "VisualStudio2012Dark";
             this.Load += new System.EventHandler(this.GraphPage2_Load);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
