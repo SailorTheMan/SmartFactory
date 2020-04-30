@@ -443,6 +443,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Filial.cs" />
     <Compile Include="Models\Machine.cs" />
     <Compile Include="Models\Repository\Repository.cs" />

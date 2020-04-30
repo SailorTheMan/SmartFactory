@@ -30,7 +30,7 @@ namespace SmartFactory.Pages
             UserController uc = new UserController();
 
             uc.Register(emailInput.Text, passwordInput.Text, nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text), 
-                Int32.Parse(expInput.Text), sexInput.Text);
+                Int32.Parse(expInput.Text), sexInput.Text, levelInput.Text);
 
             ///
             ///

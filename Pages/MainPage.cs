@@ -31,7 +31,6 @@ namespace SmartFactory
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(User.ID);
             if (User.ID == -1)
             {
                 new LoginPage().ShowDialog();
