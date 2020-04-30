@@ -69,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(294, 59);
+            this.label2.Location = new System.Drawing.Point(275, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // ageInput
             // 
-            this.ageInput.Location = new System.Drawing.Point(296, 76);
+            this.ageInput.Location = new System.Drawing.Point(277, 76);
             this.ageInput.Name = "ageInput";
             this.ageInput.Size = new System.Drawing.Size(41, 20);
             this.ageInput.TabIndex = 2;
@@ -140,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(368, 59);
+            this.label6.Location = new System.Drawing.Point(341, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 12;
@@ -148,7 +148,7 @@
             // 
             // expInput
             // 
-            this.expInput.Location = new System.Drawing.Point(370, 76);
+            this.expInput.Location = new System.Drawing.Point(343, 76);
             this.expInput.Name = "expInput";
             this.expInput.Size = new System.Drawing.Size(41, 20);
             this.expInput.TabIndex = 11;
@@ -169,9 +169,9 @@
             this.passwodLbl.AutoSize = true;
             this.passwodLbl.Location = new System.Drawing.Point(12, 154);
             this.passwodLbl.Name = "passwodLbl";
-            this.passwodLbl.Size = new System.Drawing.Size(309, 13);
+            this.passwodLbl.Size = new System.Drawing.Size(271, 13);
             this.passwodLbl.TabIndex = 15;
-            this.passwodLbl.Text = "Пароль (Пароль должен состоять минимум из 8 символов)";
+            this.passwodLbl.Text = "Пароль (Должен состоять минимум из 8 символов)";
             // 
             // passwordInput
             // 

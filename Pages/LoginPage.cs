@@ -24,12 +24,14 @@ namespace SmartFactory.Pages
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            String login = loginInput.Text;
-            String password = passwordInput.Text;
+            
 
             UserController uc = new UserController();
 
             AccountPage f1 = new AccountPage();
+
+            String login = loginInput.Text;
+            String password = uc.Encrypt(passwordInput.Text);
 
             if (uc.Login(login, password))
             {

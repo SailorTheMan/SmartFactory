@@ -72,6 +72,15 @@ namespace SmartFactory.Controllers
             
             
         }
+        public string Encrypt(string p)
+        {
+            byte[] tmpSource;
+            byte[] tmpHash;
+            tmpSource = ASCIIEncoding.ASCII.GetBytes(p);
+            tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
+            string finaliized = Convert.ToBase64String(tmpHash);
+            return finaliized;
+        }
 
         public bool Register(string email, string password, string name, string position, int age,
                 int exp, string sex, string level)
