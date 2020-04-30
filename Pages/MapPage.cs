@@ -40,7 +40,7 @@ namespace SmartFactory.Pages
 
             InitializeMarkers();
 
-            InitializeRoutes();
+            //InitializeRoutes();
             
             
         }
@@ -126,9 +126,11 @@ namespace SmartFactory.Pages
 
             while (reader.Read())
             {
+
                 filialList.Add(new Filial(reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(),
                     int.Parse(reader[5].ToString()), bool.Parse(reader[6].ToString()), float.Parse(reader[7].ToString()),
                     float.Parse(reader[8].ToString())));
+
             }
 
         }
@@ -172,9 +174,52 @@ namespace SmartFactory.Pages
         {
             GMapOverlay routes = new GMapOverlay("routes");
 
-            List<PointLatLng> points = new List<PointLatLng>();
+            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
+
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string query = "SELECT name FROM routelist";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            MySqlDataReader reader1 = cmd.ExecuteReader();
+
+            conn.Close();
+
+            while (reader1.Read())
+            {
 
 
+                conn.Open();
+
+                query = String.Format("SELECT (latitude, longitude) FROM {0}", reader1[0].ToString() + "route");
+
+                MySqlCommand cmd1 = new MySqlCommand(query, conn);
+
+                MySqlDataReader reader2 = cmd1.ExecuteReader();
+                
+                List<PointLatLng> points = new List<PointLatLng>();
+
+                while (reader2.Read())
+                {
+
+                    points.Add(new PointLatLng(float.Parse(reader2[0].ToString()), float.Parse(reader2[1].ToString())));
+
+                }
+
+                GMapRoute route = new GMapRoute(points, reader1[0].ToString() + "route");
+
+                route.Stroke = new Pen(Color.Blue, 3);
+
+                routes.Routes.Add(route);
+
+                gMapControl1.Overlays.Add(routes);
+
+                conn.Close();
+
+            }
 
         }
 
@@ -196,6 +241,16 @@ namespace SmartFactory.Pages
                 MessageBox.Show("Маршрут успешно загружен");
                 
             }
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            InitializeRoutes();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
