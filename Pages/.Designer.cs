@@ -36,9 +36,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.mapButton = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.MainPush = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -69,6 +69,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::SmartFactory.Properties.Resources.Дизайн_1__лого__общее_горизонтальное_;
             this.pictureBox1.Location = new System.Drawing.Point(11, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(11, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -154,6 +155,17 @@
             this.mapButton.UseVisualStyleBackColor = true;
             this.mapButton.Click += new System.EventHandler(this.mapButton_Click);
             // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Location = new System.Drawing.Point(981, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(485, 290);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Автоматизация склада";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // MainPush
             // 
             this.MainPush.AutoSize = true;
@@ -177,17 +189,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(981, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(485, 290);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Автоматизация склада";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // Form1
             // 

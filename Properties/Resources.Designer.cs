@@ -59,5 +59,15 @@ namespace SmartFactory.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Дизайн_1__лого__общее_горизонтальное_ {
+            get {
+                object obj = ResourceManager.GetObject("Дизайн_1 (лого, общее горизонтальное)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
