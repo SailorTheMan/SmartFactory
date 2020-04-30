@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using SmartFactory.Models;
@@ -98,7 +95,7 @@ namespace SmartFactory.Pages
             table.Columns.Add("Last Power", typeof(double));
             table.Columns.Add("Last Load", typeof(double));
             table.Columns.Add("Worktime", typeof(int));
-            
+
             
             //Обработка всех машин. Отображение последней пачки данных. 
             for(int counter = 0; counter < 12; counter++)
@@ -106,7 +103,6 @@ namespace SmartFactory.Pages
                 Machine mek = CritChecker(Program.machineList[counter]);
                 table.Rows.Add(mek.getID(), mek.isDangerous(), mek.isCritical(), Cdoub(mek.getTempLog().Last()), Cdoub(mek.getVibrLog().Last()), 
                     Cdoub(mek.getPowerLog().Last()), Cdoub(mek.getLoadLog().Last()), Cint(mek.getWorkTimeLog().Last()));
-
             }
 
             dataGridView1.DataSource = table;
@@ -211,17 +207,6 @@ namespace SmartFactory.Pages
                 e.DangerousStatus = true;
             }
             return e;
-        }
-
-        private string Tableshit(string fName)
-        {
-            String objectToSerialize;
-            Stream stream = File.Open(fName, FileMode.Open);
-            BinaryFormatter bFormatter = new BinaryFormatter();
-            objectToSerialize = (string)bFormatter.Deserialize(stream);
-
-            stream.Close();
-            return objectToSerialize;
         }
         
     }
