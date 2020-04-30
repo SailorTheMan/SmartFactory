@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
@@ -56,6 +56,8 @@
             this.machineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.OverallPush = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
@@ -65,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,16 +182,16 @@
             // 
             // radDropDownList2
             // 
-            radListDataItem11.Text = "Температура";
-            radListDataItem12.Text = "Вибрация";
-            radListDataItem13.Text = "Мощность";
-            radListDataItem14.Text = "Загрузка";
-            radListDataItem15.Text = "Время работы";
-            this.radDropDownList2.Items.Add(radListDataItem11);
-            this.radDropDownList2.Items.Add(radListDataItem12);
-            this.radDropDownList2.Items.Add(radListDataItem13);
-            this.radDropDownList2.Items.Add(radListDataItem14);
-            this.radDropDownList2.Items.Add(radListDataItem15);
+            radListDataItem1.Text = "Температура";
+            radListDataItem2.Text = "Вибрация";
+            radListDataItem3.Text = "Мощность";
+            radListDataItem4.Text = "Загрузка";
+            radListDataItem5.Text = "Время работы";
+            this.radDropDownList2.Items.Add(radListDataItem1);
+            this.radDropDownList2.Items.Add(radListDataItem2);
+            this.radDropDownList2.Items.Add(radListDataItem3);
+            this.radDropDownList2.Items.Add(radListDataItem4);
+            this.radDropDownList2.Items.Add(radListDataItem5);
             this.radDropDownList2.Location = new System.Drawing.Point(17, 96);
             this.radDropDownList2.Name = "radDropDownList2";
             this.radDropDownList2.Size = new System.Drawing.Size(125, 24);
@@ -207,16 +210,16 @@
             // radDropDownList1
             // 
             this.radDropDownList1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            radListDataItem1.Text = "1";
-            radListDataItem2.Text = "2";
-            radListDataItem3.Text = "3";
-            radListDataItem4.Text = "4";
-            radListDataItem5.Text = "итд";
-            this.radDropDownList1.Items.Add(radListDataItem1);
-            this.radDropDownList1.Items.Add(radListDataItem2);
-            this.radDropDownList1.Items.Add(radListDataItem3);
-            this.radDropDownList1.Items.Add(radListDataItem4);
-            this.radDropDownList1.Items.Add(radListDataItem5);
+            radListDataItem6.Text = "1";
+            radListDataItem7.Text = "2";
+            radListDataItem8.Text = "3";
+            radListDataItem9.Text = "4";
+            radListDataItem10.Text = "итд";
+            this.radDropDownList1.Items.Add(radListDataItem6);
+            this.radDropDownList1.Items.Add(radListDataItem7);
+            this.radDropDownList1.Items.Add(radListDataItem8);
+            this.radDropDownList1.Items.Add(radListDataItem9);
+            this.radDropDownList1.Items.Add(radListDataItem10);
             this.radDropDownList1.Location = new System.Drawing.Point(17, 49);
             this.radDropDownList1.Name = "radDropDownList1";
             this.radDropDownList1.Size = new System.Drawing.Size(125, 24);
@@ -237,7 +240,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 216);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(959, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(959, 280);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
@@ -251,11 +254,35 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Последние данные";
             // 
+            // OverallPush
+            // 
+            this.OverallPush.AutoSize = true;
+            this.OverallPush.BackColor = System.Drawing.SystemColors.Highlight;
+            this.OverallPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OverallPush.ForeColor = System.Drawing.SystemColors.Control;
+            this.OverallPush.Location = new System.Drawing.Point(9, 510);
+            this.OverallPush.Name = "OverallPush";
+            this.OverallPush.Size = new System.Drawing.Size(168, 17);
+            this.OverallPush.TabIndex = 4;
+            this.OverallPush.Text = "Место для уведомлений";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pictureBox2.Location = new System.Drawing.Point(-4, 502);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(989, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // OverallStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 536);
+            this.Controls.Add(this.OverallPush);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -277,6 +304,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -301,5 +329,7 @@
         private Telerik.WinControls.UI.RadButton radButton1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label OverallPush;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
