@@ -28,100 +28,158 @@ namespace SmartFactory.Pages
         {
 
             UserController uc = new UserController();
-
-            uc.Register(emailInput.Text, passwordInput.Text, nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text), 
-                Int32.Parse(expInput.Text), sexInput.Text, levelInput.Text);
-
-            ///
-            ///
-            ///
-            /*
-            public ActionResult Register()
+            int t = 0;
+            for (int i = 0; i < nameInput.Text.Length; i++)
             {
-                User guest = new User();
-                NameValueCollection coll;
-                coll = Request.Form;
-                string pwd = Encrypt(coll["Password"]);
-                bool fuckup = false;
-                ViewBag.Message = "Registration failed. Problems occured:";
-                bool ifmaker = false;
-                bool ifcustomer = false;
-                if (coll["IfMaker"] == "on")
-                    ifmaker = true;
-                if (coll["IfCustomer"] == "on")
-                    ifcustomer = true;
-                if (!Regex.IsMatch(coll["Email"],
-                  @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-                  @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
-                  RegexOptions.IgnoreCase))
+                if (nameInput.Text[i] == ' ')
                 {
-                    ViewBag.Message += "\nEmail is not valid";
-                    fuckup = true;
+                    t++;
                 }
-                if (coll["Name"].Length < 3 || coll["Name"].Length > 25)
-                {
-                    ViewBag.Message += "\nUsername must be between 3 and 25 units long";
-                    fuckup = true;
-                }
-                if (coll["Password"].Length < 6)
-                {
-                    ViewBag.Message += "\nPassword must contain 6 or more units";
-                    fuckup = true;
-                }
-                if (repository.IsUserExist(coll["Email"]))
-                {
-                    ViewBag.Message += "\nUser with such email aready exists";
-                    fuckup = true;
-                }
-                if (repository.IsUserExist(coll["Name"]))
-                {
-                    ViewBag.Message += "\nUser with such username aready exists";
-                    fuckup = true;
-                }
-                if (!ifmaker && !ifcustomer)
-                {
-                    ViewBag.Message += "\nYour role is not selected. At least one role needs to be applied";
-                    fuckup = true;
-                }
-                if (!fuckup)
-                {
-                    guest.Email = coll["Email"];
-                    guest.Password = pwd;
-                    guest.Name = coll["Name"];
-                    guest.IfMaker = ifmaker;
-                    guest.IfCustomer = ifcustomer;
-                    repository.CreateUser(guest);
-                    User dummy = new User();
-                    dummy.Name = guest.Name;
-                    Session["UserId"] = guest.ID;
-                    return RedirectToAction("RegComplete", dummy);
-                }
-                else
-                {
-                    ViewBag.Message += "\nPlease, try again";
-                    return View();
-                }
-
             }
-            
-            public string Encrypt (string p)                        ///Encryption
+            if (nameInput.Text.Equals(""))
+            {
+                label8.Text = "Введите ФИО";
+            }
+            else if (t != 2)
+            {
+                label8.Text = "Введите корректные ФИО";
+            }
+            else if (positionInput.Text.Equals(""))
+            {
+                label8.Text = "Введите должность";
+            }
+            else if (emailInput.Text.Length < 1)
+            {
+                label8.Text = "Введите email";
+            }
+            else if (!emailInput.Text.Contains("@"))
+            {
+                label8.Text = "Введите корректный email";
+            }
+            else if (sexInput.Text.Equals("ПОЛ"))
+            {
+                label8.Text = "Введите пол";
+            }
+            else if (levelInput.Text.Equals("Уровень доступа"))
+            {
+                label8.Text = "Введите уровень доступа";
+            }
+            else if (ageInput.Text.Length < 1)
+            {
+                label8.Text = "Введите возраст";
+            }
+            else if (expInput.Text.Length < 1)
+            {
+                label8.Text = "Введите стаж";
+            }
+            else if (passwordInput.Text.Length < 8)
+            {
+                passwodLbl.Text = "Пароль (Пароль должен состоять минимум из 8 символов)";
+                label8.Text = "Введите пароль";
+            }
+            else
+            {
+                label8.Text = "Спасибо за регистрацию." + Environment.NewLine + "Можете войти в личный кабинет.";
+                uc.Register(emailInput.Text, passwordInput.Text, nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text),
+                Int32.Parse(expInput.Text), sexInput.Text, levelInput.Text);
+            }
+
+
+
+        }
+
+        private void nameInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            byte[] tmpSource;
-            byte[] tmpHash;
-            tmpSource = ASCIIEncoding.ASCII.GetBytes(p);
-            tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            string finaliized = Convert.ToBase64String(tmpHash);
-            return finaliized;
-        } 
-             
-             
-             
-             */
+            var tb = (TextBox)sender;
+            //разрешаем бэксп
+            if (e.KeyChar.Equals('\b')) return;
+            //Разбираемся с дефисом
+            if (e.KeyChar.Equals('-'))
+            {
+                e.Handled = tb.SelectionStart == 0 || tb.Text[tb.SelectionStart - 1].Equals('-');
+                if (!e.Handled)
+                {
+                    return;
+                }
+            }
+            //Разбираемся с пробелом
+            if (e.KeyChar.Equals(' '))
+            {
+                e.Handled = tb.SelectionStart == 0 || tb.Text[tb.SelectionStart - 1].Equals(' ');
+                if (!e.Handled)
+                {
+                    return;
+                }
+            }
+            //Разрешаем только буквы
+            e.Handled = !char.IsLetter(e.KeyChar);
+        }
 
+        private void ageInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //разрешаем бэксп
+            if (e.KeyChar.Equals('\b')) return;
+            //Разрешаем только цифры
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
 
-            ///
-            ///
-            ///
+        private void positionInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var tb = (TextBox)sender;
+            //разрешаем бэксп
+            if (e.KeyChar.Equals('\b')) return;
+            //Разбираемся с дефисом
+            if (e.KeyChar.Equals('-'))
+            {
+                e.Handled = tb.SelectionStart == 0 || tb.Text[tb.SelectionStart - 1].Equals('-');
+                if (!e.Handled)
+                {
+                    return;
+                }
+            }
+            //Разбираемся с пробелом
+            if (e.KeyChar.Equals(' '))
+            {
+                e.Handled = tb.SelectionStart == 0 || tb.Text[tb.SelectionStart - 1].Equals(' ');
+                if (!e.Handled)
+                {
+                    return;
+                }
+            }
+            //Разрешаем только буквы
+            e.Handled = !char.IsLetter(e.KeyChar);
+        }
+
+        private void expInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //разрешаем бэксп
+            if (e.KeyChar.Equals('\b')) return;
+            //Разрешаем только цифры
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void emailInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //быстрее было так сделать чем искать нормальное решение
+            //разрешаем спец символы !#$%&'*+-/=?^_`{|}~
+            if (e.KeyChar.Equals('!') || e.KeyChar.Equals('@') || e.KeyChar.Equals('.') || e.KeyChar.Equals('#') || e.KeyChar.Equals('$') || e.KeyChar.Equals('%') || e.KeyChar.Equals('&') || e.KeyChar.Equals("'") || e.KeyChar.Equals('*') || e.KeyChar.Equals('+') || e.KeyChar.Equals('-') || e.KeyChar.Equals('/') || e.KeyChar.Equals('=') || e.KeyChar.Equals('?') || e.KeyChar.Equals('^') || e.KeyChar.Equals('_') || e.KeyChar.Equals('`') || e.KeyChar.Equals('{') || e.KeyChar.Equals('|') || e.KeyChar.Equals('}') || e.KeyChar.Equals('~'))
+            {
+                return;
+            }
+            if (e.KeyChar.Equals('\b')) return;
+            if (char.IsDigit(e.KeyChar)) return;
+            if (char.IsLetter(e.KeyChar)) return;
+            e.Handled = true;
+        }
+
+        private void sexInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void levelInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
