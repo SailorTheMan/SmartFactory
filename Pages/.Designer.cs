@@ -38,6 +38,7 @@
             this.mapButton = new System.Windows.Forms.Button();
             this.MainPush = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -119,6 +120,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel2.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.mapButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button4, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 114);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -176,6 +178,17 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Location = new System.Drawing.Point(981, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(485, 290);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Автоматизация склада";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,6 +226,7 @@
         private System.Windows.Forms.Button mapButton;
         public System.Windows.Forms.Label MainPush;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button4;
     }
 }
 

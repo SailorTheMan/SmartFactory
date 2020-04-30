@@ -122,5 +122,11 @@ namespace SmartFactory
             MainPush.Text = "Загрузка системы картографии";
             new MapPage().ShowDialog();
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            StorePage sp = new StorePage();
+            sp.Show();
+        }
     }
 }
