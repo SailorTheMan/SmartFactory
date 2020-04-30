@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatPage));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -71,7 +70,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::SmartFactory.Properties.Resources.Дизайн_1__лого__общее_горизонтальное_;
             this.pictureBox1.Location = new System.Drawing.Point(11, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(11, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
