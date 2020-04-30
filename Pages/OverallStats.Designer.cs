@@ -263,9 +263,8 @@
             this.OverallPush.ForeColor = System.Drawing.SystemColors.Control;
             this.OverallPush.Location = new System.Drawing.Point(9, 510);
             this.OverallPush.Name = "OverallPush";
-            this.OverallPush.Size = new System.Drawing.Size(216, 20);
+            this.OverallPush.Size = new System.Drawing.Size(0, 20);
             this.OverallPush.TabIndex = 4;
-            this.OverallPush.Text = "Место для уведомлений";
             // 
             // pictureBox2
             // 

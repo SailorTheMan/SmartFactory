@@ -31,9 +31,10 @@ namespace SmartFactory
 
         private void button3_Click(object sender, EventArgs e)
         {
+            MainPush.Text = "Вход в личный кабинет";
             if (User.ID == -1)//
             {
-                MainPush.Text = "Открытие входа в личный кабинет";
+                
                 new LoginPage().Show();
                 if (User.ID != -1)
                 {

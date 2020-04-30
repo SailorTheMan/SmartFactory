@@ -21,6 +21,7 @@ namespace SmartFactory.Pages
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MainPush.Text = "Загрузка...";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Данные буду загружены после закрытия этого окна. Вы получите уведомление об успешном завершении.");
@@ -28,11 +29,14 @@ namespace SmartFactory.Pages
                 MessageBox.Show("Данные успешно были загружены");
             }
             fillTable();
+            MainPush.Text = "";
         }
 
         private void StorePage_Load(object sender, EventArgs e)
         {
+            MainPush.Text = "Загрузка...";
             fillTable();
+            MainPush.Text = "";
         }
 
         private void fillTable()
