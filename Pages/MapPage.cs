@@ -16,6 +16,8 @@ using GMap.NET.WindowsForms.Markers;
 using SmartFactory.Models;
 using SmartFactory.Scripts;
 using System.Threading;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms.ToolTips;
 
 namespace SmartFactory.Pages
 {
@@ -23,6 +25,10 @@ namespace SmartFactory.Pages
     {
 
         private List<Filial> filialList = new List<Filial>();
+        private GMapOverlay markersOverlay = new GMapOverlay("markers");
+        private GMapOverlay routesOverlay = new GMapOverlay("routes");
+        private GMapOverlay peopleMarkersOverlay = new GMapOverlay("peopleMarkers");
+
         public string routeName { get; set; }
 
         public MapPage()
@@ -40,8 +46,9 @@ namespace SmartFactory.Pages
 
             InitializeMarkers();
 
-            //InitializeRoutes();
-            
+            InitializeRoutes();
+
+            InitializePeopleLocation();
             
         }
 
@@ -101,13 +108,13 @@ namespace SmartFactory.Pages
             gMapControl1.Dock = DockStyle.Fill;
 
             //Указываем что будем использовать карты Google.
-            gMapControl1.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
 
             //Если вы используете интернет через прокси сервер,
             //указываем свои учетные данные.
-            GMap.NET.MapProviders.GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
-            GMap.NET.MapProviders.GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+            GMapProvider.WebProxy = System.Net.WebRequest.GetSystemWebProxy();
+            GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
         }
 
         private void InitializeFilialsArray()
@@ -137,24 +144,22 @@ namespace SmartFactory.Pages
 
         private void InitializeMarkers()
         {
-          
-            GMapOverlay markersOverlay = new GMapOverlay("markers");
+            
             for (int i = 0; i < filialList.Count; i++) {
 
                 GMarkerGoogle marker = new GMarkerGoogle(
-                    new GMap.NET.PointLatLng(filialList[i].latitude, filialList[i].longitude),
+                    new PointLatLng(filialList[i].latitude, filialList[i].longitude),
                     GMarkerGoogleType.red);
 
-                marker.ToolTip = new GMap.NET.WindowsForms.ToolTips.GMapRoundedToolTip(marker);
+                marker.ToolTip = new GMapRoundedToolTip(marker);
 
-                marker.ToolTipText = InitializeToolText(filialList[i]);
+                marker.ToolTipText = InitializeToolTextForFilial(filialList[i]);
 
                 markersOverlay.Markers.Add(marker);
             }
-            gMapControl1.Overlays.Add(markersOverlay);
         }
 
-        private string InitializeToolText(Filial filial)
+        private string InitializeToolTextForFilial(Filial filial)
         {
             string text = filial.name + '\n' + filial.country + '\n' + filial.address + '\n' + filial.director + '\n' 
                 + filial.numberOfEmployees  + '\n';
@@ -172,8 +177,7 @@ namespace SmartFactory.Pages
 
         private void InitializeRoutes()
         {
-            GMapOverlay routes = new GMapOverlay("routes");
-
+            
             string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
 
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -186,17 +190,18 @@ namespace SmartFactory.Pages
 
             MySqlDataReader reader1 = cmd.ExecuteReader();
 
-            conn.Close();
-
             while (reader1.Read())
             {
 
+                MySqlConnection conn1 = new MySqlConnection(connStr);
 
-                conn.Open();
+                conn1.Open();
 
-                query = String.Format("SELECT (latitude, longitude) FROM {0}", reader1[0].ToString() + "route");
+                query = String.Format("SELECT latitude, longitude FROM {0}", reader1[0].ToString().ToLower() + "route");
 
-                MySqlCommand cmd1 = new MySqlCommand(query, conn);
+                MySqlCommand cmd1 = new MySqlCommand(query, conn1);
+
+                Console.WriteLine(query);
 
                 MySqlDataReader reader2 = cmd1.ExecuteReader();
                 
@@ -213,13 +218,12 @@ namespace SmartFactory.Pages
 
                 route.Stroke = new Pen(Color.Blue, 3);
 
-                routes.Routes.Add(route);
+                routesOverlay.Routes.Add(route);
 
-                gMapControl1.Overlays.Add(routes);
-
-                conn.Close();
+                conn1.Close();
 
             }
+            conn.Close();
 
         }
 
@@ -246,12 +250,106 @@ namespace SmartFactory.Pages
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            InitializeRoutes();
+
+            int index = gMapControl1.Overlays.IndexOf(routesOverlay);
+
+            if (index == -1)
+            {
+                gMapControl1.Overlays.Add(routesOverlay);
+            }
+            else
+            {
+                gMapControl1.Overlays.Remove(routesOverlay);
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+            int index = gMapControl1.Overlays.IndexOf(markersOverlay);
+
+            if (index == -1)
+            {
+                gMapControl1.Overlays.Add(markersOverlay);
+            }
+            else
+            {
+                gMapControl1.Overlays.Remove(markersOverlay);
+            }
+
+        }
+
+        private void InitializePeopleLocation()
+        {
+
+            List<Employee> peopleList = InitializePeopleList();
+
+            for (int i = 0; i < peopleList.Count; i++)
+            {
+
+                GMarkerGoogle marker = new GMarkerGoogle(
+                    new PointLatLng(peopleList[i].latitude, peopleList[i].longitude),
+                    GMarkerGoogleType.black_small);
+
+                marker.ToolTip = new GMapRoundedToolTip(marker);
+
+                marker.ToolTipText = InitializeToolTextForPeople(peopleList[i]);
+
+                peopleMarkersOverlay.Markers.Add(marker);
+            }
+
+        }
+
+        private List<Employee> InitializePeopleList()
+        {
+            List<Employee> peopleList = new List<Employee>();
+
+            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
+
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string query = "SELECT * FROM employees";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                peopleList.Add(new Employee(reader[1].ToString(), reader[2].ToString(), int.Parse(reader[3].ToString()), reader[4].ToString(),
+                    reader[5].ToString(), int.Parse(reader[6].ToString()), reader[7].ToString(), 
+                    float.Parse(reader[8].ToString()), float.Parse(reader[9].ToString())));
+
+            }
+
+            return peopleList;
+        }
+
+        private string InitializeToolTextForPeople(Employee employee)
+        {
+
+                string text = employee.name + '\n' + employee.country + '\n' + employee.age + '\n' + employee.sex + '\n' + employee.position + '\n'
+                    + employee.exp + '\n' + employee.address + '\n';
+
+                return text;
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            int index = gMapControl1.Overlays.IndexOf(peopleMarkersOverlay);
+
+            if (index == -1)
+            {
+                gMapControl1.Overlays.Add(peopleMarkersOverlay);
+            }
+            else
+            {
+                gMapControl1.Overlays.Remove(peopleMarkersOverlay);
+            }
         }
     }
 }
