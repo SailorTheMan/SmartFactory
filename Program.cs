@@ -15,6 +15,17 @@ namespace SmartFactory
     {
 
         public static Machine[] machineList = new Machine[20];
+        public static double dangTemp = 45.00;
+        public static double dangVibr = 0.75;
+        public static double dangPow = 0.65;
+        public static double dangLoad = 80.00;
+        public static int dangTime = 70000;
+
+        public static double critTemp = 50.00;
+        public static double critVibr = 1.00;
+        public static double critPow = 0.7;
+        public static double critLoad = 95.00;
+        public static int critTime = 85000;
 
         /// <summary>
         /// Главная точка входа для приложения.

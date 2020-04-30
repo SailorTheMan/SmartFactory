@@ -12,8 +12,8 @@ namespace SmartFactory.Models
 
         private int id;
 
-        private bool DangerousStatus = false;
-        private bool CriticalStatus = false;
+        public bool DangerousStatus = false;
+        public bool CriticalStatus = false; 
 
         private List<string> TempLog = new List<string>();
         private List<string> VibrLog = new List<string>();
@@ -26,6 +26,10 @@ namespace SmartFactory.Models
             this.id = id;
         }
 
+        public int getID()
+        {
+            return id;
+        }
         public void addTempLog(string str)
         {
             TempLog.Add(str);
