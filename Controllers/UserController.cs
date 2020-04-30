@@ -59,8 +59,6 @@ namespace SmartFactory.Controllers
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                    
-
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())

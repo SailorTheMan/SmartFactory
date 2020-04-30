@@ -117,5 +117,10 @@ namespace SmartFactory
             }
             
         }
+
+        private void mapButton_Click(object sender, EventArgs e)
+        {
+            new MapPage().ShowDialog();
+        }
     }
 }

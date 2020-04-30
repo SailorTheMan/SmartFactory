@@ -35,6 +35,7 @@
             // 
             // zedGraphControl1
             // 
+            this.zedGraphControl1.BackColor = System.Drawing.Color.White;
             this.zedGraphControl1.Location = new System.Drawing.Point(40, 13);
             this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.zedGraphControl1.Name = "zedGraphControl1";
@@ -53,7 +54,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 661);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(811, 528);
             this.Controls.Add(this.zedGraphControl1);
             this.Name = "GraphPage2";
             // 

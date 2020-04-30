@@ -65,6 +65,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -437,6 +443,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\Filial.cs" />
     <Compile Include="Models\Machine.cs" />
     <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Models\User.cs" />
@@ -452,6 +459,18 @@
     </Compile>
     <Compile Include="Pages\DangerousPage.Designer.cs">
       <DependentUpon>DangerousPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RouteNameInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\RouteNameInput.Designer.cs">
+      <DependentUpon>RouteNameInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MapPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\MapPage.Designer.cs">
+      <DependentUpon>MapPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\OverallStats.cs">
       <SubType>Form</SubType>
@@ -498,6 +517,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\RoutesToDB.cs" />
     <Compile Include="Scripts\StatUpdater.cs" />
     <Compile Include="Scripts\DatToDB.cs" />
     <EmbeddedResource Include="Pages\AccountPage.resx">
@@ -505,6 +525,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\DangerousPage.resx">
       <DependentUpon>DangerousPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\RouteNameInput.resx">
+      <DependentUpon>RouteNameInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MapPage.resx">
+      <DependentUpon>MapPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\OverallStats.resx">
       <DependentUpon>OverallStats.cs</DependentUpon>
@@ -558,6 +584,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
+    <Folder Include="Files\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
