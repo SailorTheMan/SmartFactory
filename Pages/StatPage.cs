@@ -32,9 +32,11 @@ namespace SmartFactory.Pages
             
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                MainPush.Text = "Загрузка...";
                 Thread uploadingData = new Thread(createUploadThread);
                 uploadingData.Start();
                 label1.Text = "";
+                MainPush.Text = "";
             }
 
         }
@@ -49,7 +51,9 @@ namespace SmartFactory.Pages
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MainPush.Text = "Загрузка телеметрии";
             new OverallStats().Show();
+            MainPush.Text = "";
         }
 
         private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
@@ -64,6 +68,7 @@ namespace SmartFactory.Pages
 
         private void button3_Click(object sender, EventArgs e)
         {
+            MainPush.Text = "Вход в личный кабинет";
             if (User.ID == -1)
             {
                 new LoginPage().ShowDialog();

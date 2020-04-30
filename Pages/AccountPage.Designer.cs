@@ -67,7 +67,7 @@
             this.tableLayoutPanel1.Controls.Add(this.levelLbl, 1, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -230,6 +230,8 @@
             this.ClientSize = new System.Drawing.Size(571, 427);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(589, 474);
+            this.MinimumSize = new System.Drawing.Size(589, 474);
             this.Name = "AccountPage";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AccountPage_Load);

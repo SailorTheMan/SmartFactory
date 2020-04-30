@@ -42,9 +42,12 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.MainPush = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -192,21 +195,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 517);
+            this.label1.Location = new System.Drawing.Point(31, 504);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Загрузите файл статистики";
+            // 
+            // MainPush
+            // 
+            this.MainPush.AutoSize = true;
+            this.MainPush.BackColor = System.Drawing.SystemColors.Highlight;
+            this.MainPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainPush.ForeColor = System.Drawing.SystemColors.Control;
+            this.MainPush.Location = new System.Drawing.Point(7, 689);
+            this.MainPush.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MainPush.Name = "MainPush";
+            this.MainPush.Size = new System.Drawing.Size(0, 20);
+            this.MainPush.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 675);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1469, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // StatPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1416, 718);
+            this.Controls.Add(this.MainPush);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1434, 765);
+            this.MinimumSize = new System.Drawing.Size(1434, 765);
             this.Name = "StatPage";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.StatPage_Load);
@@ -214,6 +244,7 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +265,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label MainPush;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

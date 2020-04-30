@@ -85,11 +85,14 @@
             this.ClientSize = new System.Drawing.Size(765, 581);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.toolStrip1);
+            this.MaximumSize = new System.Drawing.Size(773, 614);
+            this.MinimumSize = new System.Drawing.Size(773, 614);
             this.Name = "GraphPage";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(773, 614);
             this.Text = "radDiagramRibbonBar1";
             this.ThemeName = "VisualStudio2012Dark";
             this.Load += new System.EventHandler(this.GraphPage_Load);

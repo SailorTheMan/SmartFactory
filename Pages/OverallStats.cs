@@ -62,6 +62,7 @@ namespace SmartFactory.Pages
             GraphPage2 gp = new GraphPage2();
             gp.Owner = this;
             gp.ShowDialog();
+            OverallPush.Text = "";
         }
 
         private void radDropDownList1_SelectedValueChanged(object sender, EventArgs e)

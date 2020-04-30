@@ -120,6 +120,8 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gMapControl1);
+            this.MaximumSize = new System.Drawing.Size(1303, 672);
+            this.MinimumSize = new System.Drawing.Size(1303, 672);
             this.Name = "MapPage";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MapPage_Load);
