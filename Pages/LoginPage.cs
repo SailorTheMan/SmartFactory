@@ -30,8 +30,19 @@ namespace SmartFactory.Pages
             UserController uc = new UserController();
 
             AccountPage f1 = new AccountPage();
-
-            if (uc.Login(login, password))
+            if (loginInput.Text.Length < 1)
+            {
+                label1.Text = "Введите свой Email";
+            }
+            else if (!loginInput.Text.Contains("@"))
+            {
+                label1.Text = "Введите корректный email";
+            }
+            else if (passwordInput.Text.Length < 1)
+            {
+                label1.Text = "Введите свой пароль";
+            }
+            else if (uc.Login(login, password))
             {
                 MessageBox.Show("Выполнен вход.");
 
@@ -39,7 +50,7 @@ namespace SmartFactory.Pages
             }
             else
             {
-                MessageBox.Show("Проверьте правильность ввода логина/пароля");
+                label1.Text = "Проверьте правильность ввода логина/пароля";
             }
 
             

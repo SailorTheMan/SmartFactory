@@ -146,8 +146,8 @@ namespace SmartFactory.Pages
                     return;
                 }
             }
-            //Разрешаем только буквы
-            e.Handled = !char.IsLetter(e.KeyChar);
+            //Разрешаем только буквы и цифры
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar));
         }
 
         private void expInput_KeyPress(object sender, KeyPressEventArgs e)
