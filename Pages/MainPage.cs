@@ -37,6 +37,7 @@ namespace SmartFactory
                 if (User.ID != -1)
                 {
                     loginButton.Text = "Личный кабинет";
+                    chatButton1.Enabled = true;
                 }
             }
 //
@@ -123,6 +124,11 @@ namespace SmartFactory
             StorePage sp = new StorePage();
             sp.Show();
             MainPush.Text = "";
+        }
+
+        private void chatButton1_Click(object sender, EventArgs e)
+        {
+            new ChatPage().Show();
         }
     }
 }
