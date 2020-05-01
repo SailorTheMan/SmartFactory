@@ -66,13 +66,19 @@ namespace SmartFactory.Scripts
 
                 if (!reader.Read())
                 {
-                    query = query.Remove(query.Length - 1) + ";";
+                    try
+                    {
+                        query = query.Remove(query.Length - 1) + ";";
 
-                    conn1.Open();
-                    MySqlCommand command1 = new MySqlCommand(query, conn1);
-                    command1.ExecuteNonQuery();
-                    conn1.Close();
-                    
+                        conn1.Open();
+                        MySqlCommand command1 = new MySqlCommand(query, conn1);
+                        command1.ExecuteNonQuery();
+                        conn1.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Не удалось установить соединение с сервером. '\n' Проверьте подключение и попробуйте еще раз.");
+                    }
                 }
                 else
                 {

@@ -43,17 +43,24 @@ namespace SmartFactory.Pages
 
         private void fillTable()
         {
-            var select = "SELECT * FROM store;";
-            //var c = new SqlConnection(yourConnectionString); // Your Connection String here
-            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            var dataAdapter = new MySqlDataAdapter(select, conn);
+            try
+            {
+                var select = "SELECT * FROM store;";
+                //var c = new SqlConnection(yourConnectionString); // Your Connection String here
+                string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                var dataAdapter = new MySqlDataAdapter(select, conn);
 
-            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
-            dataGridView1.ReadOnly = true;
-            dataGridView1.DataSource = ds.Tables[0];
+                var commandBuilder = new MySqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView1.ReadOnly = true;
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            catch
+            {
+                MessageBox.Show("Возможно отсутствует подключение к интернету. '\n' Проверьте подключение и попробуйте снова.");
+            }
         }
 
         public void CheckRoot()

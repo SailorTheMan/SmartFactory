@@ -4,6 +4,7 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SmartFactory.Models;
 using Telerik.WinControls.UI;
@@ -25,11 +26,16 @@ namespace SmartFactory.Scripts
 
             string query = String.Format("INSERT INTO `chat` (`userID`,`name`, `text`, `date`) VALUES ('{0}', '{1}', '{2}', '{3}');", 
                 User.ID, User.Name, message.Message, date.ToString());
-
-            conn.Open();
-            MySqlCommand command = new MySqlCommand(query, conn);
-            command.ExecuteNonQuery();
-
+            try
+            {
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером. '\n' Проверьте подключение и попробуйте еще раз.");
+            }
             conn.Close();
 
         }
@@ -44,35 +50,42 @@ namespace SmartFactory.Scripts
 
             string query = String.Format("SELECT `userID`, `name`, `text`, `date` FROM `chat` WHERE id >= {0}",
                 lastMessageID.ToString());
-
-            conn.Open();
-            MySqlCommand command = new MySqlCommand(query, conn);
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                int UserId = int.Parse(reader[0].ToString());
-                string name = reader[1].ToString();
-                string text = reader[2].ToString();
-                Console.WriteLine(reader[0].ToString() + " " + reader[1].ToString());
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(query, conn);
+                MySqlDataReader reader = command.ExecuteReader();
 
-                DateTime date = DateTime.Parse(reader[3].ToString());
-                DateTime dateNow = System.TimeZoneInfo.ConvertTimeFromUtc(date, System.TimeZoneInfo.Local);
-
-                Author author = author = new Author(Properties.Resources.avatar, name);
-
-                if (UserId == User.ID)
+                while (reader.Read())
                 {
-                    author = selfAuthor;
+                    int UserId = int.Parse(reader[0].ToString());
+                    string name = reader[1].ToString();
+                    string text = reader[2].ToString();
+                    Console.WriteLine(reader[0].ToString() + " " + reader[1].ToString());
+
+                    DateTime date = DateTime.Parse(reader[3].ToString());
+                    DateTime dateNow = System.TimeZoneInfo.ConvertTimeFromUtc(date, System.TimeZoneInfo.Local);
+
+                    Author author = author = new Author(Properties.Resources.avatar, name);
+
+                    if (UserId == User.ID)
+                    {
+                        author = selfAuthor;
+                    }
+
+                    ChatTextMessage message = new ChatTextMessage(text, author, dateNow);
+
+                    messageList.Add(message);
                 }
 
-                ChatTextMessage message = new ChatTextMessage(text, author, dateNow);
-
-                messageList.Add(message);
+                conn.Close();
+                return messageList;
             }
-
-            conn.Close();
-            return messageList;
+            catch
+            {
+                MessageBox.Show("Проверьте подключение к интернету.");
+                return messageList;
+            }
         }
     }
 }

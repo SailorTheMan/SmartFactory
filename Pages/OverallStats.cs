@@ -225,19 +225,25 @@ namespace SmartFactory.Pages
             // XDate dt = new XDate(Convert.ToInt32(parsedD[2]), Convert.ToInt32(parsedD[1]), Convert.ToInt32(parsedD[0]),
             //   Convert.ToInt32(parsedT[0]), Convert.ToInt32(parsedT[1]), Convert.ToInt32(parsedT[2]));
 
+            try
+            {
+                var select = String.Format("SELECT `Machine ID`, {0} FROM `machine_stats` WHERE {1} AND  AND ", measures[measure]);
+                // var select = "SELECT * FROM `machine_stats` WHERE '{$minDate}' <= `DateTime` AND `DateTime` <= '{$maxDate}'";
+                //var c = new SqlConnection(yourConnectionString); // Your Connection String here
+                string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                var dataAdapter = new MySqlDataAdapter(select, conn);
 
-            var select = String.Format("SELECT `Machine ID`, {0} FROM `machine_stats` WHERE {1} AND  AND ", measures[measure]);
-            // var select = "SELECT * FROM `machine_stats` WHERE '{$minDate}' <= `DateTime` AND `DateTime` <= '{$maxDate}'";
-            //var c = new SqlConnection(yourConnectionString); // Your Connection String here
-            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            var dataAdapter = new MySqlDataAdapter(select, conn);
-
-            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
-            dataGridView1.ReadOnly = true;
-            dataGridView1.DataSource = ds.Tables[0];
+                var commandBuilder = new MySqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView1.ReadOnly = true;
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером. '\n' Проверьте подключение и попробуйте еще раз.");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
