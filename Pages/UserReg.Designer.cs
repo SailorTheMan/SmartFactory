@@ -51,7 +51,8 @@
             // nameInput
             // 
             this.nameInput.Location = new System.Drawing.Point(16, 34);
-            this.nameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameInput.Margin = new System.Windows.Forms.Padding(4);
+            this.nameInput.MaxLength = 100;
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(331, 22);
             this.nameInput.TabIndex = 0;
@@ -81,7 +82,8 @@
             // ageInput
             // 
             this.ageInput.Location = new System.Drawing.Point(395, 94);
-            this.ageInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ageInput.Margin = new System.Windows.Forms.Padding(4);
+            this.ageInput.MaxLength = 3;
             this.ageInput.Name = "ageInput";
             this.ageInput.Size = new System.Drawing.Size(53, 22);
             this.ageInput.TabIndex = 2;
@@ -92,7 +94,7 @@
             this.sexInput.Items.Add("М");
             this.sexInput.Items.Add("Ж");
             this.sexInput.Location = new System.Drawing.Point(371, 34);
-            this.sexInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sexInput.Margin = new System.Windows.Forms.Padding(4);
             this.sexInput.Name = "sexInput";
             this.sexInput.Size = new System.Drawing.Size(68, 22);
             this.sexInput.TabIndex = 5;
@@ -122,7 +124,8 @@
             // positionInput
             // 
             this.positionInput.Location = new System.Drawing.Point(16, 94);
-            this.positionInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.positionInput.Margin = new System.Windows.Forms.Padding(4);
+            this.positionInput.MaxLength = 100;
             this.positionInput.Name = "positionInput";
             this.positionInput.Size = new System.Drawing.Size(331, 22);
             this.positionInput.TabIndex = 7;
@@ -141,7 +144,8 @@
             // emailInput
             // 
             this.emailInput.Location = new System.Drawing.Point(16, 154);
-            this.emailInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailInput.Margin = new System.Windows.Forms.Padding(4);
+            this.emailInput.MaxLength = 100;
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(331, 22);
             this.emailInput.TabIndex = 9;
@@ -160,7 +164,8 @@
             // expInput
             // 
             this.expInput.Location = new System.Drawing.Point(493, 94);
-            this.expInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.expInput.Margin = new System.Windows.Forms.Padding(4);
+            this.expInput.MaxLength = 2;
             this.expInput.Name = "expInput";
             this.expInput.Size = new System.Drawing.Size(53, 22);
             this.expInput.TabIndex = 11;
@@ -169,7 +174,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(429, 190);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 48);
             this.button1.TabIndex = 13;
@@ -190,7 +195,8 @@
             // passwordInput
             // 
             this.passwordInput.Location = new System.Drawing.Point(16, 217);
-            this.passwordInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordInput.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordInput.MaxLength = 100;
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.Size = new System.Drawing.Size(331, 22);
             this.passwordInput.TabIndex = 14;
@@ -212,7 +218,7 @@
             this.levelInput.Items.Add("руководитель предприятия");
             this.levelInput.Items.Add("админ");
             this.levelInput.Location = new System.Drawing.Point(457, 34);
-            this.levelInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.levelInput.Margin = new System.Windows.Forms.Padding(4);
             this.levelInput.Name = "levelInput";
             this.levelInput.Size = new System.Drawing.Size(169, 22);
             this.levelInput.TabIndex = 18;
@@ -252,7 +258,7 @@
             this.Controls.Add(this.ageInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nameInput);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(657, 308);
             this.MinimumSize = new System.Drawing.Size(657, 308);
             this.Name = "UserReg";

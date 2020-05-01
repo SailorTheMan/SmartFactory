@@ -20,7 +20,7 @@ namespace SmartFactory
     public partial class MainPage : MetroFramework.Forms.MetroForm
     {
         private List<MetroForm> formList = new List<MetroForm>();
-        //спасаем try/catch
+
         public MainPage()
         {
             InitializeComponent();
