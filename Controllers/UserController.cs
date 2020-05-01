@@ -13,6 +13,7 @@ using System.Data;
 
 using MySql.Data.MySqlClient;
 using SmartFactory.Models;
+using System.Linq.Expressions;
 
 namespace SmartFactory.Controllers
 {
@@ -35,9 +36,15 @@ namespace SmartFactory.Controllers
             string sql = "SELECT password FROM users WHERE email = '" + login + "'";
 
             MySqlCommand command = new MySqlCommand(sql, conn);
+            string pwd;
             try
             {
-                string pwd = command.ExecuteScalar().ToString();
+                if (command.ExecuteScalar() == null)
+                {
+                    return false;
+                }
+                pwd = command.ExecuteScalar().ToString();
+
                 if (pwd == password)
                 {
                     string query = "SELECT * FROM users WHERE email = '" + login + "'";
@@ -65,13 +72,12 @@ namespace SmartFactory.Controllers
                     return false;
                 }
             }
-            catch (NullReferenceException e)
+            catch
             {
                 return false;
             }
-            
-            
         }
+    
         public string Encrypt(string p)
         {
             byte[] tmpSource;
