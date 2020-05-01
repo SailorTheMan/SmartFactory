@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loginButton = new MetroFramework.Controls.MetroButton();
             this.chatButton1 = new MetroFramework.Controls.MetroButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -37,11 +38,10 @@
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.MainPush = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -68,10 +68,10 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.ErrorImage = global::SmartFactory.Properties.Resources.Logo2;
             this.pictureBox1.Image = global::SmartFactory.Properties.Resources.Logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(11, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(233, 110);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -189,20 +189,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1460, 31);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.ErrorImage = global::SmartFactory.Properties.Resources.Logo2;
-            this.pictureBox1.Image = global::SmartFactory.Properties.Resources.Logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,10 +203,10 @@
             this.Text = "Главная";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,13 +216,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        public System.Windows.Forms.Label MainPush;
         public MetroFramework.Controls.MetroButton loginButton;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile mapButton;
         private MetroFramework.Controls.MetroTile metroTile2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public MetroFramework.Controls.MetroButton chatButton1;
+        public System.Windows.Forms.Label MainPush;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
