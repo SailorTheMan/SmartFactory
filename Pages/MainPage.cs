@@ -164,6 +164,7 @@ namespace SmartFactory
                 if (sp != null)
                 {
                     sp.CheckRoot();
+                    sp.ChangeLoginButton();
                     continue;
                 }
                 StorePage storePage = formList[i] as StorePage;

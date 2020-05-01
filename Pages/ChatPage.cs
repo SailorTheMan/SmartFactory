@@ -65,5 +65,10 @@ namespace SmartFactory.Pages
         {
             UpdateMessages();
         }
+
+        private void radChat1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
