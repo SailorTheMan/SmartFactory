@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SmartFactory.Scripts;
+using SmartFactory.Models;
 using MySql.Data.MySqlClient;
 
 namespace SmartFactory.Pages
@@ -37,6 +38,7 @@ namespace SmartFactory.Pages
             MainPush.Text = "Загрузка...";
             fillTable();
             MainPush.Text = "";
+            CheckRoot();
         }
 
         private void fillTable()
@@ -54,7 +56,16 @@ namespace SmartFactory.Pages
             dataGridView1.DataSource = ds.Tables[0];
         }
 
+        public void CheckRoot()
+        {
+            if (User.Level == 0)
+            {
+                button1.Enabled = true;
+            }
+        }
+
+        
 
 
-    }
+}
 }
