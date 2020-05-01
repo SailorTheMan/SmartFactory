@@ -12,14 +12,14 @@ using SmartFactory.Pages;
 using SmartFactory;
 using MySql.Data.MySqlClient;
 using Google.Protobuf.Collections;
+using MetroFramework;
+using MetroFramework.Forms;
 
 namespace SmartFactory
 {
     public partial class MainPage : MetroFramework.Forms.MetroForm
     {
-        public StatPage sp = new StatPage();
-        public MapPage mp = new MapPage();
-        public StorePage storePage = new StorePage();
+        private List<MetroForm> formList = new List<MetroForm>();
 
         public MainPage()
         {
@@ -62,6 +62,8 @@ namespace SmartFactory
         private void button2_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Открытие телеметрии";
+            StatPage sp = new StatPage();
+            formList.Add(sp);
             sp.ShadowType = MetroFormShadowType.None;
             sp.Owner = this;
             sp.Show();
@@ -77,48 +79,63 @@ namespace SmartFactory
         {
 
             string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
-
-            MySqlConnection conn = new MySqlConnection(connStr);
-
-            conn.Open();
-
-            string query = "SELECT * FROM `machine_stats`";
-
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            bool isRepeated = false;
-            bool isFirst = true;
-
-            while (reader.Read())
+            MySqlDataReader reader;
+            try
             {
-                if (!isRepeated && (int.Parse(reader[0].ToString()) == 1 && !isFirst))
+
+                MySqlConnection conn = new MySqlConnection(connStr);
+
+                conn.Open();
+
+                string query = "SELECT * FROM `machine_stats`";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                reader = cmd.ExecuteReader();
+                bool isRepeated = false;
+                bool isFirst = true;
+
+                while (reader.Read())
                 {
-                    isRepeated = true;
+                    if (!isRepeated && (int.Parse(reader[0].ToString()) == 1 && !isFirst))
+                    {
+                        isRepeated = true;
                     
-                }
+                    }
 
-                if (!isRepeated)
-                {
-                    Program.machineList[int.Parse(reader[0].ToString()) - 1] = new Machine(int.Parse(reader[0].ToString()));
-                }
+                    if (!isRepeated)
+                    {
+                        Program.machineList[int.Parse(reader[0].ToString()) - 1] = new Machine(int.Parse(reader[0].ToString()));
+                    }
 
-                Program.machineList[int.Parse(reader[0].ToString()) - 1].addTempLog(reader[1].ToString() + '	' + reader[2].ToString());
-                Program.machineList[int.Parse(reader[0].ToString()) - 1].addVibrLog(reader[1].ToString() + '	' + reader[3].ToString());
-                Program.machineList[int.Parse(reader[0].ToString()) - 1].addPowerLog(reader[1].ToString() + '	' + reader[4].ToString());
-                Program.machineList[int.Parse(reader[0].ToString()) - 1].addLoadLog(reader[1].ToString() + '	' + reader[5].ToString());
-                Program.machineList[int.Parse(reader[0].ToString()) - 1].addWorkTimeLog(reader[1].ToString() + '	' + reader[6].ToString());
+                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addTempLog(reader[1].ToString() + '	' + reader[2].ToString());
+                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addVibrLog(reader[1].ToString() + '	' + reader[3].ToString());
+                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addPowerLog(reader[1].ToString() + '	' + reader[4].ToString());
+                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addLoadLog(reader[1].ToString() + '	' + reader[5].ToString());
+                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addWorkTimeLog(reader[1].ToString() + '	' + reader[6].ToString());
                 
-                isFirst = false;
+                    isFirst = false;
+                }
+                MainPush.Text = "Последние данные загружены";
             }
-            MainPush.Text = "Последние данные загружены";
 
+            catch
+            {
+                MessageBox.Show("Для работы программы необходимо подключение к интернету. '\n'Проверьте качество соединения." +
+                    " И перезапустите программу.");
+                metroTile1.Enabled = false;
+                metroTile2.Enabled = false;
+                mapButton.Enabled = false;
+                loginButton.Enabled = false;
+                return;
+            }
         }
 
         private void mapButton_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Загрузка системы картографии";
+            MapPage mp = new MapPage();
+            formList.Add(mp);
             mp.Show();
             MainPush.Text = "";
         }
@@ -126,6 +143,8 @@ namespace SmartFactory
         private void button4_Click_1(object sender, EventArgs e)
         {
             MainPush.Text = "Загрузка автоматизации склада";
+            StorePage storePage = new StorePage();
+            formList.Add(storePage);
             storePage.Show();
             MainPush.Text = "";
         }
@@ -136,9 +155,28 @@ namespace SmartFactory
         }
         public void CheckRoot()
         {
-            sp.CheckRoot();
-            storePage.CheckRoot();
-            mp.CheckRoot();
+
+            for (int i = 0; i < formList.Count; i++)
+            {
+                StatPage sp = formList[i] as StatPage;
+                if (sp != null)
+                {
+                    sp.CheckRoot();
+                    continue;
+                }
+                StorePage storePage = formList[i] as StorePage;
+                if (storePage != null)
+                {
+                    storePage.CheckRoot();
+                    continue;
+                }
+                MapPage mp = formList[i] as MapPage;
+                if (mp != null)
+                {
+                    mp.CheckRoot();
+                    continue;
+                }
+            }
         }
     }
 }

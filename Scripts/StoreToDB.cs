@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using MySql.Data.MySqlClient;
 
@@ -20,8 +21,6 @@ namespace SmartFactory.Scripts
             string query = "INSERT INTO `store` (`name`, `type`, `sizetype`, `count in box`, `mass`, `box number`, `count`, " +
                 "`location`, `tier`, `price`, `sum`, `link`) VALUES ";
             Console.WriteLine(query);
-
-
 
             using (StreamReader sr = new StreamReader(path, Encoding.GetEncoding("Windows-1251")))
             {
@@ -45,12 +44,10 @@ namespace SmartFactory.Scripts
                     string location = stringList[7];
                     if (stringList[stringList.Length - 1].EndsWith(".") || stringList[stringList.Length - 1].EndsWith(". "))
                     {
-                        Console.WriteLine("if");
                         string loc;
 
                         while ((loc = sr.ReadLine()).EndsWith(".") || (loc.EndsWith(". ")))
                         {
-                            Console.WriteLine(loc);
                             location += loc;
                         }
 
@@ -72,11 +69,16 @@ namespace SmartFactory.Scripts
                 Console.WriteLine(query);
 
                 conn.Open();
-
-                MySqlCommand command = new MySqlCommand(query, conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-
+                try
+                {
+                    MySqlCommand command = new MySqlCommand(query, conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось установить соединение с сервером. '\n' Проверьте подключение и попробуйте еще раз.");
+                }
             }
         }
 
