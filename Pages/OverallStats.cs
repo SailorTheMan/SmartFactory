@@ -227,7 +227,7 @@ namespace SmartFactory.Pages
             //   Convert.ToInt32(parsedT[0]), Convert.ToInt32(parsedT[1]), Convert.ToInt32(parsedT[2]));
 
 
-            var select = "SELECT `Machine ID`, `Temp` FROM `machine_stats` WHERE (Temp >= 10) AND (Temp <= 50) AND (`Machine ID` = 3)";
+            var select = String.Format("SELECT `Machine ID`, {0} FROM `machine_stats` WHERE {1} AND  AND ", measures[measure]);
             // var select = "SELECT * FROM `machine_stats` WHERE '{$minDate}' <= `DateTime` AND `DateTime` <= '{$maxDate}'";
             //var c = new SqlConnection(yourConnectionString); // Your Connection String here
             string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
