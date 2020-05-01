@@ -82,7 +82,7 @@ namespace SmartFactory.Pages
             {
                 label8.Text = "Спасибо за регистрацию." + Environment.NewLine + "Можете войти в личный кабинет.";
                 uc.Register(emailInput.Text, uc.Encrypt(passwordInput.Text), nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text),
-                Int32.Parse(expInput.Text), sexInput.Text, levelInput.Text);
+                Int32.Parse(expInput.Text), sexInput.Text, "сотрудник");
             }
 
 

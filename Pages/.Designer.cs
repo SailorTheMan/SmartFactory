@@ -128,10 +128,9 @@
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(449, 226);
             this.metroTile1.TabIndex = 9;
-            this.metroTile1.Text = "Онлайн данные со всех устройств";
+            this.metroTile1.Text = "Данные со всех устройств";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile1.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -146,7 +145,6 @@
             this.mapButton.Text = "Данные картографии";
             this.mapButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mapButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.mapButton.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mapButton.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mapButton.Click += new System.EventHandler(this.mapButton_Click);
             // 
@@ -161,7 +159,6 @@
             this.metroTile2.Text = "Автоматизированный склад";
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile2.Click += new System.EventHandler(this.button4_Click_1);
             // 
@@ -198,6 +195,8 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1500, 720);
+            this.MinimumSize = new System.Drawing.Size(1500, 720);
             this.Name = "MainPage";
             this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
             this.Text = "Главная";

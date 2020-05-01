@@ -126,7 +126,6 @@
             this.metroTile1.TabIndex = 7;
             this.metroTile1.Text = "Данные со всех устроуйств";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile1.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -167,7 +166,6 @@
             this.metroTile3.TabIndex = 9;
             this.metroTile3.Text = "Устройства в критическом состоянии";
             this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
@@ -180,7 +178,6 @@
             this.metroTile2.TabIndex = 8;
             this.metroTile2.Text = "Опасные устройства";
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
