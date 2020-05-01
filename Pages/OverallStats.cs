@@ -48,6 +48,7 @@ namespace SmartFactory.Pages
 
         private void radButton2_Click(object sender, EventArgs e)
         {
+            
             OverallPush.Text = "Отрисовка графика";
 
             /*
