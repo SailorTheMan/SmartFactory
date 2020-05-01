@@ -63,7 +63,7 @@ namespace SmartFactory.Scripts
             return true;
         }
 
-        private string reverseDate(string date) //Превращает 01.02.2020 1:23:45 в 2020-02-01 1:23:45
+        public static string reverseDate(string date) //Превращает 01.02.2020 1:23:45 в 2020-02-01 1:23:45
         {
             string[] dateArr1 = date.Split('.');
             string[] dateArr2 = dateArr1[2].Split(' ');

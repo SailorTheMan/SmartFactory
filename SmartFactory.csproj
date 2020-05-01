@@ -474,6 +474,12 @@
     <Compile Include="Pages\ChatPage.Designer.cs">
       <DependentUpon>ChatPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CriticalPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\CriticalPage.Designer.cs">
+      <DependentUpon>CriticalPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NewGraphPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -559,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ChatPage.resx">
       <DependentUpon>ChatPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CriticalPage.resx">
+      <DependentUpon>CriticalPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\NewGraphPage.resx">
       <DependentUpon>NewGraphPage.cs</DependentUpon>

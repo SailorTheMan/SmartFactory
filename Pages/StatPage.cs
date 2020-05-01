@@ -89,5 +89,12 @@ namespace SmartFactory.Pages
                 loginButton.Text = "Личный кабинет";
             }
         }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            MainPush.Text = "Загрузка телеметрии";
+            new CriticalPage().Show();
+            MainPush.Text = "";
+        }
     }
 }
