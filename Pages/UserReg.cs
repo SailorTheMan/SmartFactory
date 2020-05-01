@@ -91,9 +91,11 @@ namespace SmartFactory.Pages
 
         private void nameInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var tb = (TextBox)sender;
             //разрешаем бэксп
             if (e.KeyChar.Equals('\b')) return;
+            var tb = (TextBox)sender;
+           
+           
             //Разбираемся с дефисом
             if (e.KeyChar.Equals('-'))
             {
@@ -112,6 +114,7 @@ namespace SmartFactory.Pages
                     return;
                 }
             }
+            
             //Разрешаем только буквы
             e.Handled = !char.IsLetter(e.KeyChar);
         }
@@ -120,6 +123,7 @@ namespace SmartFactory.Pages
         {
             //разрешаем бэксп
             if (e.KeyChar.Equals('\b')) return;
+            
             //Разрешаем только цифры
             e.Handled = !char.IsDigit(e.KeyChar);
         }
@@ -129,6 +133,7 @@ namespace SmartFactory.Pages
             var tb = (TextBox)sender;
             //разрешаем бэксп
             if (e.KeyChar.Equals('\b')) return;
+           
             //Разбираемся с дефисом
             if (e.KeyChar.Equals('-'))
             {
@@ -155,19 +160,22 @@ namespace SmartFactory.Pages
         {
             //разрешаем бэксп
             if (e.KeyChar.Equals('\b')) return;
+           
             //Разрешаем только цифры
             e.Handled = !char.IsDigit(e.KeyChar);
         }
 
         private void emailInput_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar.Equals('\b')) return;
+            
             //быстрее было так сделать чем искать нормальное решение
             //разрешаем спец символы !#$%&'*+-/=?^_`{|}~
             if (e.KeyChar.Equals('!') || e.KeyChar.Equals('@') || e.KeyChar.Equals('.') || e.KeyChar.Equals('#') || e.KeyChar.Equals('$') || e.KeyChar.Equals('%') || e.KeyChar.Equals('&') || e.KeyChar.Equals("'") || e.KeyChar.Equals('*') || e.KeyChar.Equals('+') || e.KeyChar.Equals('-') || e.KeyChar.Equals('/') || e.KeyChar.Equals('=') || e.KeyChar.Equals('?') || e.KeyChar.Equals('^') || e.KeyChar.Equals('_') || e.KeyChar.Equals('`') || e.KeyChar.Equals('{') || e.KeyChar.Equals('|') || e.KeyChar.Equals('}') || e.KeyChar.Equals('~'))
             {
                 return;
             }
-            if (e.KeyChar.Equals('\b')) return;
+            
             if (char.IsDigit(e.KeyChar)) return;
             if (char.IsLetter(e.KeyChar)) return;
             e.Handled = true;

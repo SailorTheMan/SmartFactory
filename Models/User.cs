@@ -16,7 +16,7 @@ namespace SmartFactory.Models
         public static string Email { get; set; }
         public static int Age { get; set; }
         public static string Sex { get; set; }
-        public static int Level { get; set; }
+        public static int Level { get; set; } = 3;
 
     }
 }

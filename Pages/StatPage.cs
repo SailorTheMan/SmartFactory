@@ -45,7 +45,7 @@ namespace SmartFactory.Pages
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MainPush.Text = "Загрузка телеметрии";
+            MainPush.Text = "Загрузка телеметрии...";
             new NewOverallStats().Show();
             MainPush.Text = "";
         }
@@ -73,6 +73,10 @@ namespace SmartFactory.Pages
                     main.loginButton.Text = "Личный кабинет";
 
                     loginButton.Text = "Личный кабинет";
+
+                    main.chatButton1.Enabled = true;
+
+                    main.CheckRoot();
                 }
             }
 
@@ -80,6 +84,7 @@ namespace SmartFactory.Pages
             {
                 new AccountPage().ShowDialog();
             }
+            MainPush.Text = "";
         }
 
         private void StatPage_Load(object sender, EventArgs e)

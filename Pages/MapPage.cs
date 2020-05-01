@@ -18,6 +18,8 @@ using SmartFactory.Scripts;
 using System.Threading;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms.ToolTips;
+using MetroFramework.Forms;
+using MetroFramework;
 
 namespace SmartFactory.Pages
 {
@@ -40,16 +42,32 @@ namespace SmartFactory.Pages
         {
             
             InitializeGmap();
-            InitializeFilialsArray();
+            try
+            {
+                InitializeFilialsArray();
 
-            gMapControl1.Position = new PointLatLng(filialList[0].latitude, filialList[0].longitude);
+                gMapControl1.Position = new PointLatLng(filialList[0].latitude, filialList[0].longitude);
 
-            InitializeMarkers();
+                InitializeMarkers();
 
-            InitializeRoutes();
+                InitializeRoutes();
 
-            InitializePeopleLocation();
+                InitializePeopleLocation();
+
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером. '\n' Проверьте подключение и попробуйте еще раз.");
+            }
+            CheckRoot();
             
+        }
+        public void CheckRoot()
+        {
+            if (User.Level == 0)
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void InitializeGmap()
@@ -117,27 +135,37 @@ namespace SmartFactory.Pages
             GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
         }
 
-        private void InitializeFilialsArray()
+        private bool InitializeFilialsArray()
         {
-            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
-
-            MySqlConnection conn = new MySqlConnection(connStr);
-
-            conn.Open();
-
-            string query = "SELECT * FROM filials";
-
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
+                string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
 
-                filialList.Add(new Filial(reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(),
-                    int.Parse(reader[5].ToString()), bool.Parse(reader[6].ToString()), float.Parse(reader[7].ToString()),
-                    float.Parse(reader[8].ToString())));
+                MySqlConnection conn = new MySqlConnection(connStr);
 
+                conn.Open();
+
+                string query = "SELECT * FROM filials";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    filialList.Add(new Filial(reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(),
+                        int.Parse(reader[5].ToString()), bool.Parse(reader[6].ToString()), float.Parse(reader[7].ToString()),
+                        float.Parse(reader[8].ToString())));
+
+                }
+                return true;
+            }
+            catch
+            {
+                
+                MessageBox.Show("Произошла ошибка при загрузке карты. '\n'Проверьте свое интернет соединение и повторите попытку.");
+                return false;
             }
 
         }

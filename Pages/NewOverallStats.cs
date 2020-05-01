@@ -59,7 +59,7 @@ namespace SmartFactory.Pages
             NewGraphPage gp = new NewGraphPage();
             gp.ShadowType = MetroFormShadowType.None;
             gp.Owner = this;
-            gp.ShowDialog();
+            gp.Show();
             OverallPush.Text = "";
         }
 
@@ -127,20 +127,26 @@ namespace SmartFactory.Pages
 
             string minDateS = minDate.GetDateTimeFormats('s')[0];
             string maxDateS = maxDate.GetDateTimeFormats('s')[0];
+            try
+            {
+                string[] measures = { "Machine ID", "DateTime", "Temp", "Vibr", "Power", "Load", "Wtime", "id" };
 
-            string[] measures = { "Machine ID", "DateTime", "Temp", "Vibr", "Power", "Load", "Wtime", "id" };
+                var select = String.Format("SELECT `Machine ID`, `DateTime`, `{0}` FROM `machine_stats` WHERE (`Machine ID` = {1}) AND (`DateTime` >= '{2}') AND (`DateTime` <= '{3}')", measures[measure], machid, minDateS, maxDateS);
 
-            var select = String.Format("SELECT `Machine ID`, `DateTime`, `{0}` FROM `machine_stats` WHERE (`Machine ID` = {1}) AND (`DateTime` >= '{2}') AND (`DateTime` <= '{3}')", measures[measure], machid, minDateS, maxDateS);
-
-            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            var dataAdapter = new MySqlDataAdapter(select, conn);
-            //dataGridView1.Rows[0]
-            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
-            dataGridView1.ReadOnly = true;
-            dataGridView1.DataSource = ds.Tables[0];
+                string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                var dataAdapter = new MySqlDataAdapter(select, conn);
+                //dataGridView1.Rows[0]
+                var commandBuilder = new MySqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView1.ReadOnly = true;
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером. '\n' Проверьте подключение и попробуйте еще раз.");
+            }
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

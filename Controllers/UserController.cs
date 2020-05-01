@@ -13,6 +13,8 @@ using System.Data;
 
 using MySql.Data.MySqlClient;
 using SmartFactory.Models;
+using System.Linq.Expressions;
+using System.Windows;
 
 namespace SmartFactory.Controllers
 {
@@ -25,6 +27,8 @@ namespace SmartFactory.Controllers
 
         public bool Login(string login, string password)
         {
+            try
+            {
 
             string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
 
@@ -35,9 +39,13 @@ namespace SmartFactory.Controllers
             string sql = "SELECT password FROM users WHERE email = '" + login + "'";
 
             MySqlCommand command = new MySqlCommand(sql, conn);
-            try
-            {
-                string pwd = command.ExecuteScalar().ToString();
+            string pwd;
+                if (command.ExecuteScalar() == null)
+                {
+                    return false;
+                }
+                pwd = command.ExecuteScalar().ToString();
+
                 if (pwd == password)
                 {
                     string query = "SELECT * FROM users WHERE email = '" + login + "'";
@@ -65,13 +73,17 @@ namespace SmartFactory.Controllers
                     return false;
                 }
             }
-            catch (NullReferenceException e)
+            catch (MySqlException)
+            {
+                MessageBox.Show("Проверьте подключение к интернету");
+                return false;
+            }
+            catch
             {
                 return false;
             }
-            
-            
         }
+    
         public string Encrypt(string p)
         {
             byte[] tmpSource;
@@ -109,16 +121,23 @@ namespace SmartFactory.Controllers
                     break;
             }
 
-            string query = String.Format("INSERT INTO users (name, age, sex, position, email, exp, password, level) " +
-                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}');", name, age.ToString(), sex, position, email, exp.ToString(),
-                password, numLevel);
+            try
+            {
 
-            MySqlCommand command = new MySqlCommand(query, conn);
+                string query = String.Format("INSERT INTO users (name, age, sex, position, email, exp, password, level) " +
+                    "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}');", name, age.ToString(), sex, position, email, exp.ToString(),
+                    password, numLevel);
 
-            command.ExecuteNonQuery();
+                MySqlCommand command = new MySqlCommand(query, conn);
 
-            conn.Close();
+                command.ExecuteNonQuery();
 
+                conn.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером. '\n'Проверьте подключение и попробуйте еще раз.");
+            }
             return true;
         }
     }
