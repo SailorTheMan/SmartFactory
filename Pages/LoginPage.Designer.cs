@@ -73,9 +73,11 @@
             // loginInput
             // 
             this.loginInput.Location = new System.Drawing.Point(67, 176);
+            this.loginInput.MaxLength = 100;
             this.loginInput.Name = "loginInput";
             this.loginInput.Size = new System.Drawing.Size(265, 23);
             this.loginInput.TabIndex = 10;
+            this.loginInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginInput_KeyPress);
             // 
             // loginButton
             // 
@@ -89,9 +91,11 @@
             // passwordInput
             // 
             this.passwordInput.Location = new System.Drawing.Point(114, 231);
+            this.passwordInput.MaxLength = 30;
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.Size = new System.Drawing.Size(170, 23);
             this.passwordInput.TabIndex = 13;
+            this.passwordInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordInput_KeyPress);
             // 
             // Password
             // 
@@ -142,6 +146,7 @@
             this.Name = "LoginPage";
             this.Text = "Вход";
             this.Load += new System.EventHandler(this.LoginPage_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoginPage_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

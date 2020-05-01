@@ -126,7 +126,7 @@
             this.radDateTimePicker2.Location = new System.Drawing.Point(199, 95);
             this.radDateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDateTimePicker2.Name = "radDateTimePicker2";
-            this.radDateTimePicker2.Size = new System.Drawing.Size(164, 30);
+            this.radDateTimePicker2.Size = new System.Drawing.Size(164, 25);
             this.radDateTimePicker2.TabIndex = 8;
             this.radDateTimePicker2.TabStop = false;
             this.radDateTimePicker2.Text = "28 апреля 2020 г.";
@@ -155,7 +155,7 @@
             this.radDateTimePicker1.Location = new System.Drawing.Point(199, 48);
             this.radDateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDateTimePicker1.Name = "radDateTimePicker1";
-            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 30);
+            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 25);
             this.radDateTimePicker1.TabIndex = 5;
             this.radDateTimePicker1.TabStop = false;
             this.radDateTimePicker1.Text = "1 февраля 2020 г.";
