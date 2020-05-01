@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Telerik.WinControls;
 
-using SmartFactory.Models;
 using ZedGraph;
 
+using SmartFactory.Models;
 
 namespace SmartFactory.Pages
 {
-    public partial class GraphPage2 : Telerik.WinControls.UI.RadForm
+    public partial class NewGraphPage : MetroFramework.Forms.MetroForm
     {
-        public GraphPage2()
+        public NewGraphPage()
         {
             InitializeComponent();
         }
 
-        private void GraphPage2_Load(object sender, EventArgs e)
+        private void NewGraphPage_Load(object sender, EventArgs e)
         {
             fillChart();
         }
@@ -32,6 +33,8 @@ namespace SmartFactory.Pages
             //chart1.Series["Series1"].LegendText = "График XY";
 
             NewOverallStats main = this.Owner as NewOverallStats;         //Шняга для передачи данных между формами. Но нужно соответсвующуе элементы пабликами делать
+
+            Console.WriteLine(main.ToString());
 
             int machid = main.radDropDownList1.SelectedItem.Index;
             int measure = main.radDropDownList2.SelectedItem.Index;
@@ -89,7 +92,7 @@ namespace SmartFactory.Pages
                 //s.Points.AddXY(dt, float.Parse(couple[1]));
             }
 
-            LineItem myCurve = pane.AddCurve(main.radDropDownList2.SelectedItem.Text + " машины " + (machid+1).ToString(), list, Color.Blue, SymbolType.None);
+            LineItem myCurve = pane.AddCurve(main.radDropDownList2.SelectedItem.Text + " машины " + (machid + 1).ToString(), list, Color.Blue, SymbolType.None);
 
             pane.XAxis.Type = AxisType.Date;
             pane.XAxis.Scale.Format = "dd.MM.yyyy HH:mm:ss";
@@ -115,7 +118,6 @@ namespace SmartFactory.Pages
             chart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             chart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
             */
-
+        }
         }
     }
-}

@@ -21,7 +21,7 @@ using GMap.NET.WindowsForms.ToolTips;
 
 namespace SmartFactory.Pages
 {
-    public partial class MapPage : Form
+    public partial class MapPage : MetroFramework.Forms.MetroForm
     {
 
         private List<Filial> filialList = new List<Filial>();
@@ -351,5 +351,6 @@ namespace SmartFactory.Pages
                 gMapControl1.Overlays.Remove(peopleMarkersOverlay);
             }
         }
+
+        }
     }
-}

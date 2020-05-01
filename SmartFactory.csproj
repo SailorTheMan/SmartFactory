@@ -83,8 +83,21 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="MediaFoundation">
       <HintPath>lib\RCWF\2020.1.218.40.Trial\MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AnalysisServices.AdomdClient">
       <HintPath>lib\RCWF\2020.1.218.40.Trial\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
@@ -455,6 +468,18 @@
     <Compile Include="Pages\AccountPage.Designer.cs">
       <DependentUpon>AccountPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewGraphPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\NewGraphPage.Designer.cs">
+      <DependentUpon>NewGraphPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewOverallStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\NewOverallStats.Designer.cs">
+      <DependentUpon>NewOverallStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\StorePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -525,6 +550,12 @@
     <EmbeddedResource Include="Pages\AccountPage.resx">
       <DependentUpon>AccountPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NewGraphPage.resx">
+      <DependentUpon>NewGraphPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NewOverallStats.resx">
+      <DependentUpon>NewOverallStats.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\RouteNameInput.resx">
       <DependentUpon>RouteNameInput.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,7 +616,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
     <Folder Include="Files\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
@@ -605,6 +635,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+    <None Include="Content\Logo2.jpg" />
     <Content Include="License-LGPL.txt" />
     <None Include="Resources\Дизайн_1 %28лого, общее горизонтальное%29.png" />
   </ItemGroup>
