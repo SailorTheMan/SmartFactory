@@ -35,7 +35,8 @@ namespace SmartFactory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new MainPage());
+            Application.Run(new MainPage());
 
             /* не нужно
             ///TODO

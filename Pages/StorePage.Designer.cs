@@ -28,25 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.MainPush = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.button1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Загрузить файл номенклатуры";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // openFileDialog1
             // 
@@ -67,38 +59,52 @@
             this.dataGridView1.Size = new System.Drawing.Size(1409, 501);
             this.dataGridView1.TabIndex = 1;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.flowLayoutPanel1.Controls.Add(this.MainPush);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 604);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1421, 60);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
             // MainPush
             // 
             this.MainPush.AutoSize = true;
             this.MainPush.BackColor = System.Drawing.SystemColors.Highlight;
-            this.MainPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPush.ForeColor = System.Drawing.SystemColors.Control;
-            this.MainPush.Location = new System.Drawing.Point(7, 604);
+            this.MainPush.Location = new System.Drawing.Point(4, 0);
             this.MainPush.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MainPush.Name = "MainPush";
-            this.MainPush.Size = new System.Drawing.Size(0, 20);
-            this.MainPush.TabIndex = 6;
+            this.MainPush.Size = new System.Drawing.Size(298, 29);
+            this.MainPush.TabIndex = 2;
+            this.MainPush.Text = "Место для уведомлений";
+            this.MainPush.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // metroStyleManager1
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 590);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1469, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.metroStyleManager1.Owner = null;
+            this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Lime;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(262, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(287, 47);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Загрузить файл номенклатуры";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StorePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 637);
-            this.Controls.Add(this.MainPush);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1461, 684);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximumSize = new System.Drawing.Size(1461, 684);
             this.MinimumSize = new System.Drawing.Size(1461, 684);
@@ -106,18 +112,19 @@
             this.Text = "Номенкулатура";
             this.Load += new System.EventHandler(this.StorePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Label MainPush;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
+        private MetroFramework.Controls.MetroButton button1;
     }
 }

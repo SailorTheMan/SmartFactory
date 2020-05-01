@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -80,7 +81,7 @@ namespace SmartFactory.Pages
             else
             {
                 label8.Text = "Спасибо за регистрацию." + Environment.NewLine + "Можете войти в личный кабинет.";
-                uc.Register(emailInput.Text, passwordInput.Text, nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text),
+                uc.Register(emailInput.Text, uc.Encrypt(passwordInput.Text), nameInput.Text, positionInput.Text, Int32.Parse(ageInput.Text),
                 Int32.Parse(expInput.Text), sexInput.Text, levelInput.Text);
             }
 
@@ -181,5 +182,7 @@ namespace SmartFactory.Pages
         {
             e.Handled = true;
         }
+
+        
     }
 }

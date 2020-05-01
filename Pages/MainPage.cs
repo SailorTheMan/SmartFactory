@@ -15,14 +15,12 @@ using Google.Protobuf.Collections;
 
 namespace SmartFactory
 {
-    public partial class Form1 : Form
+    public partial class MainPage : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public MainPage()
         {
             InitializeComponent();
         }
-
-        LoginPage loginPage;
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -32,13 +30,14 @@ namespace SmartFactory
         private void button3_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Вход в личный кабинет";
-            if (User.ID == -1)//
+            if (User.ID == -1)
             {
-                
-                new LoginPage().Show();
+                new LoginPage().ShowDialog();
+
                 if (User.ID != -1)
                 {
-                    button3.Text = "Личный кабинет";
+                    loginButton.Text = "Личный кабинет";
+                    chatButton1.Enabled = true;
                 }
             }
 //
@@ -58,7 +57,9 @@ namespace SmartFactory
         private void button2_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Открытие телеметрии";
-            new StatPage().Show();
+            StatPage sp = new StatPage();
+            sp.Owner = this;
+            sp.Show();
             MainPush.Text = "";
         }
 
@@ -110,15 +111,6 @@ namespace SmartFactory
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < Program.machineList.Length -1 ; i++)
-            {
-                Console.WriteLine(i.ToString() + " " + Program.machineList[i].getLoadLog()[0]);
-            }
-            
-        }
-
         private void mapButton_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Загрузка системы картографии";
@@ -132,6 +124,11 @@ namespace SmartFactory
             StorePage sp = new StorePage();
             sp.Show();
             MainPush.Text = "";
+        }
+
+        private void chatButton1_Click(object sender, EventArgs e)
+        {
+            new ChatPage().Show();
         }
     }
 }
