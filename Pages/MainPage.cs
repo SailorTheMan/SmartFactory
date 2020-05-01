@@ -14,6 +14,7 @@ using MySql.Data.MySqlClient;
 using Google.Protobuf.Collections;
 using MetroFramework;
 using MetroFramework.Forms;
+using Telerik.Windows.Diagrams.Core;
 
 namespace SmartFactory
 {
@@ -75,7 +76,19 @@ namespace SmartFactory
             InitMachineList();
         }
 
-        private void InitMachineList()
+        private bool isRepeatedInList(int id)
+        {
+            for (int i = 0; i < Program.machineList.Count(); i++)
+            {
+                if (Program.machineList[i].id + 1 == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void InitMachineList()
         {
 
             string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
@@ -92,36 +105,45 @@ namespace SmartFactory
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 reader = cmd.ExecuteReader();
-                bool isRepeated = false;
-                bool isFirst = true;
 
                 while (reader.Read())
                 {
-                    if (!isRepeated && (int.Parse(reader[0].ToString()) == 1 && !isFirst))
-                    {
-                        isRepeated = true;
-                    
-                    }
-
+                    bool isRepeated = isRepeatedInList(int.Parse(reader[0].ToString()));
+                    /*
                     if (!isRepeated)
                     {
                         Program.machineList[int.Parse(reader[0].ToString()) - 1] = new Machine(int.Parse(reader[0].ToString()));
                     }
+                    */
+                    if (!isRepeated)
+                    {
+                        Machine machine = new Machine(int.Parse(reader[0].ToString()) - 1);
 
-                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addTempLog(reader[1].ToString() + '	' + reader[2].ToString());
-                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addVibrLog(reader[1].ToString() + '	' + reader[3].ToString());
-                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addPowerLog(reader[1].ToString() + '	' + reader[4].ToString());
-                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addLoadLog(reader[1].ToString() + '	' + reader[5].ToString());
-                    Program.machineList[int.Parse(reader[0].ToString()) - 1].addWorkTimeLog(reader[1].ToString() + '	' + reader[6].ToString());
-                
-                    isFirst = false;
+                        machine.addTempLog(reader[1].ToString() + '	' + reader[2].ToString());
+                        machine.addVibrLog(reader[1].ToString() + '	' + reader[3].ToString());
+                        machine.addPowerLog(reader[1].ToString() + '	' + reader[4].ToString());
+                        machine.addLoadLog(reader[1].ToString() + '	' + reader[5].ToString());
+                        machine.addWorkTimeLog(reader[1].ToString() + '	' + reader[6].ToString());
+
+                        Program.machineList.Add(machine);
+                        
+                    }
+                    else
+                    {
+                        Program.machineList[int.Parse(reader[0].ToString()) - 1].addTempLog(reader[1].ToString() + '	' + reader[2].ToString());
+                        Program.machineList[int.Parse(reader[0].ToString()) - 1].addVibrLog(reader[1].ToString() + '	' + reader[3].ToString());
+                        Program.machineList[int.Parse(reader[0].ToString()) - 1].addPowerLog(reader[1].ToString() + '	' + reader[4].ToString());
+                        Program.machineList[int.Parse(reader[0].ToString()) - 1].addLoadLog(reader[1].ToString() + '	' + reader[5].ToString());
+                        Program.machineList[int.Parse(reader[0].ToString()) - 1].addWorkTimeLog(reader[1].ToString() + '	' + reader[6].ToString());
+                    }
+                    
                 }
                 MainPush.Text = "Последние данные загружены";
             }
 
             catch
             {
-                MessageBox.Show("Для работы программы необходимо подключение к интернету. '\n'Проверьте качество соединения." +
+                MessageBox.Show("Ошибка соединения с сервером. '\n'Проверьте качество соединения." +
                     " И перезапустите программу.");
                 metroTile1.Enabled = false;
                 metroTile2.Enabled = false;

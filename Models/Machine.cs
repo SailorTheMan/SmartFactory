@@ -10,7 +10,7 @@ namespace SmartFactory.Models
     class Machine
     {
 
-        private int id;
+        public int id { get; set; }
 
         public bool DangerousStatus = false;
         public bool CriticalStatus = false; 

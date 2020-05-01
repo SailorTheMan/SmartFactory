@@ -39,7 +39,7 @@ namespace SmartFactory.Pages
         {
             MessageBox.Show("Загрузка данных произойдет в фоновом режиме. Вы получите сообщение об успешной загрузке");
             new DatToDB().Converter(openFileDialog1.FileName);
-            MessageBox.Show("Загрузка данных успешно завершена.");
+            MessageBox.Show("Загрузка данных успешно завершена. Перезапустите программу, чтобы увидеть изменения.");
             //timer1.Start();
         }
 
