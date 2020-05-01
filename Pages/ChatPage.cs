@@ -28,7 +28,7 @@ namespace SmartFactory.Pages
         {
             this.radChat1.Author = author;
             this.radChat1.SendMessage += SaveMessage;
-            //UpdateMessages();
+            UpdateMessages();
         }
 
         private void SaveMessage(object sender, SendMessageEventArgs e)

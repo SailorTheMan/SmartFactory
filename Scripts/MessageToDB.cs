@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using SmartFactory.Models;
 using Telerik.WinControls.UI;
+using Telerik.WinControls.UI.Design;
+using Telerik.Windows.Documents.Spreadsheet.Formatting.FormatStrings.Infos;
 
 namespace SmartFactory.Scripts
 {
@@ -17,8 +20,11 @@ namespace SmartFactory.Scripts
             
             MySqlConnection conn = new MySqlConnection(connStr);
 
+            DateTime dateNow = DateTime.Now;
+            DateTime date = dateNow.ToUniversalTime();
+
             string query = String.Format("INSERT INTO `chat` (`userID`,`name`, `text`, `date`) VALUES ('{0}', '{1}', '{2}', '{3}');", 
-                User.ID, User.Name, message.Message, DateTime.Now.ToString());
+                User.ID, User.Name, message.Message, date.ToString());
 
             conn.Open();
             MySqlCommand command = new MySqlCommand(query, conn);
@@ -51,6 +57,7 @@ namespace SmartFactory.Scripts
                 Console.WriteLine(reader[0].ToString() + " " + reader[1].ToString());
 
                 DateTime date = DateTime.Parse(reader[3].ToString());
+                DateTime dateNow = System.TimeZoneInfo.ConvertTimeFromUtc(date, System.TimeZoneInfo.Local);
 
                 Author author = author = new Author(Properties.Resources.avatar, name);
 
@@ -59,7 +66,7 @@ namespace SmartFactory.Scripts
                     author = selfAuthor;
                 }
 
-                ChatTextMessage message = new ChatTextMessage(text, author, date);
+                ChatTextMessage message = new ChatTextMessage(text, author, dateNow);
 
                 messageList.Add(message);
             }
