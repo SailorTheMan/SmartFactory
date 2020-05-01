@@ -56,12 +56,12 @@
             // 
             this.MainPush.AutoSize = true;
             this.MainPush.BackColor = System.Drawing.SystemColors.Highlight;
-            this.MainPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPush.ForeColor = System.Drawing.SystemColors.Control;
-            this.MainPush.Location = new System.Drawing.Point(28, 720);
+            this.MainPush.Location = new System.Drawing.Point(28, 714);
             this.MainPush.Margin = new System.Windows.Forms.Padding(5, 0, 7, 0);
             this.MainPush.Name = "MainPush";
-            this.MainPush.Size = new System.Drawing.Size(0, 20);
+            this.MainPush.Size = new System.Drawing.Size(0, 29);
             this.MainPush.TabIndex = 4;
             // 
             // pictureBox2
@@ -151,7 +151,7 @@
             this.tableLayoutPanel1.Controls.Add(this.metroTile3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.metroTile2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 252);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -213,12 +213,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 766);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.MainPush);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.MainPush);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximumSize = new System.Drawing.Size(1500, 800);
             this.MinimumSize = new System.Drawing.Size(1435, 766);
