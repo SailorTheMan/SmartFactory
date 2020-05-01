@@ -79,6 +79,7 @@ namespace SmartFactory.Pages
             {
                 new AccountPage().ShowDialog();
             }
+            MainPush.Text = "";
         }
 
         private void StatPage_Load(object sender, EventArgs e)
