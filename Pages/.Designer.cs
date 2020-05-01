@@ -81,7 +81,7 @@
             // 
             this.loginButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginButton.Location = new System.Drawing.Point(1218, 25);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(25);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(257, 64);
             this.loginButton.TabIndex = 1;
@@ -94,7 +94,7 @@
             this.chatButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chatButton1.Enabled = false;
             this.chatButton1.Location = new System.Drawing.Point(272, 25);
-            this.chatButton1.Margin = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.chatButton1.Margin = new System.Windows.Forms.Padding(25);
             this.chatButton1.Name = "chatButton1";
             this.chatButton1.Size = new System.Drawing.Size(91, 64);
             this.chatButton1.TabIndex = 2;
@@ -124,7 +124,7 @@
             // 
             this.metroTile1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTile1.Location = new System.Drawing.Point(25, 25);
-            this.metroTile1.Margin = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(25);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(449, 226);
             this.metroTile1.TabIndex = 9;
@@ -139,7 +139,7 @@
             // 
             this.mapButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mapButton.Location = new System.Drawing.Point(524, 25);
-            this.mapButton.Margin = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.mapButton.Margin = new System.Windows.Forms.Padding(25);
             this.mapButton.Name = "mapButton";
             this.mapButton.Size = new System.Drawing.Size(450, 226);
             this.mapButton.TabIndex = 10;
@@ -154,7 +154,7 @@
             // 
             this.metroTile2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTile2.Location = new System.Drawing.Point(1024, 25);
-            this.metroTile2.Margin = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.metroTile2.Margin = new System.Windows.Forms.Padding(25);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(451, 226);
             this.metroTile2.TabIndex = 11;
@@ -174,9 +174,8 @@
             this.MainPush.Location = new System.Drawing.Point(4, 0);
             this.MainPush.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MainPush.Name = "MainPush";
-            this.MainPush.Size = new System.Drawing.Size(298, 29);
+            this.MainPush.Size = new System.Drawing.Size(0, 29);
             this.MainPush.TabIndex = 2;
-            this.MainPush.Text = "Место для уведомлений";
             this.MainPush.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
@@ -184,17 +183,17 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.flowLayoutPanel1.Controls.Add(this.MainPush);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 600);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 669);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1559, 100);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1460, 31);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1599, 720);
+            this.ClientSize = new System.Drawing.Size(1500, 720);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -223,7 +222,7 @@
         private MetroFramework.Controls.MetroTile mapButton;
         private MetroFramework.Controls.MetroTile metroTile2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        public MetroFramework.Controls.MetroButton chatButton1;
+        private MetroFramework.Controls.MetroButton chatButton1;
     }
 }
 

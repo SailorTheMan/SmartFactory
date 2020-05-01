@@ -29,7 +29,7 @@ namespace SmartFactory.Pages
 
             String login = loginInput.Text;
             String password = uc.Encrypt(passwordInput.Text);
-
+            label1.Text = "Загрузка...";
             AccountPage f1 = new AccountPage();
             if (loginInput.Text.Length < 1)
             {
@@ -37,7 +37,7 @@ namespace SmartFactory.Pages
             }
             else if (!loginInput.Text.Contains("@"))
             {
-                label1.Text = "Введите корректный email";
+                label1.Text = "Введите корректный Email";
             }
             else if (passwordInput.Text.Length < 1)
             {
@@ -51,7 +51,7 @@ namespace SmartFactory.Pages
             }
             else
             {
-                label1.Text = "Проверьте правильность ввода логина/пароля";
+                label1.Text = "Проверьте правильность ввода Email/пароля";
             }
 
             
