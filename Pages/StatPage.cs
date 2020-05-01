@@ -39,7 +39,7 @@ namespace SmartFactory.Pages
         {
             MessageBox.Show("Загрузка данных произойдет в фоновом режиме. Вы получите сообщение об успешной загрузке");
             new DatToDB().Converter(openFileDialog1.FileName);
-            MessageBox.Show("Загрузка данных успешно завершена.");
+            MessageBox.Show("Загрузка данных успешно завершена. Перезапустите программу, чтобы увидеть изменения.");
             //timer1.Start();
         }
 
@@ -93,18 +93,20 @@ namespace SmartFactory.Pages
             {
                 loginButton.Text = "Личный кабинет";
             }
+
+            CheckRoot();
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
         {
-            MainPush.Text = "Загрузка телеметрии";
+            MainPush.Text = "Загрузка телеметрии...";
             new CriticalPage().Show();
             MainPush.Text = "";
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            MainPush.Text = "Загрузка телеметрии";
+            MainPush.Text = "Загрузка телеметрии...";
             new DangerousPage().Show();
             MainPush.Text = "";
         }
@@ -113,8 +115,13 @@ namespace SmartFactory.Pages
         {
             if (User.Level == 0)
             {
-                metroButton1.Enabled = false;
+                metroButton1.Enabled = true;
             }
+        }
+
+        public void ChangeLoginButton()
+        {
+            loginButton.Text = "Личный кабинет";
         }
     }
 }

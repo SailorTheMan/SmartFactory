@@ -42,6 +42,7 @@
             this.radChat1.TabIndex = 0;
             this.radChat1.Text = "radChat1";
             this.radChat1.TimeSeparatorInterval = System.TimeSpan.Parse("1.00:00:00");
+            this.radChat1.Click += new System.EventHandler(this.radChat1_Click);
             // 
             // timer1
             // 

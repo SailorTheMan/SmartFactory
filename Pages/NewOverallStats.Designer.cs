@@ -33,11 +33,6 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -220,20 +215,10 @@
             // radDropDownList1
             // 
             this.radDropDownList1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.radDropDownList1.DropDownHeight = 80;
-            this.radDropDownList1.ItemHeight = 14;
-            radListDataItem6.Text = "1";
-            radListDataItem7.Text = "2";
-            radListDataItem8.Text = "3";
-            radListDataItem9.Text = "4";
-            radListDataItem10.Text = "итд";
-            this.radDropDownList1.Items.Add(radListDataItem6);
-            this.radDropDownList1.Items.Add(radListDataItem7);
-            this.radDropDownList1.Items.Add(radListDataItem8);
-            this.radDropDownList1.Items.Add(radListDataItem9);
-            this.radDropDownList1.Items.Add(radListDataItem10);
-            this.radDropDownList1.Location = new System.Drawing.Point(13, 40);
-            this.radDropDownList1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radDropDownList1.DropDownHeight = 107;
+            this.radDropDownList1.ItemHeight = 19;
+            this.radDropDownList1.Location = new System.Drawing.Point(17, 49);
+            this.radDropDownList1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDropDownList1.Name = "radDropDownList1";
             this.radDropDownList1.Size = new System.Drawing.Size(113, 16);
             this.radDropDownList1.TabIndex = 0;

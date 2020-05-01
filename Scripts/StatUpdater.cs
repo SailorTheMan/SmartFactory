@@ -13,7 +13,7 @@ namespace SmartFactory.Scripts
 
         public void UpdateStat()
         {
-            for (int i = 0; i < Program.machineList.Length; i++)
+            for (int i = 0; i < Program.machineList.Count; i++)
             {
                 //Program.machineList[i]. //подумать о жизни надо
             }

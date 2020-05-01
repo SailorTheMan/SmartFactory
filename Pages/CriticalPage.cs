@@ -27,11 +27,13 @@ namespace SmartFactory.Pages
 
         private void fillSqlCritTable()
         {
-            string connStr = Program.connStr;
-            MySqlConnection conn = new MySqlConnection(connStr);
-            conn.Open();
+            try
+            {
+                string connStr = Program.connStr;
+                MySqlConnection conn = new MySqlConnection(connStr);
+                conn.Open();
 
-            var lastEntry = "SELECT DateTime FROM `machine_stats` WHERE id = (SELECT MAX(id) FROM `machine_stats`)";
+                var lastEntry = "SELECT DateTime FROM `machine_stats` WHERE id = (SELECT MAX(id) FROM `machine_stats`)";
 
             MySqlCommand command = new MySqlCommand(lastEntry, conn);
             string returnedDate = command.ExecuteScalar().ToString(); //Получаем правильно
@@ -40,15 +42,20 @@ namespace SmartFactory.Pages
             string minDate = DatToDB.reverseDate(minDateDT.ToString());           //Считаем правильно
             string maxDate = DatToDB.reverseDate(maxDateDT.ToString());
 
-            conn.Close();
-            var select = String.Format("SELECT * FROM `machine_stats` WHERE ((`DateTime` >= '{0}') AND (`DateTime` <= '{1}') AND ((`Temp` >= '{2}') OR (`Vibr` >= '{3}') OR " +
-                "(`Power` >= '{4}') OR (`Load` >= '{5}') OR (`Wtime` >= '{6}')))", minDate, maxDate, Program.critTemp, Program.critVibr, Program.critPow, Program.critLoad, Program.critTime);
-            //Запрос обрабатывается
-            var dataAdapter = new MySqlDataAdapter(select, conn);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);  //А ds пустой!
-            dataGridView1.ReadOnly = true;
-            dataGridView1.DataSource = ds.Tables[0];
+                conn.Close();
+                var select = String.Format("SELECT * FROM `machine_stats` WHERE ((`DateTime` >= '{0}') AND (`DateTime` <= '{1}') AND ((`Temp` >= '{2}') OR (`Vibr` >= '{3}') OR " +
+                    "(`Power` >= '{4}') OR (`Load` >= '{5}') OR (`Wtime` >= '{6}')))", minDate, maxDate, Program.critTemp, Program.critVibr, Program.critPow, Program.critLoad, Program.critTime);
+                //Запрос обрабатывается
+                var dataAdapter = new MySqlDataAdapter(select, conn);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);  //А ds пустой!
+                dataGridView1.ReadOnly = true;
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            catch
+            {
+                MessageBox.Show("Проверьте подключение к интернету");
+            }
         }
 
 
@@ -170,6 +177,11 @@ namespace SmartFactory.Pages
 
                 }
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

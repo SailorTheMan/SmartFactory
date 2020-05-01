@@ -14,7 +14,8 @@ namespace SmartFactory
     static class Program
     {
 
-        public static Machine[] machineList = new Machine[20];
+        public static List<Machine> machineList = new List<Machine>();
+        //public static Machine[] machineList = new Machine[12];
         public static double dangTemp = 45.00;
         public static double dangVibr = 0.75;
         public static double dangPow = 0.65;

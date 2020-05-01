@@ -43,8 +43,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.passwodLbl = new System.Windows.Forms.Label();
             this.passwordInput = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.levelInput = new System.Windows.Forms.DomainUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -201,30 +199,6 @@
             this.passwordInput.Size = new System.Drawing.Size(331, 22);
             this.passwordInput.TabIndex = 14;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(467, 9);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 17);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Уровень доступа";
-            // 
-            // levelInput
-            // 
-            this.levelInput.Items.Add("сотрудник");
-            this.levelInput.Items.Add("руководитель отдела");
-            this.levelInput.Items.Add("руководитель предприятия");
-            this.levelInput.Items.Add("админ");
-            this.levelInput.Location = new System.Drawing.Point(457, 34);
-            this.levelInput.Margin = new System.Windows.Forms.Padding(4);
-            this.levelInput.Name = "levelInput";
-            this.levelInput.Size = new System.Drawing.Size(169, 22);
-            this.levelInput.TabIndex = 18;
-            this.levelInput.Text = "Уровень доступа";
-            this.levelInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.levelInput_KeyPress);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -241,8 +215,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 261);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.levelInput);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.passwodLbl);
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.button1);
@@ -285,8 +257,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label passwodLbl;
         private System.Windows.Forms.TextBox passwordInput;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DomainUpDown levelInput;
         private System.Windows.Forms.Label label8;
     }
 }

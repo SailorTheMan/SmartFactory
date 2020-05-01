@@ -21,6 +21,9 @@ namespace SmartFactory.Pages
 
         private void NewOverallStats_Load(object sender, EventArgs e)
         {
+
+            InitializeMachinePicker();
+
             radDateTimePicker1.MinDate = new DateTime(2020, 2, 1);
             radDateTimePicker1.MaxDate = new DateTime(2020, 3, 31);
             radDateTimePicker1.Value = DateTime.Today;
@@ -35,6 +38,14 @@ namespace SmartFactory.Pages
             radDateTimePicker2.CustomFormat = "dd/MM/yyyy HH:mm";
 
             fillTable();
+        }
+
+        private void InitializeMachinePicker()
+        {
+            for (int i = 0; i < Program.machineList.Count; i++)
+            {
+                radDropDownList1.Items.Add((i+1).ToString());
+            }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
