@@ -93,6 +93,8 @@ namespace SmartFactory.Pages
             {
                 loginButton.Text = "Личный кабинет";
             }
+
+            CheckRoot();
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
@@ -113,8 +115,13 @@ namespace SmartFactory.Pages
         {
             if (User.Level == 0)
             {
-                metroButton1.Enabled = false;
+                metroButton1.Enabled = true;
             }
+        }
+
+        public void ChangeLoginButton()
+        {
+            loginButton.Text = "Личный кабинет";
         }
     }
 }
