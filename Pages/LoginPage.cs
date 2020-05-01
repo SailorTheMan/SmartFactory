@@ -13,7 +13,7 @@ using SmartFactory.Models;
 
 namespace SmartFactory.Pages
 {
-    public partial class LoginPage : Form
+    public partial class LoginPage : MetroFramework.Forms.MetroForm
     {
         public LoginPage()
         {
@@ -64,6 +64,11 @@ namespace SmartFactory.Pages
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace SmartFactory.Pages
 {
-    public partial class StorePage : Form
+    public partial class StorePage : MetroFramework.Forms.MetroForm
     {
         public StorePage()
         {
@@ -53,6 +53,8 @@ namespace SmartFactory.Pages
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = ds.Tables[0];
         }
+
+
 
     }
 }

@@ -33,6 +33,11 @@ namespace SmartFactory.Scripts
                     Console.WriteLine(s);
                     string[] stringList = s.Split('\t');
 
+                    if (stringList[0] == "")
+                    {
+                        continue;
+                    }
+
                     query += String.Format("('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', ",
                             stringList[0], stringList[1], stringList[2], stringList[3], stringList[4], stringList[5],
                             stringList[6]);

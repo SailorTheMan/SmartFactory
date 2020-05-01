@@ -5,32 +5,21 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Navigation;
-using SmartFactory.Models;
 using MySql.Data.MySqlClient;
-using ZedGraph;
-//using Telerik.WinControls.GridView;
-//using Telerik.WinControls.GridView;
+using SmartFactory.Models;
 
 namespace SmartFactory.Pages
 {
-    public partial class OverallStats : Telerik.WinControls.UI.RadForm
+    public partial class NewOverallStats : MetroFramework.Forms.MetroForm
     {
-        public OverallStats()
+        public NewOverallStats()
         {
             InitializeComponent();
-            GraphPage gp = new GraphPage();
-            gp.Owner = this;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RadForm1_Load(object sender, EventArgs e)
+        private void NewOverallStats_Load(object sender, EventArgs e)
         {
             radDateTimePicker1.MinDate = new DateTime(2020, 2, 1);
             radDateTimePicker1.MaxDate = new DateTime(2020, 3, 31);
@@ -48,7 +37,15 @@ namespace SmartFactory.Pages
             fillTable();
         }
 
-        private void radButton2_Click(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            OverallPush.Text = "Заполнение таблицы";
+            //fillTable();
+            fillSqlTable();
+            OverallPush.Text = "Таблица заполнена";
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
         {
             OverallPush.Text = "Отрисовка графика";
 
@@ -59,34 +56,13 @@ namespace SmartFactory.Pages
             //new GraphPage().Show();
             */
 
-            GraphPage2 gp = new GraphPage2();
+            NewGraphPage gp = new NewGraphPage();
+            gp.ShadowType = MetroFormShadowType.None;
             gp.Owner = this;
             gp.ShowDialog();
             OverallPush.Text = "";
         }
 
-        private void radDropDownList1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //MessageBox.Show("Всё ок");
-        }
-
-        private void radDropDownList1_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
-        {
-            //MessageBox.Show("Всё ок");
-        }
-
-        private void radButton1_Click(object sender, EventArgs e)
-        {
-            OverallPush.Text = "Заполнение таблицы";
-            //fillTable();
-            fillSqlTable();
-            OverallPush.Text = "Таблица заполнена";
-        }
-
-        private void radDateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
         private void fillTable()
         {
             DataTable table = new DataTable();
@@ -100,12 +76,12 @@ namespace SmartFactory.Pages
             table.Columns.Add("Last Load", typeof(double));
             table.Columns.Add("Worktime", typeof(int));
 
-            
+
             //Обработка всех машин. Отображение последней пачки данных. 
-            for(int counter = 0; counter < 12; counter++)
+            for (int counter = 0; counter < 12; counter++)
             {
                 Machine mek = CritChecker(Program.machineList[counter]);
-                table.Rows.Add(mek.getID(), mek.isDangerous(), mek.isCritical(), Cdoub(mek.getTempLog().Last()), Cdoub(mek.getVibrLog().Last()), 
+                table.Rows.Add(mek.getID(), mek.isDangerous(), mek.isCritical(), Cdoub(mek.getTempLog().Last()), Cdoub(mek.getVibrLog().Last()),
                     Cdoub(mek.getPowerLog().Last()), Cdoub(mek.getLoadLog().Last()), Cint(mek.getWorkTimeLog().Last()));
             }
 
@@ -120,6 +96,54 @@ namespace SmartFactory.Pages
         {
             string[] str = input.Split('\t');
             return Convert.ToInt32(str[1]);
+        }
+
+        private Machine CritChecker(Machine e)
+        {
+            double t = Cdoub(e.getTempLog().Last());
+            double v = Cdoub(e.getVibrLog().Last());
+            double w = Cdoub(e.getPowerLog().Last());
+            double l = Cdoub(e.getLoadLog().Last());
+            double h = Cdoub(e.getWorkTimeLog().Last());        //Надо хакнуть Last
+
+
+            if (t >= Program.critTemp || v >= Program.critVibr || w >= Program.critPow || l >= Program.critLoad || h >= Program.critTime)
+            {
+                e.CriticalStatus = true;
+            }
+            else if (t >= Program.dangTemp || v >= Program.dangVibr || w >= Program.dangPow || l >= Program.dangLoad || h >= Program.dangTime)
+            {
+                e.DangerousStatus = true;
+            }
+            return e;
+        }
+
+        private void fillSqlTable()
+        {
+            int machid = radDropDownList1.SelectedItem.Index;
+            int measure = radDropDownList2.SelectedItem.Index;
+            DateTime minDate = radDateTimePicker1.Value;
+            DateTime maxDate = radDateTimePicker2.Value;
+
+
+            string[] measures = { "Machine ID", "DateTime", "Temp", "Vibr", "Power", "Load", "Wtime", "id" };
+
+            // XDate dt = new XDate(Convert.ToInt32(parsedD[2]), Convert.ToInt32(parsedD[1]), Convert.ToInt32(parsedD[0]),
+            //   Convert.ToInt32(parsedT[0]), Convert.ToInt32(parsedT[1]), Convert.ToInt32(parsedT[2]));
+
+
+            var select = "SELECT `Machine ID`, `Temp` FROM `machine_stats` WHERE (Temp >= 10) AND (Temp <= 50) AND (`Machine ID` = 3)";
+            // var select = "SELECT * FROM `machine_stats` WHERE '{$minDate}' <= `DateTime` AND `DateTime` <= '{$maxDate}'";
+            //var c = new SqlConnection(yourConnectionString); // Your Connection String here
+            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            var dataAdapter = new MySqlDataAdapter(select, conn);
+
+            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+            dataAdapter.Fill(ds);
+            dataGridView1.ReadOnly = true;
+            dataGridView1.DataSource = ds.Tables[0];
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -185,65 +209,7 @@ namespace SmartFactory.Pages
             }
             //foreach (DataGridViewCell b in this.dataGridView1.Rows[e.RowIndex].Cells[1])
 
-           //var b = this.dataGridView1.Rows[e.RowIndex].Cells[1].;
-        }
-
-        /// <summary>
-        /// Возвращает элемент класса Machine с обновлённым статусом
-        /// </summary>
-        
-
-        private Machine CritChecker(Machine e)
-        {
-            double t = Cdoub(e.getTempLog().Last());
-            double v = Cdoub(e.getVibrLog().Last());
-            double w = Cdoub(e.getPowerLog().Last());
-            double l = Cdoub(e.getLoadLog().Last());
-            double h = Cdoub(e.getWorkTimeLog().Last());        //Надо хакнуть Last
-
-            
-            if (t >= Program.critTemp || v >= Program.critVibr || w >= Program.critPow || l >= Program.critLoad || h >= Program.critTime)
-            {
-                e.CriticalStatus = true;
-            }
-            else if (t >= Program.dangTemp || v >= Program.dangVibr || w >= Program.dangPow || l >= Program.dangLoad || h >= Program.dangTime)
-            {
-                e.DangerousStatus = true;
-            }
-            return e;
-        }
-
-        private void fillSqlTable()
-        {
-            int machid = radDropDownList1.SelectedItem.Index;
-            int measure = radDropDownList2.SelectedItem.Index;
-            DateTime minDate = radDateTimePicker1.Value;
-            DateTime maxDate = radDateTimePicker2.Value;
-
-           
-            string[] measures = {"Machine ID", "DateTime", "Temp", "Vibr", "Power", "Load", "Wtime", "id"};
-
-            // XDate dt = new XDate(Convert.ToInt32(parsedD[2]), Convert.ToInt32(parsedD[1]), Convert.ToInt32(parsedD[0]),
-            //   Convert.ToInt32(parsedT[0]), Convert.ToInt32(parsedT[1]), Convert.ToInt32(parsedT[2]));
-
-
-            var select = "SELECT `Machine ID`, `Temp` FROM `machine_stats` WHERE (Temp >= 10) AND (Temp <= 50) AND (`Machine ID` = 3)";
-            // var select = "SELECT * FROM `machine_stats` WHERE '{$minDate}' <= `DateTime` AND `DateTime` <= '{$maxDate}'";
-            //var c = new SqlConnection(yourConnectionString); // Your Connection String here
-            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            var dataAdapter = new MySqlDataAdapter(select, conn);
-
-            var commandBuilder = new MySqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
-            dataAdapter.Fill(ds);
-            dataGridView1.ReadOnly = true;
-            dataGridView1.DataSource = ds.Tables[0];
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            //var b = this.dataGridView1.Rows[e.RowIndex].Cells[1].;
         }
     }
 }

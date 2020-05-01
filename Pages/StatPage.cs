@@ -15,16 +15,11 @@ using SmartFactory.Scripts;
 
 namespace SmartFactory.Pages
 {
-    public partial class StatPage : Form
+    public partial class StatPage : MetroFramework.Forms.MetroForm
     {
         public StatPage()
         {
             InitializeComponent();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -35,7 +30,6 @@ namespace SmartFactory.Pages
                 MainPush.Text = "Загрузка...";
                 Thread uploadingData = new Thread(createUploadThread);
                 uploadingData.Start();
-                label1.Text = "";
                 MainPush.Text = "";
             }
 
@@ -52,7 +46,7 @@ namespace SmartFactory.Pages
         private void button2_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Загрузка телеметрии";
-            new OverallStats().Show();
+            new NewOverallStats().Show();
             MainPush.Text = "";
         }
 
@@ -76,9 +70,9 @@ namespace SmartFactory.Pages
                 {
                     MainPage main = this.Owner as MainPage;
 
-                    main.button3.Text = "Личный кабинет";
+                    main.loginButton.Text = "Личный кабинет";
 
-                    button3.Text = "Личный кабинет";
+                    loginButton.Text = "Личный кабинет";
                 }
             }
 
@@ -92,7 +86,7 @@ namespace SmartFactory.Pages
         {
             if (User.ID != -1)
             {
-                button3.Text = "Личный кабинет";
+                loginButton.Text = "Личный кабинет";
             }
         }
     }

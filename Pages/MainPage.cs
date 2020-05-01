@@ -15,7 +15,7 @@ using Google.Protobuf.Collections;
 
 namespace SmartFactory
 {
-    public partial class MainPage : Form
+    public partial class MainPage : MetroFramework.Forms.MetroForm
     {
         public MainPage()
         {
@@ -36,7 +36,7 @@ namespace SmartFactory
 
                 if (User.ID != -1)
                 {
-                    button3.Text = "Личный кабинет";
+                    loginButton.Text = "Личный кабинет";
                 }
             }
 //
@@ -108,15 +108,6 @@ namespace SmartFactory
             }
             MainPush.Text = "Последние данные загружены";
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < Program.machineList.Length -1 ; i++)
-            {
-                Console.WriteLine(i.ToString() + " " + Program.machineList[i].getLoadLog()[0]);
-            }
-            
         }
 
         private void mapButton_Click(object sender, EventArgs e)
