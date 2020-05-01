@@ -73,6 +73,10 @@ namespace SmartFactory.Pages
                     main.loginButton.Text = "Личный кабинет";
 
                     loginButton.Text = "Личный кабинет";
+
+                    main.chatButton1.Enabled = true;
+
+                    main.CheckRoot();
                 }
             }
 
@@ -88,6 +92,14 @@ namespace SmartFactory.Pages
             if (User.ID != -1)
             {
                 loginButton.Text = "Личный кабинет";
+            }
+        }
+
+        public void CheckRoot()
+        {
+            if (User.Level == 0)
+            {
+                metroButton1.Enabled = false;
             }
         }
     }

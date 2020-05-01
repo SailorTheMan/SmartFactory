@@ -71,8 +71,6 @@ namespace SmartFactory.Pages
             }
         }
 
-        
 
-
-}
+    }
 }

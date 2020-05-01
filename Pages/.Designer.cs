@@ -222,7 +222,7 @@
         private MetroFramework.Controls.MetroTile mapButton;
         private MetroFramework.Controls.MetroTile metroTile2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private MetroFramework.Controls.MetroButton chatButton1;
+        public MetroFramework.Controls.MetroButton chatButton1;
     }
 }
 
