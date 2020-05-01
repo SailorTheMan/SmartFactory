@@ -108,5 +108,13 @@ namespace SmartFactory.Pages
             new DangerousPage().Show();
             MainPush.Text = "";
         }
+
+        public void CheckRoot()
+        {
+            if (User.Level == 0)
+            {
+                metroButton1.Enabled = false;
+            }
+        }
     }
 }
