@@ -56,7 +56,7 @@ namespace SmartFactory
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MainPush.Text = "Открытие телеметрии";
+            MainPush.Text = "Загрузка телеметрии...";
             StatPage sp = new StatPage();
             sp.ShadowType = MetroFormShadowType.None;
             sp.Owner = this;
@@ -114,14 +114,14 @@ namespace SmartFactory
 
         private void mapButton_Click(object sender, EventArgs e)
         {
-            MainPush.Text = "Загрузка системы картографии";
+            MainPush.Text = "Загрузка системы картографии...";
             new MapPage().Show();
             MainPush.Text = "";
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            MainPush.Text = "Загрузка автоматизации склада";
+            MainPush.Text = "Загрузка автоматизации склада...";
             StorePage sp = new StorePage();
             sp.Show();
             MainPush.Text = "";
@@ -129,7 +129,9 @@ namespace SmartFactory
 
         private void chatButton1_Click(object sender, EventArgs e)
         {
+            MainPush.Text = "Загрузка чата...";
             new ChatPage().Show();
+            MainPush.Text = "";
         }
     }
 }

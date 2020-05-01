@@ -51,8 +51,8 @@
             this.MainPush.BackColor = System.Drawing.SystemColors.Highlight;
             this.MainPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPush.ForeColor = System.Drawing.SystemColors.Control;
-            this.MainPush.Location = new System.Drawing.Point(7, 689);
-            this.MainPush.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MainPush.Location = new System.Drawing.Point(24, 729);
+            this.MainPush.Margin = new System.Windows.Forms.Padding(4, 0, 5, 0);
             this.MainPush.Name = "MainPush";
             this.MainPush.Size = new System.Drawing.Size(0, 20);
             this.MainPush.TabIndex = 4;
@@ -60,10 +60,10 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 713);
+            this.pictureBox2.Location = new System.Drawing.Point(11, 722);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1469, 46);
+            this.pictureBox2.Size = new System.Drawing.Size(1469, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;

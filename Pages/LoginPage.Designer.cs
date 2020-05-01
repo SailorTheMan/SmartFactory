@@ -53,7 +53,7 @@
             // 
             this.pictureBox1.Image = global::SmartFactory.Properties.Resources.Дизайн_1__лого__общее_горизонтальное_;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(71, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(78, 64);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(243, 83);
@@ -72,14 +72,14 @@
             // 
             // loginInput
             // 
-            this.loginInput.Location = new System.Drawing.Point(62, 176);
+            this.loginInput.Location = new System.Drawing.Point(67, 176);
             this.loginInput.Name = "loginInput";
             this.loginInput.Size = new System.Drawing.Size(265, 23);
             this.loginInput.TabIndex = 10;
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(125, 290);
+            this.loginButton.Location = new System.Drawing.Point(141, 293);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(114, 23);
             this.loginButton.TabIndex = 11;
@@ -88,7 +88,7 @@
             // 
             // passwordInput
             // 
-            this.passwordInput.Location = new System.Drawing.Point(104, 236);
+            this.passwordInput.Location = new System.Drawing.Point(114, 231);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.Size = new System.Drawing.Size(170, 23);
             this.passwordInput.TabIndex = 13;
@@ -96,7 +96,7 @@
             // Password
             // 
             this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(160, 213);
+            this.Password.Location = new System.Drawing.Point(168, 208);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(57, 20);
             this.Password.TabIndex = 12;
@@ -104,14 +104,16 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(113, 263);
+            this.label1.Location = new System.Drawing.Point(18, 263);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 24);
+            this.label1.Size = new System.Drawing.Size(362, 24);
             this.label1.TabIndex = 14;
+            this.label1.Text = "Введите Email и пароль";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(125, 333);
+            this.button1.Location = new System.Drawing.Point(141, 334);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 15;

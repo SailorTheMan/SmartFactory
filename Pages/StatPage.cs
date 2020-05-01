@@ -45,7 +45,7 @@ namespace SmartFactory.Pages
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MainPush.Text = "Загрузка телеметрии";
+            MainPush.Text = "Загрузка телеметрии...";
             new NewOverallStats().Show();
             MainPush.Text = "";
         }

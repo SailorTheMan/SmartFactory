@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem13 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem14 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem15 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -81,21 +81,21 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.radDropDownList1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(22, 51);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(29, 63);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(719, 125);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(959, 154);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Параметры";
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(315, 77);
-            this.metroButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroButton2.Location = new System.Drawing.Point(420, 95);
+            this.metroButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(152, 19);
+            this.metroButton2.Size = new System.Drawing.Size(203, 23);
             this.metroButton2.TabIndex = 12;
             this.metroButton2.Text = "Отобразить график";
             this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -103,10 +103,10 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(315, 39);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroButton1.Location = new System.Drawing.Point(420, 48);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(152, 19);
+            this.metroButton1.Size = new System.Drawing.Size(203, 23);
             this.metroButton1.TabIndex = 3;
             this.metroButton1.Text = "Перестроить таблицу";
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -115,19 +115,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(147, 63);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(196, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(70, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Время до";
             // 
             // radDateTimePicker2
             // 
-            this.radDateTimePicker2.Location = new System.Drawing.Point(149, 77);
-            this.radDateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radDateTimePicker2.Location = new System.Drawing.Point(199, 95);
+            this.radDateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDateTimePicker2.Name = "radDateTimePicker2";
-            this.radDateTimePicker2.Size = new System.Drawing.Size(123, 20);
+            this.radDateTimePicker2.Size = new System.Drawing.Size(164, 30);
             this.radDateTimePicker2.TabIndex = 8;
             this.radDateTimePicker2.TabStop = false;
             this.radDateTimePicker2.Text = "28 апреля 2020 г.";
@@ -137,28 +136,26 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(147, 63);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(196, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.Size = new System.Drawing.Size(0, 17);
             this.label6.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(147, 25);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(196, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.Size = new System.Drawing.Size(69, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Время от";
             // 
             // radDateTimePicker1
             // 
-            this.radDateTimePicker1.Location = new System.Drawing.Point(149, 39);
-            this.radDateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radDateTimePicker1.Location = new System.Drawing.Point(199, 48);
+            this.radDateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDateTimePicker1.Name = "radDateTimePicker1";
-            this.radDateTimePicker1.Size = new System.Drawing.Size(123, 20);
+            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 30);
             this.radDateTimePicker1.TabIndex = 5;
             this.radDateTimePicker1.TabStop = false;
             this.radDateTimePicker1.Text = "1 февраля 2020 г.";
@@ -168,72 +165,69 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(147, 25);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(196, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(19, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Выбор параметра";
             // 
             // radDropDownList2
             // 
-            this.radDropDownList2.DropDownHeight = 80;
-            this.radDropDownList2.ItemHeight = 14;
-            radListDataItem11.Text = "Температура";
-            radListDataItem12.Text = "Вибрация";
-            radListDataItem13.Text = "Мощность";
-            radListDataItem14.Text = "Загрузка";
-            radListDataItem15.Text = "Время работы";
-            this.radDropDownList2.Items.Add(radListDataItem11);
-            this.radDropDownList2.Items.Add(radListDataItem12);
-            this.radDropDownList2.Items.Add(radListDataItem13);
-            this.radDropDownList2.Items.Add(radListDataItem14);
-            this.radDropDownList2.Items.Add(radListDataItem15);
-            this.radDropDownList2.Location = new System.Drawing.Point(13, 78);
-            this.radDropDownList2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radDropDownList2.DropDownHeight = 107;
+            this.radDropDownList2.ItemHeight = 19;
+            radListDataItem1.Text = "Температура";
+            radListDataItem2.Text = "Вибрация";
+            radListDataItem3.Text = "Мощность";
+            radListDataItem4.Text = "Загрузка";
+            radListDataItem5.Text = "Время работы";
+            this.radDropDownList2.Items.Add(radListDataItem1);
+            this.radDropDownList2.Items.Add(radListDataItem2);
+            this.radDropDownList2.Items.Add(radListDataItem3);
+            this.radDropDownList2.Items.Add(radListDataItem4);
+            this.radDropDownList2.Items.Add(radListDataItem5);
+            this.radDropDownList2.Location = new System.Drawing.Point(17, 96);
+            this.radDropDownList2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDropDownList2.Name = "radDropDownList2";
-            this.radDropDownList2.Size = new System.Drawing.Size(94, 19);
+            this.radDropDownList2.Size = new System.Drawing.Size(125, 28);
             this.radDropDownList2.TabIndex = 2;
             this.radDropDownList2.ThemeName = "VisualStudio2012Dark";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(19, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Выбор машины";
             // 
             // radDropDownList1
             // 
             this.radDropDownList1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.radDropDownList1.DropDownHeight = 80;
-            this.radDropDownList1.ItemHeight = 14;
-            radListDataItem1.Text = "1";
-            radListDataItem2.Text = "2";
-            radListDataItem3.Text = "3";
-            radListDataItem4.Text = "4";
-            radListDataItem5.Text = "итд";
-            this.radDropDownList1.Items.Add(radListDataItem1);
-            this.radDropDownList1.Items.Add(radListDataItem2);
-            this.radDropDownList1.Items.Add(radListDataItem3);
-            this.radDropDownList1.Items.Add(radListDataItem4);
-            this.radDropDownList1.Items.Add(radListDataItem5);
-            this.radDropDownList1.Location = new System.Drawing.Point(13, 40);
-            this.radDropDownList1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radDropDownList1.DropDownHeight = 107;
+            this.radDropDownList1.ItemHeight = 19;
+            radListDataItem6.Text = "1";
+            radListDataItem7.Text = "2";
+            radListDataItem8.Text = "3";
+            radListDataItem9.Text = "4";
+            radListDataItem10.Text = "итд";
+            this.radDropDownList1.Items.Add(radListDataItem6);
+            this.radDropDownList1.Items.Add(radListDataItem7);
+            this.radDropDownList1.Items.Add(radListDataItem8);
+            this.radDropDownList1.Items.Add(radListDataItem9);
+            this.radDropDownList1.Items.Add(radListDataItem10);
+            this.radDropDownList1.Location = new System.Drawing.Point(17, 49);
+            this.radDropDownList1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(94, 19);
+            this.radDropDownList1.Size = new System.Drawing.Size(125, 28);
             this.radDropDownList1.TabIndex = 0;
             this.radDropDownList1.ThemeName = "VisualStudio2012Dark";
             // 
@@ -243,11 +237,11 @@
             this.OverallPush.BackColor = System.Drawing.SystemColors.Highlight;
             this.OverallPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OverallPush.ForeColor = System.Drawing.SystemColors.Control;
-            this.OverallPush.Location = new System.Drawing.Point(3, 0);
+            this.OverallPush.Location = new System.Drawing.Point(4, 5);
+            this.OverallPush.Margin = new System.Windows.Forms.Padding(4, 5, 4, 0);
             this.OverallPush.Name = "OverallPush";
-            this.OverallPush.Size = new System.Drawing.Size(231, 24);
+            this.OverallPush.Size = new System.Drawing.Size(0, 29);
             this.OverallPush.TabIndex = 2;
-            this.OverallPush.Text = "Место для уведомлений";
             this.OverallPush.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
@@ -255,20 +249,19 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.flowLayoutPanel1.Controls.Add(this.OverallPush);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 460);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 566);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(724, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(965, 39);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(22, 194);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(29, 239);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 13);
+            this.label7.Size = new System.Drawing.Size(135, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Последние данные";
             // 
@@ -281,27 +274,27 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 215);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 265);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(719, 228);
+            this.dataGridView1.Size = new System.Drawing.Size(959, 281);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // NewOverallStats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 508);
+            this.ClientSize = new System.Drawing.Size(1005, 625);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NewOverallStats";
-            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
             this.Text = "Телеметрия";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.NewOverallStats_Load);
