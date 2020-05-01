@@ -29,6 +29,7 @@ namespace SmartFactory.Pages
             this.radChat1.Author = author;
             this.radChat1.SendMessage += SaveMessage;
             UpdateMessages();
+            timer1.Start();
         }
 
         private void SaveMessage(object sender, SendMessageEventArgs e)
@@ -58,6 +59,11 @@ namespace SmartFactory.Pages
         {
             UpdateMessages();
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateMessages();
         }
     }
 }

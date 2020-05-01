@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.radChat1 = new Telerik.WinControls.UI.RadChat();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radChat1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +53,11 @@
             this.metroButton1.Text = "metroButton1";
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ChatPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -70,5 +77,6 @@
 
         private Telerik.WinControls.UI.RadChat radChat1;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
