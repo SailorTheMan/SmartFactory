@@ -25,8 +25,10 @@ namespace SmartFactory.Pages
         private void loginButton_Click(object sender, EventArgs e)
         {
             
-
             UserController uc = new UserController();
+
+            String login = loginInput.Text;
+            String password = uc.Encrypt(passwordInput.Text);
 
             AccountPage f1 = new AccountPage();
             if (loginInput.Text.Length < 1)
@@ -41,15 +43,10 @@ namespace SmartFactory.Pages
             {
                 label1.Text = "Введите свой пароль";
             }
+
             else if (uc.Login(login, password))
-
-            String login = loginInput.Text;
-            String password = uc.Encrypt(passwordInput.Text);
-
-            if (uc.Login(login, password))
             {
                 MessageBox.Show("Выполнен вход.");
-
                 this.Close();
             }
             else

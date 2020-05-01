@@ -74,6 +74,10 @@ namespace SmartFactory.Pages
                 new LoginPage().ShowDialog();
                 if (User.ID != -1)
                 {
+                    MainPage main = this.Owner as MainPage;
+
+                    main.button3.Text = "Личный кабинет";
+
                     button3.Text = "Личный кабинет";
                 }
             }

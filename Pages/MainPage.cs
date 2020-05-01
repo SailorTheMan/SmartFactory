@@ -15,14 +15,12 @@ using Google.Protobuf.Collections;
 
 namespace SmartFactory
 {
-    public partial class Form1 : Form
+    public partial class MainPage : Form
     {
-        public Form1()
+        public MainPage()
         {
             InitializeComponent();
         }
-
-        LoginPage loginPage;
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -32,10 +30,10 @@ namespace SmartFactory
         private void button3_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Вход в личный кабинет";
-            if (User.ID == -1)//
+            if (User.ID == -1)
             {
-                
-                new LoginPage().Show();
+                new LoginPage().ShowDialog();
+
                 if (User.ID != -1)
                 {
                     button3.Text = "Личный кабинет";
@@ -58,7 +56,9 @@ namespace SmartFactory
         private void button2_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Открытие телеметрии";
-            new StatPage().Show();
+            StatPage sp = new StatPage();
+            sp.Owner = this;
+            sp.Show();
             MainPush.Text = "";
         }
 
