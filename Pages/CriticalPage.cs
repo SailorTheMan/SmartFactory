@@ -37,7 +37,7 @@ namespace SmartFactory.Pages
             string returnedDate = command.ExecuteScalar().ToString(); //Получаем правильно
             DateTime maxDateDT = DateTime.Parse(returnedDate);
             DateTime minDateDT = maxDateDT.AddHours(-24);
-            string minDate = DatToDB.reverseDate(minDateDT.AddHours(-72).ToString());           //Считаем правильно
+            string minDate = DatToDB.reverseDate(minDateDT.ToString());           //Считаем правильно
             string maxDate = DatToDB.reverseDate(maxDateDT.ToString());
 
             conn.Close();
