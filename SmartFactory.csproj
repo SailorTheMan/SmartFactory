@@ -480,6 +480,12 @@
     <Compile Include="Pages\CriticalPage.Designer.cs">
       <DependentUpon>CriticalPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DangerousPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\DangerousPage.Designer.cs">
+      <DependentUpon>DangerousPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NewGraphPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -568,6 +574,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\CriticalPage.resx">
       <DependentUpon>CriticalPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\DangerousPage.resx">
+      <DependentUpon>DangerousPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\NewGraphPage.resx">
       <DependentUpon>NewGraphPage.cs</DependentUpon>

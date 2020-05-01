@@ -1,33 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using SmartFactory.Scripts;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using SmartFactory.Scripts;
 
 namespace SmartFactory.Pages
 {
-    public partial class CriticalPage : MetroFramework.Forms.MetroForm
+    public partial class DangerousPage : MetroFramework.Forms.MetroForm
     {
-        public CriticalPage()
+        public DangerousPage()
         {
             InitializeComponent();
-
-        }
-
-        private void CriticalPage_Load(object sender, EventArgs e)
-        {
-            fillSqlCritTable();
         }
 
         private void fillSqlCritTable()
         {
-            string connStr = Program.connStr;
+            string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
 
@@ -41,8 +30,10 @@ namespace SmartFactory.Pages
             string maxDate = DatToDB.reverseDate(maxDateDT.ToString());
 
             conn.Close();
-            var select = String.Format("SELECT * FROM `machine_stats` WHERE ((`DateTime` >= '{0}') AND (`DateTime` <= '{1}') AND ((`Temp` >= '{2}') OR (`Vibr` >= '{3}') OR " +
-                "(`Power` >= '{4}') OR (`Load` >= '{5}') OR (`Wtime` >= '{6}')))", minDate, maxDate, Program.critTemp, Program.critVibr, Program.critPow, Program.critLoad, Program.critTime);
+
+            var select = String.Format("SELECT * FROM `machine_stats` WHERE ((`DateTime` >= '{0}') AND (`DateTime` <= '{1}') AND ((`Temp` BETWEEN '{2}' AND '{3}') OR (`Vibr` BETWEEN '{4}' AND '{5}') OR " +
+                "(`Power` BETWEEN '{6}' AND '{7}') OR (`Load` BETWEEN '{8}' AND '{9}') OR (`Wtime` BETWEEN '{10}' AND '{11}')))", minDate, maxDate, Program.dangTemp, Program.critTemp, Program.dangVibr, Program.critVibr,
+                Program.dangPow, Program.critPow, Program.dangLoad, Program.critLoad, Program.dangTime, Program.critTime);
             //Запрос обрабатывается
             var dataAdapter = new MySqlDataAdapter(select, conn);
             var ds = new DataSet();
@@ -52,8 +43,6 @@ namespace SmartFactory.Pages
         }
 
 
-
-        
         private void dataGridView1_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.Value != null && !(e.Value is DateTime))
@@ -170,6 +159,11 @@ namespace SmartFactory.Pages
 
                 }
             }
+        }
+
+        private void DangerousPage_Load(object sender, EventArgs e)
+        {
+            fillSqlCritTable();
         }
     }
 }

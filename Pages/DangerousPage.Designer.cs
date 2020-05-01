@@ -1,6 +1,6 @@
 ﻿namespace SmartFactory.Pages
 {
-    partial class CriticalPage
+    partial class DangerousPage
     {
         /// <summary>
         /// Required designer variable.
@@ -41,18 +41,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(848, 296);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting_1);
             // 
-            // CriticalPage
+            // DangerousPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 380);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "CriticalPage";
-            this.Text = "CriticalPage";
-            this.Load += new System.EventHandler(this.CriticalPage_Load);
+            this.Name = "DangerousPage";
+            this.Text = "DangerousPage";
+            this.Load += new System.EventHandler(this.DangerousPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -96,5 +96,12 @@ namespace SmartFactory.Pages
             new CriticalPage().Show();
             MainPush.Text = "";
         }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            MainPush.Text = "Загрузка телеметрии";
+            new DangerousPage().Show();
+            MainPush.Text = "";
+        }
     }
 }

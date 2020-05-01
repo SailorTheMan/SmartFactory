@@ -37,8 +37,8 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,7 +80,7 @@
             this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.loginButton, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 69);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -114,8 +114,8 @@
             // 
             // metroTile1
             // 
-            this.metroTile1.Location = new System.Drawing.Point(370, 2);
-            this.metroTile1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTile1.Location = new System.Drawing.Point(371, 2);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(364, 197);
             this.metroTile1.TabIndex = 7;
@@ -128,7 +128,7 @@
             // metroButton1
             // 
             this.metroButton1.Location = new System.Drawing.Point(378, 449);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(2);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(364, 65);
             this.metroButton1.TabIndex = 8;
@@ -151,6 +151,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1107, 201);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
+            // metroTile3
+            // 
+            this.metroTile3.Location = new System.Drawing.Point(740, 2);
+            this.metroTile3.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(365, 197);
+            this.metroTile3.TabIndex = 9;
+            this.metroTile3.Text = "Устройства в критическом состоянии";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+            // 
             // metroTile2
             // 
             this.metroTile2.Location = new System.Drawing.Point(2, 2);
@@ -162,19 +175,7 @@
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            // 
-            // metroTile3
-            // 
-            this.metroTile3.Location = new System.Drawing.Point(738, 2);
-            this.metroTile3.Margin = new System.Windows.Forms.Padding(2);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(367, 197);
-            this.metroTile3.TabIndex = 9;
-            this.metroTile3.Text = "Устройства в критическом состоянии";
-            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // StatPage
             // 
@@ -186,11 +187,11 @@
             this.Controls.Add(this.MainPush);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1125, 650);
             this.MinimumSize = new System.Drawing.Size(1076, 622);
             this.Name = "StatPage";
-            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "Телеметрия";
             this.Load += new System.EventHandler(this.StatPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

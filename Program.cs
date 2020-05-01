@@ -27,6 +27,8 @@ namespace SmartFactory
         public static double critLoad = 95.00;
         public static int critTime = 85000;
 
+        public static string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
