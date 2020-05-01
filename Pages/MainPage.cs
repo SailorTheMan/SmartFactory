@@ -58,6 +58,7 @@ namespace SmartFactory
         {
             MainPush.Text = "Открытие телеметрии";
             StatPage sp = new StatPage();
+            sp.ShadowType = MetroFormShadowType.None;
             sp.Owner = this;
             sp.Show();
             MainPush.Text = "";

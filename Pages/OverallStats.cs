@@ -21,8 +21,6 @@ namespace SmartFactory.Pages
         public OverallStats()
         {
             InitializeComponent();
-            GraphPage gp = new GraphPage();
-            gp.Owner = this;
         }
 
         private void label2_Click(object sender, EventArgs e)
