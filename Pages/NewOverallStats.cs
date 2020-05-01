@@ -120,25 +120,22 @@ namespace SmartFactory.Pages
 
         private void fillSqlTable()
         {
-            int machid = radDropDownList1.SelectedItem.Index;
-            int measure = radDropDownList2.SelectedItem.Index;
+            int machid = radDropDownList1.SelectedItem.Index+1;
+            int measure = radDropDownList2.SelectedItem.Index+2;
             DateTime minDate = radDateTimePicker1.Value;
             DateTime maxDate = radDateTimePicker2.Value;
 
+            string minDateS = minDate.GetDateTimeFormats('s')[0];
+            string maxDateS = maxDate.GetDateTimeFormats('s')[0];
 
             string[] measures = { "Machine ID", "DateTime", "Temp", "Vibr", "Power", "Load", "Wtime", "id" };
 
-            // XDate dt = new XDate(Convert.ToInt32(parsedD[2]), Convert.ToInt32(parsedD[1]), Convert.ToInt32(parsedD[0]),
-            //   Convert.ToInt32(parsedT[0]), Convert.ToInt32(parsedT[1]), Convert.ToInt32(parsedT[2]));
+            var select = String.Format("SELECT `Machine ID`, `DateTime`, `{0}` FROM `machine_stats` WHERE (`Machine ID` = {1}) AND (`DateTime` >= '{2}') AND (`DateTime` <= '{3}')", measures[measure], machid, minDateS, maxDateS);
 
-
-            var select = "SELECT `Machine ID`, `Temp` FROM `machine_stats` WHERE (Temp >= 10) AND (Temp <= 50) AND (`Machine ID` = 3)";
-            // var select = "SELECT * FROM `machine_stats` WHERE '{$minDate}' <= `DateTime` AND `DateTime` <= '{$maxDate}'";
-            //var c = new SqlConnection(yourConnectionString); // Your Connection String here
             string connStr = "server=baltika.mysql.database.azure.com;user=sailor@baltika;database=smartfactory;password=Baltika123;charset=utf8;";
             MySqlConnection conn = new MySqlConnection(connStr);
             var dataAdapter = new MySqlDataAdapter(select, conn);
-
+            //dataGridView1.Rows[0]
             var commandBuilder = new MySqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
             dataAdapter.Fill(ds);
@@ -148,9 +145,10 @@ namespace SmartFactory.Pages
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.Value != null)
+            if (e.Value != null && !(e.Value is DateTime))
             {
-                double val = Convert.ToDouble(e.Value);
+                double val = Convert.ToDouble(e.Value); 
+
                 // Это условное форматирование ячеек. Можно реюзать.
                 switch (this.dataGridView1.Columns[e.ColumnIndex].Name)
                 {
@@ -164,6 +162,17 @@ namespace SmartFactory.Pages
                             e.CellStyle.BackColor = Color.Red;
                         }
                         break;
+                    case "Temp":
+                        if (val >= Program.dangTemp)
+                        {
+                            e.CellStyle.BackColor = Color.Yellow;
+                        }
+                        if (val >= Program.critTemp)
+                        {
+                            e.CellStyle.BackColor = Color.Red;
+                        }
+                        break;
+
                     case "Last Vibr":
                         if (val >= Program.dangVibr)
                         {
@@ -174,6 +183,17 @@ namespace SmartFactory.Pages
                             e.CellStyle.BackColor = Color.Red;
                         }
                         break;
+                    case "Vibr":
+                        if (val >= Program.dangVibr)
+                        {
+                            e.CellStyle.BackColor = Color.Yellow;
+                        }
+                        if (val >= Program.critVibr)
+                        {
+                            e.CellStyle.BackColor = Color.Red;
+                        }
+                        break;
+
                     case "Last Power":
                         if (val >= Program.dangPow)
                         {
@@ -184,6 +204,17 @@ namespace SmartFactory.Pages
                             e.CellStyle.BackColor = Color.Red;
                         }
                         break;
+                    case "Power":
+                        if (val >= Program.dangPow)
+                        {
+                            e.CellStyle.BackColor = Color.Yellow;
+                        }
+                        if (val >= Program.critPow)
+                        {
+                            e.CellStyle.BackColor = Color.Red;
+                        }
+                        break;
+
                     case "Last Load":
                         if (val >= Program.dangLoad)
                         {
@@ -194,7 +225,28 @@ namespace SmartFactory.Pages
                             e.CellStyle.BackColor = Color.Red;
                         }
                         break;
+                    case "Load":
+                        if (val >= Program.dangLoad)
+                        {
+                            e.CellStyle.BackColor = Color.Yellow;
+                        }
+                        if (val >= Program.critLoad)
+                        {
+                            e.CellStyle.BackColor = Color.Red;
+                        }
+                        break;
+
                     case "Worktime":
+                        if (val >= Program.dangTime)
+                        {
+                            e.CellStyle.BackColor = Color.Yellow;
+                        }
+                        if (val >= Program.critTime)
+                        {
+                            e.CellStyle.BackColor = Color.Red;
+                        }
+                        break;
+                    case "Wtime":
                         if (val >= Program.dangTime)
                         {
                             e.CellStyle.BackColor = Color.Yellow;
@@ -207,9 +259,6 @@ namespace SmartFactory.Pages
 
                 }
             }
-            //foreach (DataGridViewCell b in this.dataGridView1.Rows[e.RowIndex].Cells[1])
-
-            //var b = this.dataGridView1.Rows[e.RowIndex].Cells[1].;
         }
     }
 }
