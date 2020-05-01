@@ -22,8 +22,8 @@ namespace SmartFactory.Scripts
         public bool Converter(String path)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
-
-            conn.Open();
+            MySqlConnection conn1 = new MySqlConnection(connStr);
+            
 
             using (StreamReader sr = File.OpenText(path))
             {
@@ -31,6 +31,8 @@ namespace SmartFactory.Scripts
                 string s;
                 string query = "INSERT INTO `machine_stats` (`Machine ID`, `DateTime`, `Temp`, `Vibr`, `Power`, `Load`, `Wtime`) VALUES";
                 int id = 0;
+
+                string checkQuery = "SELECT `Machine ID` FROM `machine_stats` WHERE ";
 
                 
 
@@ -40,8 +42,9 @@ namespace SmartFactory.Scripts
                 //machineList[2].addTempLog()
                 while((s = sr.ReadLine()) != null)
 
-                //for (int i = 0; i < 45; i++)
+                //for (int i = 0; i < 20; i++)
                 {
+                  //  s = sr.ReadLine();
 
                     string[] stringArray = s.Split('\t');
 
@@ -51,12 +54,30 @@ namespace SmartFactory.Scripts
 
                     query += String.Format("('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}'),", 
                         stringArray[0], dateStr, stringArray[2], stringArray[3], stringArray[4], stringArray[5], stringArray[6]);
+
+                    checkQuery += String.Format("`Machine ID`='{0}' AND `DateTime`='{1}' OR ", stringArray[0], dateStr);
+
+                }
+                checkQuery = checkQuery.Remove(checkQuery.Length - 3, 3) + ";";
+                conn.Open();
+                MySqlCommand command = new MySqlCommand(checkQuery, conn);
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (!reader.Read())
+                {
+                    query = query.Remove(query.Length - 1) + ";";
+
+                    conn1.Open();
+                    MySqlCommand command1 = new MySqlCommand(query, conn1);
+                    command1.ExecuteNonQuery();
+                    conn1.Close();
                     
                 }
-                query = query.Remove(query.Length - 1) + ";";
-                MySqlCommand command = new MySqlCommand(query, conn);
-                command.ExecuteNonQuery();
-
+                else
+                {
+                    MessageBox.Show("Обнаружены поветорения. Уберите их вручную и попробуйте снова.");
+                }
                 conn.Close();
             }
 
