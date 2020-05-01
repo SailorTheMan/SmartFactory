@@ -17,6 +17,10 @@ namespace SmartFactory
 {
     public partial class MainPage : MetroFramework.Forms.MetroForm
     {
+        public StatPage sp = new StatPage();
+        public MapPage mp = new MapPage();
+        public StorePage storePage = new StorePage();
+
         public MainPage()
         {
             InitializeComponent();
@@ -38,12 +42,13 @@ namespace SmartFactory
                 {
                     loginButton.Text = "Личный кабинет";
                     chatButton1.Enabled = true;
+                    CheckRoot();
                 }
             }
 //
             else
             {
-                new AccountPage().Show();
+                new AccountPage().ShowDialog();
             }
             MainPush.Text = "";
             
@@ -57,7 +62,6 @@ namespace SmartFactory
         private void button2_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Открытие телеметрии";
-            StatPage sp = new StatPage();
             sp.ShadowType = MetroFormShadowType.None;
             sp.Owner = this;
             sp.Show();
@@ -115,21 +119,26 @@ namespace SmartFactory
         private void mapButton_Click(object sender, EventArgs e)
         {
             MainPush.Text = "Загрузка системы картографии";
-            new MapPage().Show();
+            mp.Show();
             MainPush.Text = "";
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
             MainPush.Text = "Загрузка автоматизации склада";
-            StorePage sp = new StorePage();
-            sp.Show();
+            storePage.Show();
             MainPush.Text = "";
         }
 
         private void chatButton1_Click(object sender, EventArgs e)
         {
             new ChatPage().Show();
+        }
+        public void CheckRoot()
+        {
+            sp.CheckRoot();
+            storePage.CheckRoot();
+            mp.CheckRoot();
         }
     }
 }

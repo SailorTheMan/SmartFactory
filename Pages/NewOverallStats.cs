@@ -59,7 +59,7 @@ namespace SmartFactory.Pages
             NewGraphPage gp = new NewGraphPage();
             gp.ShadowType = MetroFormShadowType.None;
             gp.Owner = this;
-            gp.ShowDialog();
+            gp.Show();
             OverallPush.Text = "";
         }
 

@@ -124,6 +124,7 @@
             // 
             // metroButton1
             // 
+            this.metroButton1.Enabled = false;
             this.metroButton1.Location = new System.Drawing.Point(536, 471);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(494, 80);

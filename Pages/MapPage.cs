@@ -49,7 +49,16 @@ namespace SmartFactory.Pages
             InitializeRoutes();
 
             InitializePeopleLocation();
+
+            CheckRoot();
             
+        }
+        public void CheckRoot()
+        {
+            if (User.Level == 0)
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void InitializeGmap()
