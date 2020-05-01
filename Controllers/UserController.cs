@@ -61,8 +61,8 @@ namespace SmartFactory.Controllers
                         User.Age = int.Parse(reader[2].ToString());
                         User.Sex = reader[3].ToString();
                         User.Position = reader[4].ToString();
-                        User.Email = reader[5].ToString();
-                        User.Experience = reader[6].ToString();
+                        User.Email = reader[6].ToString();
+                        User.Experience = reader[5].ToString();
                         User.Level = int.Parse(reader[8].ToString());
                     }
 

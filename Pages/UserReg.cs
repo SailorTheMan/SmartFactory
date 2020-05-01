@@ -61,10 +61,6 @@ namespace SmartFactory.Pages
             {
                 label8.Text = "Введите пол";
             }
-            else if (levelInput.Text.Equals("Уровень доступа"))
-            {
-                label8.Text = "Введите уровень доступа";
-            }
             else if (ageInput.Text.Length < 1)
             {
                 label8.Text = "Введите возраст";
