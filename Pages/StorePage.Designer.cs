@@ -51,12 +51,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 79);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1409, 501);
+            this.dataGridView1.Size = new System.Drawing.Size(1057, 407);
             this.dataGridView1.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -64,9 +63,10 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.flowLayoutPanel1.Controls.Add(this.MainPush);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 604);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 491);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1421, 60);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1066, 49);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // MainPush
@@ -75,10 +75,9 @@
             this.MainPush.BackColor = System.Drawing.SystemColors.Highlight;
             this.MainPush.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPush.ForeColor = System.Drawing.SystemColors.Control;
-            this.MainPush.Location = new System.Drawing.Point(4, 0);
-            this.MainPush.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MainPush.Location = new System.Drawing.Point(3, 0);
             this.MainPush.Name = "MainPush";
-            this.MainPush.Size = new System.Drawing.Size(298, 29);
+            this.MainPush.Size = new System.Drawing.Size(231, 24);
             this.MainPush.TabIndex = 2;
             this.MainPush.Text = "Место для уведомлений";
             this.MainPush.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,25 +90,27 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(262, 16);
+            this.button1.Location = new System.Drawing.Point(855, 21);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(287, 47);
+            this.button1.Size = new System.Drawing.Size(215, 38);
             this.button1.TabIndex = 5;
             this.button1.Text = "Загрузить файл номенклатуры";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StorePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1461, 684);
+            this.ClientSize = new System.Drawing.Size(1096, 556);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(1461, 684);
-            this.MinimumSize = new System.Drawing.Size(1461, 684);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1096, 556);
+            this.MinimumSize = new System.Drawing.Size(1096, 556);
             this.Name = "StorePage";
+            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
             this.Text = "Номенкулатура";
             this.Load += new System.EventHandler(this.StorePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

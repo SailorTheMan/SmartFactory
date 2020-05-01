@@ -277,5 +277,19 @@ namespace SmartFactory.Pages
                 }
             }
         }
+
+
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            fillTable();
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            DiagramPage dp = new DiagramPage();
+            dp.Owner = this;
+            dp.Show();
+        }
     }
 }
