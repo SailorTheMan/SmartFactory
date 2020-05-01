@@ -145,10 +145,10 @@ namespace SmartFactory.Pages
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            /*if (e.Value != null)
+            if (e.Value != null && !(e.Value is DateTime))
             {
-                if (e.Value.GetType() != DateTime.) { double val = Convert.ToDouble(e.Value); }
-                
+                double val = Convert.ToDouble(e.Value); 
+
                 // Это условное форматирование ячеек. Можно реюзать.
                 switch (this.dataGridView1.Columns[e.ColumnIndex].Name)
                 {
@@ -258,7 +258,7 @@ namespace SmartFactory.Pages
                         break;
 
                 }
-            }*/
+            }
         }
     }
 }
